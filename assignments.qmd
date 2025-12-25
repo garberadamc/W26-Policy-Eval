@@ -1,0 +1,41 @@
+ ---
+title: "Assignments"
+subtitle: ""
+toc: true
+---
+
+# Final Project - EDS241
+
+::: {.callout-important}
+## Important: Email group presentation slides to instructor (Adam) before 7am on presentation day! (3/19)
+
+- Presentation slides must be emailed to your instructor (Adam) before 7am (3/19) 
+- Acceptable submission formats include `google slides` or a shared link of the slides in `pdf` format (i.e., *a Google Drive link*)
+- If slides are available in advance please send early!
+:::
+ 
+## Final project links: 
+
+- [Final Project Instructions](https://docs.google.com/document/d/1pW-QzEenwRTEu8meupA_ELVcAmOtDSTq11QFCaO1eVY/edit?usp=sharing) 
+- [Study Group Assignments](https://docs.google.com/spreadsheets/d/16rPEUDtxgMFQNmf1PkByN9XN1T9oZv00_2_LPFyYLtU/edit?usp=sharing)
+- [Final Presentation Grading Rubric](https://docs.google.com/document/d/1R8BPlZ6RZWwygTcijZ5ENhktGFPYdlRGDqkIuVo2hDQ/edit?usp=sharing)
+- [Presentation Question Form](https://docs.google.com/document/d/1f1x97nH2liGQhDDN4JBBuFCFXLOGRGRIjTeNMdJuFW8/edit?usp=sharing)
+  
+  
+## Presentation day schedule (8-11am, Wednesday 3/19):
+
+::: {.callout-important}
+## Presentations will start at 8am sharp (please do not be late)
+Presentation order will follow the numerical order of your assigned group study.
+:::
+
+1. First 4 presentations (~60 minutes)
+2. Short break (~5-10 minutes)
+3. Next 3 presentations (~45 minutes)
+4. Short break (~5-10 minutes)
+5. Final 3 presentations (~45 minutes)
+
+🍿 **Snacks are encouraged!**  Bring food for sustenance/survival or to share with the class!  (*totally optional*)
+
+
+
