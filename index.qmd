@@ -1,7 +1,7 @@
 ---
-title: "EDS 241 - Environmental Policy Evaluation"
-subtitle: "Master of Environmental Data Science (MEDS)"
-description: "Winter 2025"
+title: "Environmental Policy Evaluation (EDS241 / ESM244)"
+subtitle: "Bren School of Environmental Science and Management"
+description: "Winter 2026"
 title-block-banner: false
 toc: false
 ---
@@ -29,7 +29,7 @@ cat(
 <br>
 
 ::: callout-tip
-### Welcome to the course website for EDS 241!
+### Welcome to the course website for EDS241/ESM244!
 :::
 
 ## Course Description
@@ -62,12 +62,9 @@ knitr::include_graphics("images/headshot-241.png")
 [**Adam Garber**]{.teal-text}\
 **Email:** [agarber\@ucsb.edu](mailto::agarber@ucsb.edu)\
 **Office hours (subject to change):**\
-Monday 9-11 am \@ BH 3418 (office)\
-Thursday 3-4pm (~~3-5 pm~~) \@ BH 3418 (office)\
+Tuesday 12-2pm \@ BH 3520 (office)\
 **Alternate instructor availability:**\
-Tuesday 3-4 pm \@ BH 3418 (by appointment)\
-Wednesday (after class)\
-Friday 10-12 pm \@ BH 3418 (by appointment)\
+Monday - Friday (by appointment)\
 
 :::
 :::::
@@ -101,12 +98,12 @@ Wednesday 12 - 1 pm \@  Visitor Center (~~BH 3418~~)
 
 ### Time
 
-Wednesday, 9:30-10:45 am\
+Tuesday & Thursday, 8:00-9:15 am\
 
 ### Location
 
-Bren Hall 1424
+Bren Hall 1414
 
 ## Acknowledgements
 
-This website was developed from a [template](https://github.com/UCSB-MEDS/EDS-website-template?tab=readme-ov-file) authored by [Sam Csik](samanthacsik.github.io). The `EDS 241` course website houses materials which are heavily reused, adapted from, and inspired by Sam Csik's original work. This website was made using `Quarto` and the repository used to make this website can be found [here](https://github.com/garberadamc/eds241-policy-eval).
+This website was developed from a [template](https://github.com/UCSB-MEDS/EDS-website-template?tab=readme-ov-file) authored by [Sam Csik](samanthacsik.github.io). The `EDS241/ESM244` course website houses materials which are heavily reused, adapted from, and inspired by Sam Csik's original work. This website was made using `Quarto` and the repository used to make this website can be found [here](https://github.com/garberadamc/eds241-policy-eval).

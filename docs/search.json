@@ -123,21 +123,21 @@
     "href": "course-materials/week3.html",
     "title": "Week 3:",
     "section": "",
-    "text": "Lecture slides\nLab\nAnswer key\n\n\n\n\nLecture 3 - Experimental Design (Professor Mark Buntaine)\nNA\nNA"
+    "text": "Lecture slides\nLab\nResources\n\n\n\n\nLecture (TUES) , Lecture (THURS)\nHandout: , Repository:"
   },
   {
     "objectID": "course-materials/week3.html#lecture-materials",
     "href": "course-materials/week3.html#lecture-materials",
     "title": "Week 3:",
     "section": "",
-    "text": "Lecture slides\nLab\nAnswer key\n\n\n\n\nLecture 3 - Experimental Design (Professor Mark Buntaine)\nNA\nNA"
+    "text": "Lecture slides\nLab\nResources\n\n\n\n\nLecture (TUES) , Lecture (THURS)\nHandout: , Repository:"
   },
   {
     "objectID": "course-materials/week3.html#assignment-reminders",
     "href": "course-materials/week3.html#assignment-reminders",
     "title": "Week 3:",
     "section": " Assignment Reminders",
-    "text": "Assignment Reminders\n\n\n\n\n\n\n\n\n\nAssignment Type\nAssignment Title\nDate Assigned\nDate Due\n\n\n\n\nEnd of Class Survey\nEOC-Week3\n01/22/2025\n01/22/2025, 11:55pm\n\n\nAssignment 1\nHandout: HW1-LOBSTRS , Repository: HW1-LOBSTRS\n01/08/2025\n01/26/2025, 11:59pm\n\n\nReading - Mastering ’Metrics\nA&P: Chapter 5 - Difference-in-Difference\n01/22/2025\n01/26/2025\n\n\nReading - Article: Natural Experiments\nLarsen et al., 2019\n01/22/2025\n01/26/2025"
+    "text": "Assignment Reminders\n\n\n\n\n\n\n\n\n\nAssignment Type\nAssignment Title\nDate Assigned\nDate Due\n\n\n\n\nEnd of Class Survey\nEOC-Week2\n01/13\n01/13, 11:55pm\n\n\nAssignment\nHandout: , Repository:\n01/13\n01/13\n\n\nReading - Generalized Linear Models\nCarruthers et al., 2008\n01/13\n01/13"
   },
   {
     "objectID": "course-materials/week3.html#extra-resources",
@@ -158,14 +158,14 @@
     "href": "course-materials/week1.html#lecture-materials",
     "title": "Week 1:",
     "section": " Lecture Materials",
-    "text": "Lecture Materials\n\n\n\n\n\n\n\n\nLecture slides\nLab\nAnswer key\n\n\n\n\nLecture 1: Intro. to Casual Inference\nHandout: Lab 1 , Repository: Lab 1"
+    "text": "Lecture Materials\n\n\n\n\n\n\n\n\nLecture slides\nLab\nResources\n\n\n\n\nLecture 1 (TUE): Intro. to Casual Inference ,  Lecture 2 (THURS):\nHandout: Lab 1 , Repository: Lab 1"
   },
   {
     "objectID": "course-materials/week1.html#assignment-reminders",
     "href": "course-materials/week1.html#assignment-reminders",
     "title": "Week 1:",
     "section": " Assignment Reminders",
-    "text": "Assignment Reminders\n\n\n\n\n\n\n\n\n\nAssignment Type\nAssignment Title\nDate Assigned\nDate Due\n\n\n\n\nEnd of Class Survey\nEOC-Week1\n01/08/2025\n01/08/2025, 11:55pm\n\n\nAssignment 1\nHandout: HW1-LOBSTRS , Repository: HW1-LOBSTRS\n01/08/2025\n01/26/2025, 11:59pm\n\n\nReading - Mastering ’Metrics\nA&P: Chapter 2\n01/08/2025\n01/15/2025\n\n\nReading - Article\nCareful read: Buntaine et al. (2024)\n01/08/2025\n(1) Read study carefully before the guest lecture! (2) Think of questions for Prof. Mark Buntaine\n\n\n\n\n\n\n\n\n\n\nAssignment Submission and Rubric\n\n\n\n\nSubmission: Submit assignments through GradeScope\nQuestion-specific guide: Each question has detailed grading criteria available on GradeScope. Be sure to review these guidelines before submitting your work!\nGeneral rubric outline: For an overview of the grading criteria, refer to the assignment rubric - general outline"
+    "text": "Assignment Reminders\n\n\n\n\n\n\n\n\n\nAssignment Type\nAssignment Title\nDate Assigned\nDate Due\n\n\n\n\nEnd of Class Survey\nEOC-Week1\n01/06\n01/08, 11:55pm\n\n\nAssignment 1\nHandout: HW1-LOBSTRS , Repository: HW1-LOBSTRS\n01/06\nTBA\n\n\nReading - Mastering ’Metrics\nA&P: Chapter 2\n01/06\n01/15\n\n\nReading - Article\nCareful read: Buntaine et al. (2024)\n01/06\n\n\n\n\n\n\n\n\n\n\n\nAssignment Submission and Rubric\n\n\n\n\nSubmission: Submit assignments through GradeScope\nQuestion-specific guide: Each question has detailed grading criteria available on GradeScope. Be sure to review these guidelines before submitting your work!\nGeneral rubric outline: For an overview of the grading criteria, refer to the assignment rubric - general outline"
   },
   {
     "objectID": "course-materials/week1.html#discussion-materials",
@@ -205,30 +205,30 @@
   {
     "objectID": "index.html#course-description",
     "href": "index.html#course-description",
-    "title": "EDS 241 - Environmental Policy Evaluation",
+    "title": "Environmental Policy Evaluation (EDS241 / ESM244)",
     "section": "Course Description",
     "text": "Course Description\nThis course will present state of the art program evaluation techniques necessary to evaluate the impact of environmental policies. The program evaluation methods presented will aim at identifying and measuring the causal effect of policies, regulations, and interventions on environmental outcomes of interest. Students will learn the research designs and methods for estimating causal effects with experimental and non-experimental data. This will prepare the students for interpreting and conducting high-quality empirical research, with applications in cross-sectional data and panel data settings."
   },
   {
     "objectID": "index.html#teaching-team",
     "href": "index.html#teaching-team",
-    "title": "EDS 241 - Environmental Policy Evaluation",
+    "title": "Environmental Policy Evaluation (EDS241 / ESM244)",
     "section": "Teaching Team",
-    "text": "Teaching Team\n\n\n\n\n\n\nInstructor\n\n\n\n\n\n\n\n\n\n\n\nAdam Garber\nEmail: agarber@ucsb.edu\nOffice hours (subject to change):\nMonday 9-11 am @ BH 3418 (office)\nThursday 3-4pm (3-5 pm) @ BH 3418 (office)\nAlternate instructor availability:\nTuesday 3-4 pm @ BH 3418 (by appointment)\nWednesday (after class)\nFriday 10-12 pm @ BH 3418 (by appointment)\n\n\n\n\n\n\nTA\n\n\n\n\n\n\n\n\n\n\n\nAnnie Adams\nEmail: aradams@ucsb.edu\nOffice hours (subject to change):\nWednesday 12 - 1 pm @ Visitor Center (BH 3418)"
+    "text": "Teaching Team\n\n\n\n\n\n\nInstructor\n\n\n\n\n\n\n\n\n\n\n\nAdam Garber\nEmail: agarber@ucsb.edu\nOffice hours (subject to change):\nTuesday 12-2pm @ BH 3520 (office)\nAlternate instructor availability:\nMonday - Friday (by appointment)\n\n\n\n\n\n\nTA\n\n\n\n\n\n\n\n\n\n\n\nAnnie Adams\nEmail: aradams@ucsb.edu\nOffice hours (subject to change):\nWednesday 12 - 1 pm @ Visitor Center (BH 3418)"
   },
   {
     "objectID": "index.html#meeting-time-location",
     "href": "index.html#meeting-time-location",
-    "title": "EDS 241 - Environmental Policy Evaluation",
+    "title": "Environmental Policy Evaluation (EDS241 / ESM244)",
     "section": "Meeting Time & Location",
-    "text": "Meeting Time & Location\n\nTime\nWednesday, 9:30-10:45 am\n\n\n\nLocation\nBren Hall 1424"
+    "text": "Meeting Time & Location\n\nTime\nTuesday & Thursday, 8:00-9:15 am\n\n\n\nLocation\nBren Hall 1414"
   },
   {
     "objectID": "index.html#acknowledgements",
     "href": "index.html#acknowledgements",
-    "title": "EDS 241 - Environmental Policy Evaluation",
+    "title": "Environmental Policy Evaluation (EDS241 / ESM244)",
     "section": "Acknowledgements",
-    "text": "Acknowledgements\nThis website was developed from a template authored by Sam Csik. The EDS 241 course website houses materials which are heavily reused, adapted from, and inspired by Sam Csik’s original work. This website was made using Quarto and the repository used to make this website can be found here."
+    "text": "Acknowledgements\nThis website was developed from a template authored by Sam Csik. The EDS241/ESM244 course website houses materials which are heavily reused, adapted from, and inspired by Sam Csik’s original work. This website was made using Quarto and the repository used to make this website can be found here."
   },
   {
     "objectID": "assignments.html",
@@ -312,21 +312,21 @@
     "href": "course-materials/week2.html",
     "title": "Week 2:",
     "section": "",
-    "text": "Lecture slides\nLab\nAnswer key\n\n\n\n\nLecture 2\nHandout: Lab 1 , Repository: Lab 1\nSee repository"
+    "text": "Lecture slides\nLab\nResources\n\n\n\n\nLecture (TUES) , Lecture (THURS)\nHandout: , Repository:"
   },
   {
     "objectID": "course-materials/week2.html#lecture-materials",
     "href": "course-materials/week2.html#lecture-materials",
     "title": "Week 2:",
     "section": "",
-    "text": "Lecture slides\nLab\nAnswer key\n\n\n\n\nLecture 2\nHandout: Lab 1 , Repository: Lab 1\nSee repository"
+    "text": "Lecture slides\nLab\nResources\n\n\n\n\nLecture (TUES) , Lecture (THURS)\nHandout: , Repository:"
   },
   {
     "objectID": "course-materials/week2.html#assignment-reminders",
     "href": "course-materials/week2.html#assignment-reminders",
     "title": "Week 2:",
     "section": " Assignment Reminders",
-    "text": "Assignment Reminders\n\n\n\n\n\n\n\n\n\nAssignment Type\nAssignment Title\nDate Assigned\nDate Due\n\n\n\n\nEnd of Class Survey\nEOC-Week2\n01/15/2025\n01/15/2025, 11:55pm\n\n\nAssignment 1\nHandout: HW1-LOBSTRS , Repository: HW1-LOBSTRS\n01/08/2025\n01/26/2025, 11:59pm\n\n\nReading - Generalized Linear Models\nCarruthers et al., 2008\n01/15/2025\n01/22/2025\n\n\n\n\n\n\n\n\n\n\nAssignment Submission and Rubric\n\n\n\n\nSubmission: Submit assignments through GradeScope\nQuestion-specific guide: Each question has detailed grading criteria available on GradeScope. Be sure to review these guidelines before submitting your work!\nGeneral rubric outline: For an overview of the grading criteria, refer to the assignment rubric - general outline"
+    "text": "Assignment Reminders\n\n\n\n\n\n\n\n\n\nAssignment Type\nAssignment Title\nDate Assigned\nDate Due\n\n\n\n\nEnd of Class Survey\nEOC-Week2\n01/13\n01/13, 11:55pm\n\n\nAssignment\nHandout: , Repository:\n01/13\n01/13\n\n\nReading - Generalized Linear Models\nCarruthers et al., 2008\n01/13\n01/13\n\n\n\n\n\n\n\n\n\n\nAssignment Submission and Rubric\n\n\n\n\nSubmission: Submit assignments through GradeScope\nQuestion-specific guide: Each question has detailed grading criteria available on GradeScope. Be sure to review these guidelines before submitting your work!\nGeneral rubric outline: For an overview of the grading criteria, refer to the assignment rubric - general outline"
   },
   {
     "objectID": "course-materials/week7.html",
@@ -411,5 +411,47 @@
     "title": "Week 10:",
     "section": " Assignment Reminders",
     "text": "Assignment Reminders\n\n\n\n\n\n\n\n\n\nAssignment Type\nAssignment Title\nDate Assigned\nDate Due\n\n\n\n\n\nReminder: Please fill out the EDS 241 course evaluations.  No EOC survey this week!\n03/12/2025\n03/12/2025, 11:55pm\n\n\nReading - Article\nGertler, 2004 - High Impact Randomized Experiment - PROGRESA Intervention\n03/12/2025"
+  },
+  {
+    "objectID": "course-materials/resources.html",
+    "href": "course-materials/resources.html",
+    "title": "All Course Materials + Additional Readings & Resources Organized by Topic",
+    "section": "",
+    "text": "Lecture 1\nLecture 2\nLecture 3\nLecture 4\nLecture 5\nLecture 6\nLecture 7\nLecture 8\nLecture 9 (Part 1, Part 2)\nLecture 10\n\n\n\n\n\nLab 1: Generalize Fast! Replication of analyses from Buntaine et al., 2024\nLab 2: Code-along 🦞 → Tables, Figures, & Lobsters (OH MY!)\nAdditional Lab - Illustration of ‘Unbiased Estimator’ Using {gganimate} | View GIF\nWeek 8 - Lab\nWeek 9 - Lab Part 1\nWeek 9 - Lab Part 2\n\n\n\n\n\nAssignment 1: California Spiny Lobster Abundance (Panulirus Interruptus)\nAssignment 2: Investigating Causal Inference Designs Applied in Environmental Science\n\n\n\n\n\nFinal Project Instructions\nStudy Group Assignments\nFinal Presentation Grading Rubric\nPresentation Question Form"
+  },
+  {
+    "objectID": "course-materials/resources.html#all-course-materials",
+    "href": "course-materials/resources.html#all-course-materials",
+    "title": "All Course Materials + Additional Readings & Resources Organized by Topic",
+    "section": "",
+    "text": "Lecture 1\nLecture 2\nLecture 3\nLecture 4\nLecture 5\nLecture 6\nLecture 7\nLecture 8\nLecture 9 (Part 1, Part 2)\nLecture 10\n\n\n\n\n\nLab 1: Generalize Fast! Replication of analyses from Buntaine et al., 2024\nLab 2: Code-along 🦞 → Tables, Figures, & Lobsters (OH MY!)\nAdditional Lab - Illustration of ‘Unbiased Estimator’ Using {gganimate} | View GIF\nWeek 8 - Lab\nWeek 9 - Lab Part 1\nWeek 9 - Lab Part 2\n\n\n\n\n\nAssignment 1: California Spiny Lobster Abundance (Panulirus Interruptus)\nAssignment 2: Investigating Causal Inference Designs Applied in Environmental Science\n\n\n\n\n\nFinal Project Instructions\nStudy Group Assignments\nFinal Presentation Grading Rubric\nPresentation Question Form"
+  },
+  {
+    "objectID": "course-materials/resources.html#applied-studies-referenced-in-eds-241---organized-by-topic",
+    "href": "course-materials/resources.html#applied-studies-referenced-in-eds-241---organized-by-topic",
+    "title": "All Course Materials + Additional Readings & Resources Organized by Topic",
+    "section": "Applied studies referenced in EDS 241 - organized by topic!",
+    "text": "Applied studies referenced in EDS 241 - organized by topic!\n\nData science - general topics\nReproducibility\n\nLowndes et al., 2017 - Our path to better science in less time using open data science tools\nGehlman & Loken, 2013 - The garden of forking paths: Why multiple comparisons can be a problem, even when there is no “fishing expedition” or “p-hacking”\n\nData viz\n\nAnimated Visualizations - ‘R Psychologist’ - Kristoffer Magnusson\nLarsen, Meng, & Kendall 2018 - Causal analysis in control–impact ecological studies with observational data\n\n\n\nRegression\nOrdinary Least Squares (OLS)\nGeneralized Linear Models (GLMs)\n\nCarruthers et al., 2008 - Generalized linear models: model selection, diagnostics, and overdispersion\n\n\n\nCausal inference - Econometrics\nCausal inference research conducted at Bren & UCSB\n\nSarah Anderson - Monitoring → Compliance\nMark Buntaine - Citizen participation → Env. Policy\nJoan Dudney - Climate change → Infectious tree disease\nLeah Stokes - Voting → Climate policy\nOlivier Deschenes - Climate change → Agricultural output\nMatto Mildenberger - Wildfires → Voting\nKyle Meng - Marine Reserves, Inequality, Ground water rights\n\n\n\nExperimental Design\n\nBuntaine et al., 2024 - Social competition drives collective action to reduce informal waste burning in Uganda\n\nEDS 241 - Glossary of Econometric and Statistical Terms\nJ-PAL power calculation tool\nEGAP power calculation tool\n\n\n\n\nDifference-in-Difference Design\n\nMoland et al., 2013 - Lobster and cod benefit from small-scale northern marine protected areas: inference from an empirical before– after control-impact study\n\n\n\nRegression Discontinuity Design\n\n\n\n\n\n\n\nInstrumental Variable Design"
+  },
+  {
+    "objectID": "course-materials/assignments.html",
+    "href": "course-materials/assignments.html",
+    "title": "Assignments",
+    "section": "",
+    "text": "Important: Email group presentation slides to instructor (Adam) before 7am on presentation day! (3/19)\n\n\n\n\nPresentation slides must be emailed to your instructor (Adam) before 7am (3/19)\nAcceptable submission formats include google slides or a shared link of the slides in pdf format (i.e., a Google Drive link)\nIf slides are available in advance please send early!\n\n\n\n\n\n\nFinal Project Instructions\nStudy Group Assignments\nFinal Presentation Grading Rubric\nPresentation Question Form\n\n\n\n\n\n\n\n\n\n\nPresentations will start at 8am sharp (please do not be late)\n\n\n\nPresentation order will follow the numerical order of your assigned group study.\n\n\n\nFirst 4 presentations (~60 minutes)\nShort break (~5-10 minutes)\nNext 3 presentations (~45 minutes)\nShort break (~5-10 minutes)\nFinal 3 presentations (~45 minutes)\n\n🍿 Snacks are encouraged! Bring food for sustenance/survival or to share with the class! (totally optional)"
+  },
+  {
+    "objectID": "course-materials/assignments.html#final-project-links",
+    "href": "course-materials/assignments.html#final-project-links",
+    "title": "Assignments",
+    "section": "",
+    "text": "Final Project Instructions\nStudy Group Assignments\nFinal Presentation Grading Rubric\nPresentation Question Form"
+  },
+  {
+    "objectID": "course-materials/assignments.html#presentation-day-schedule-8-11am-wednesday-319",
+    "href": "course-materials/assignments.html#presentation-day-schedule-8-11am-wednesday-319",
+    "title": "Assignments",
+    "section": "",
+    "text": "Presentations will start at 8am sharp (please do not be late)\n\n\n\nPresentation order will follow the numerical order of your assigned group study.\n\n\n\nFirst 4 presentations (~60 minutes)\nShort break (~5-10 minutes)\nNext 3 presentations (~45 minutes)\nShort break (~5-10 minutes)\nFinal 3 presentations (~45 minutes)\n\n🍿 Snacks are encouraged! Bring food for sustenance/survival or to share with the class! (totally optional)"
   }
 ]

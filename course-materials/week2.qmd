@@ -1,14 +1,14 @@
 ---
 title: "Week 2: "
-subtitle: "Generalized Linear Models, Experimental Design, & Potential Outcomes"
-description: "Wednesday January 15^th^, 2025"
+subtitle: "Generalized Linear Models"
+description: "January 13-16, 2026"
 ---
 
 ## {{< fa person-chalkboard title="a person pointing at a chalkboard" >}} Lecture Materials {#lecture-materials}
 
-| Lecture slides | Lab |  Answer key |
+| Lecture slides | Lab |  Resources |
 |----------------|------|------------|
-| [Lecture 2](https://drive.google.com/file/d/1DpBNJflvGEBtA3gKllV7wTPu8kYFLjpb/view?usp=sharing){target="_blank"} | [Handout: Lab 1](https://garberadamc.github.io/project-site/Lab1-Generalize-Fast){target="_blank"} ,  [Repository: Lab 1](https://github.com/garberadamc/Lab1-EDS241-Buntaine24){target="_blank"} | *See repository* |
+| [Lecture (TUES)](){target="_blank"} , [Lecture (THURS)](){target="_blank"} | [Handout: ](){target="_blank"} ,  [Repository: ](){target="_blank"} |  |
 
 : {.hover .bordered tbl-colwidths="[50,25,25]"} 
 
@@ -18,9 +18,9 @@ description: "Wednesday January 15^th^, 2025"
 
 | Assignment Type | Assignment Title                              | Date Assigned  | Date Due                   |
 |-----------------|-----------------------------------------------|----------------|----------------------------|
-| End of Class Survey | [EOC-Week2](https://forms.gle/B6GYuFRVsmX4Ex1t5){target="_blank"} | 01/15/2025 | 01/15/2025, 11:55pm |
-| Assignment 1 | [Handout: HW1-LOBSTRS](https://garberadamc.github.io/project-site/hw1-lobstrs-eds241){target="_blank"} , [Repository: HW1-LOBSTRS](https://github.com/garberadamc/HW1-LOBSTRS-EDS241.git){target="_blank"} | 01/08/2025 | 01/26/2025, 11:59pm |
-| Reading - Generalized Linear Models  | [Carruthers et al., 2008](https://drive.google.com/file/d/1msSVHclxUO-zMbZTLHqksvDel9m51h0R/view?usp=drive_link){target="_blank"} | 01/15/2025 | 01/22/2025 |
+| End of Class Survey | [EOC-Week2](){target="_blank"} | 01/13 | 01/13, 11:55pm |
+| Assignment | [Handout: ](){target="_blank"} , [Repository: ](){target="_blank"} | 01/13 | 01/13 |
+| Reading - Generalized Linear Models  | [Carruthers et al., 2008](){target="_blank"} | 01/13 | 01/13 |
 
 : {.hover .bordered tbl-colwidths="[20,30,20,30]"} 
 
