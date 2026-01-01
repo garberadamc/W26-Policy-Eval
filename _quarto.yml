@@ -8,7 +8,7 @@ website:
     dismissable: false
     type: primary
     position: above-navbar
-    content: "Website updated; 12.24.2026"
+    content: "Website updated; 01.02.2026"
   title: "EDS241/ESM244"
   favicon: images/bren-hex.png
   navbar:
