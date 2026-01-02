@@ -21,10 +21,12 @@ description: "January 6-9, 2026"
 
 | Assignment Type | Assignment Title                              | Date Assigned  | Date Due                   |
 |-----------------|-----------------------------------------------|----------------|----------------------------|
-| End of Class Survey | [EOC-Week1](){target="_blank"} | 01/06 | 01/08, 11:55pm |
-| Assignment 1 | [Handout: HW1-LOBSTRS](){target="_blank"} , [Repository: HW1-LOBSTRS](){target="_blank"} | 01/06| TBA |
+
+| Assignment 1 | [](){target="_blank"} , [](){target="_blank"} | 01/06| TBA |
+| Reading - *Mastering 'Metrics*  | A&P: Introduction & Chapter 1  | 01/02 | 01/07 |
+| Reading - Field Experiment Study | Pages 1-3: [Buntaine et al. (2024)](https://drive.google.com/file/d/1bvW40xguud2Y_bRnxwjCCZSmAZALgQTn/view){target="_blank"}  | 01/02 | 01/07 |
+| In Class (Thursday) | Reading Quiz | 01/08 | 01/08 |
 | Reading - *Mastering 'Metrics*  | A&P: Chapter 2  | 01/06 | 01/15 |
-| Reading - Article  | Careful read: [Buntaine et al. (2024)](https://drive.google.com/file/d/1bvW40xguud2Y_bRnxwjCCZSmAZALgQTn/view){target="_blank"}  | 01/06 |  |
 
 : {.hover .bordered tbl-colwidths="[20,30,20,30]"} 
 
