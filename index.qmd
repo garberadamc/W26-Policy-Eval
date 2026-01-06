@@ -74,7 +74,7 @@ Monday - Friday (by appointment)\
 
 ::::: {.g-col-12 .g-col-md-6}
 ::: {.center-text .body-text-l}
-**TA**
+**Co- Instructor**
 :::
 
 ```{r}
@@ -86,10 +86,11 @@ knitr::include_graphics("images/annie_picture.png")
 ```
 
 ::: center-text
-[**Annie Adams**]{.teal-text}\
+[**Annie Adams**](https://annieradams.github.io/){.teal-text}\
 **Email:** [aradams\@ucsb.edu](mailto::aradams@ucsb.edu)\
-**Office hours (subject to change):**\
-**TBA** \@  BH 3418 (office) 
+**Office hours (subject to change)**:\
+Thursday 3 pm - 4 pm @ BH 3418 (Office)\
+
 
 :::
 :::::
