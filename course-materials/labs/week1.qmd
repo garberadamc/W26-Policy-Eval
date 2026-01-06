@@ -1,0 +1,24 @@
+---
+title: "Lab 1"
+subtitle: "Creating tidy tables"
+description: "Friday January 9^th^, 2026"
+format: html
+---
+
+## Activity 1: Creating Tidy Tables 
+
+- Create balance tables using gt, kable, any other helpful package
+- Pivoting tables ? 
+- p value review, standard deviation/ standard error, 
+
+
+
+## Activity 2: Buntaine Policy Study Reading Comprehension Check 
+
+With your group, answer the following questions from the Buntaine article. 
+
+1. What prompted this study? 
+2. How were the treatment and control groups formed? 
+3. Was the social competetion strategy effective? 
+4. 
+
