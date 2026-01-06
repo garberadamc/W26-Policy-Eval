@@ -12,7 +12,7 @@ description: "January 6-9, 2026"
 
 | Lecture slides | Lab | Resources |
 |----------------|------|------------|
-| [Lecture 1 (TUE): Intro. to Casual Inference](){target="_blank"} , <br> [Lecture 2 (THURS): ](){target="_blank"} | [Handout: Lab 1](){target="_blank"} , [Repository: Lab 1](){target="_blank"} | |
+| [Lecture 1 (TUE): Intro. to Casual Inference](https://drive.google.com/drive/folders/111oGLw_ivfeu95748gehG3LbPpwP7FOT?usp=sharing){target="_blank"} , <br> [Lecture 2 (THURS): ](){target="_blank"} | [Handout: Lab 1](){target="_blank"} , [Repository: Lab 1](){target="_blank"} | |
 
 : {.hover .bordered tbl-colwidths="[50,25,25]"} 
 
