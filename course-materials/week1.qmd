@@ -12,7 +12,7 @@ description: "January 6-9, 2026"
 
 | Lecture slides | Lab | Resources |
 |----------------|------|------------|
-| [Lecture 1 (TUE): Intro. to Casual Inference](https://drive.google.com/drive/folders/111oGLw_ivfeu95748gehG3LbPpwP7FOT?usp=sharing){target="_blank"} , <br> [Lecture 2 (THURS): ](){target="_blank"} | [Handout: Lab 1](){target="_blank"} , [Repository: Lab 1](){target="_blank"} | |
+| [Lecture 1 (TUE): Intro. to Casual Inference](https://drive.google.com/file/d/1kUUpk7ZLbjHTIaLMnb2in40EXwhAbsgD/view?usp=sharing){target="_blank"} , <br> [Lecture 2 (THURS): ](){target="_blank"} | [Handout: Lab 1](){target="_blank"} , [Repository: Lab 1](){target="_blank"} | |
 
 : {.hover .bordered tbl-colwidths="[50,25,25]"} 
 
@@ -44,6 +44,16 @@ description: "January 6-9, 2026"
 <br>
 
 ::: {.left-text}
+
+[**Key Concepts (videos)**]{.teal-text .body-text-m}
+
+These short videos that accompany *Mastering ’Metrics* are a great resource for Chapter-1. The style is a bit extra, but they explain the key concepts clearly. If any of these concepts are unclear, I strongly recommend watching them (they may be relevant to the reading quiz tomorrow):
+
+- [Ceteris Paribus & Counterfactuals - 6 minutes](https://mru.org/courses/mastering-econometrics/ceteris-paribus)
+- [Ommitted Variable Bias & Selection Bias - 9 minutes](https://mru.org/courses/mastering-econometrics/selection-bias)
+- [Experimental Design & Random Assignment - 10 minutes](https://mru.org/courses/mastering-econometrics/introduction-randomized-trials)
+- [How to Read Econometrics Papers - 12 minutes](https://mru.org/courses/mastering-econometrics/how-read-economics-research-papers-randomized-controlled-trials-rcts)
+
 [**References**]{.teal-text .body-text-m}
 
 - [Gelman, A., & Loken, E. (2013) ](https://drive.google.com/file/d/1Cx2fqgKDTzMQjXtyo4Cz2YK4dQQzpb4Z/view?usp=drive_link){target="_blank"}. *The garden of forking paths: Why multiple comparisons can be a problem, even when there is no “fishing expedition” or “p-hacking” and the research hypothesis was posited ahead of time.* Department of Statistics, Columbia University, 348(1-17), 3.
