@@ -460,5 +460,26 @@
     "title": "Environmental Policy Evaluation (EDS241 / ESM244)",
     "section": "",
     "text": "////////   $$$$$$$$   ||\\      /|        @@@@@@     ^      ^    ^      ^   \n  /          $          || \\    / |       @      @    ^      ^    ^      ^   \n  /          $          ||  \\  /  |              @    ^      ^    ^      ^   \n  /          $          ||   \\/  ||             @     ^      ^    ^      ^   \n  ////////   $$$$$$$$   ||       ||            @      ^^^^^^^^    ^^^^^^^^   \n  /                 $   ||       ||           @              ^           ^   \n  /                 $   ||       ||          @               ^           ^   \n  /                 $   ||       ||         @                ^           ^   \n   ////////   $$$$$$$$   ||       ||       @@@@@@@            ^           ^"
+  },
+  {
+    "objectID": "course-materials/labs/week1.html",
+    "href": "course-materials/labs/week1.html",
+    "title": "Lab 1",
+    "section": "",
+    "text": "There are many different ways to create tidy tables in R. You might be familiar with the kable function from {knitr} that creates tables for rectangular data. Kable tables don’t have a ton of flexibility, but are great at producing clean, simple tables. As we move into creating tables for the many different statistical models we will learn in this course, we will need to move beyond a simple kable table. That is where {gt} comes in! A gt table allows for the following structure, making it ideal for displaying different statistical outcomes.\n\n\n\n\n\n\n\n\n\n\nCreate balance tables using gt, kable, any other helpful package\nPivoting tables ?\np value review, standard deviation/ standard error,"
+  },
+  {
+    "objectID": "course-materials/labs/week1.html#activity-1-creating-tidy-tables",
+    "href": "course-materials/labs/week1.html#activity-1-creating-tidy-tables",
+    "title": "Lab 1",
+    "section": "",
+    "text": "There are many different ways to create tidy tables in R. You might be familiar with the kable function from {knitr} that creates tables for rectangular data. Kable tables don’t have a ton of flexibility, but are great at producing clean, simple tables. As we move into creating tables for the many different statistical models we will learn in this course, we will need to move beyond a simple kable table. That is where {gt} comes in! A gt table allows for the following structure, making it ideal for displaying different statistical outcomes.\n\n\n\n\n\n\n\n\n\n\nCreate balance tables using gt, kable, any other helpful package\nPivoting tables ?\np value review, standard deviation/ standard error,"
+  },
+  {
+    "objectID": "course-materials/labs/week1.html#activity-2-buntaine-policy-study-reading-comprehension-check",
+    "href": "course-materials/labs/week1.html#activity-2-buntaine-policy-study-reading-comprehension-check",
+    "title": "Lab 1",
+    "section": "Activity 2: Buntaine Policy Study Reading Comprehension Check",
+    "text": "Activity 2: Buntaine Policy Study Reading Comprehension Check\nWith your group, answer the following questions from the Buntaine article.\n\nWhat prompted this study?\nHow were the treatment and control groups formed?\nWas the social competetion strategy effective?"
   }
 ]

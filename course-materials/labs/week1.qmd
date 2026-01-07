@@ -7,9 +7,91 @@ format: html
 
 ## Activity 1: Creating Tidy Tables 
 
+There are many different ways to create tidy tables in R. You might be familiar with the `kable` function from `{knitr}` that creates tables for rectangular data. Kable tables don't have a ton of flexibility, but are great at producing clean, simple tables. As we move into creating tables for the many different statistical models we will learn in this course, we will need to move beyond a simple kable table. That is where `{gt}` comes in!
+A `gt` table allows for the following structure, making it ideal for displaying different statistical outcomes. 
+
+```{r, echo=FALSE}
+knitr::include_graphics(here::here("images", "gt_table.svg"))
+```
+
+We are going to use our class survey data to create some tables! 
+
+```{r}
+# Load packages
+library(tidyverse)
+library(gtsummary)
+library(gt)
+
+
+
+# Read in class survey data and split into two random groups
+class_data <- read_csv(here::here("course-materials", "labs", "data", "W26_class_survey.csv")) %>% 
+  mutate(random_groups = sample(rep(c("control", "treatment"), each = n()/2)))
+
+```
+
+
+Let's create a base table that we will use with both `kable` and `gt`. 
+
+
+```{r}
+# Create the base summary object
+balance_summary <- class_data %>%
+  gtsummary::tbl_summary(
+    by = random_groups,
+    include = c(height, pets, dominant_hand, fav_number), # Selecting a few variables
+    statistic = list(all_continuous() ~ "{mean} ({sd})")
+  ) %>%
+  add_p()
+
+```
+
+
+
+Now lets output `balance_summary` with a kable table! 
+
+```{r}
+balance_summary %>%
+  as_kable_extra() %>% 
+  kableExtra::kable_styling(bootstrap_options = c("striped", "condensed"))
+```
+
+It looks fine! But we can make it a lot better with `{gt}`! 
+
+```{r}
+balance_summary %>%
+  as_gt() %>%
+  # Add a Title and Subtitle
+  tab_header(
+    title = "Class Survey Balance Table",
+    subtitle = "Checking for randomization success between Control and Treatment"
+  ) %>%
+  # Add a Spanner to group the data columns
+  tab_spanner(
+    label = "Randomized Groups",
+    columns = everything()
+  ) %>%
+  # Change column labels
+  cols_label(
+    label = "Characteristic",
+    p.value = "P-Value"
+  ) %>%
+  # Add a source note at the bottom
+  tab_source_note(
+    source_note = "Note: Data from the Winter 2026 Class Survey."
+  )
+```
+
+
+
+
+
+
 - Create balance tables using gt, kable, any other helpful package
 - Pivoting tables ? 
 - p value review, standard deviation/ standard error, 
+
+
 
 
 
