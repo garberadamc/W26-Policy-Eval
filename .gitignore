@@ -4,7 +4,7 @@
 .Ruserdata
 
 /.quarto/
-
+course-materials/labs/week1_notes.qmd
 .DS_Store
 **/.DS_Store
 **/*.quarto_ipynb
