@@ -10,12 +10,19 @@ description: "January 6-9, 2026"
 
 ## {{< fa person-chalkboard title="a person pointing at a chalkboard" >}} Lecture Materials {#lecture-materials}
 
-| Lecture slides | Lab | Resources |
-|----------------|------|------------|
-| [Lecture 1 (TUE): Intro. to Casual Inference](https://drive.google.com/file/d/1kUUpk7ZLbjHTIaLMnb2in40EXwhAbsgD/view?usp=sharing){target="_blank"} , <br> [Lecture 2 (THURS):Potenital Outcomes ](https://drive.google.com/file/d/1ZQvRgVOxu_QKmynCjb1vF1rKFrj1mwya/view?usp=sharing){target="_blank"} | [Handout: Lab 1](){target="_blank"} , [Repository: Lab 1](){target="_blank"} | |
+| Lecture slides | Resources |
+|----------------|------------|
+| [Lecture 1 (TUE): Intro. to Casual Inference](https://drive.google.com/file/d/1kUUpk7ZLbjHTIaLMnb2in40EXwhAbsgD/view?usp=sharing){target="_blank"}   | |
+|[Lecture 2 (THURS):Potenital Outcomes ](https://drive.google.com/file/d/1ZQvRgVOxu_QKmynCjb1vF1rKFrj1mwya/view?usp=sharing){target="_blank"}  | |
 
 : {.hover .bordered tbl-colwidths="[50,25,25]"} 
 
+## {{< fa laptop title="a laptop" >}} Lab Materials {#lab-materials}
+
+| Lab Materials to Download | Lab Solution |
+|----------------|------------|
+| [Week 1 Lab](https://downgit.github.io/#/home?url=https://github.com/annieradams/EDS241-Weekly-Labs/tree/main/week1) | [Week 1 Lab Solution](labs/week1.qmd) |
+: {.hover .bordered tbl-colwidths="[50,50]"}
 
 ## {{< fa pencil title="pencil" >}} Assignment Reminders {#assignment-reminders}
 
@@ -25,7 +32,7 @@ description: "January 6-9, 2026"
 | Reading - *Mastering 'Metrics*  | A&P: [Introduction](https://drive.google.com/file/d/1-Q1s849GuEflv91CIEZMzUZM84IP8vmY/view){target="_blank"} & [Chapter 1](https://drive.google.com/file/d/1b0nRvm1cOCimmJuQrSp0gIorUjCdjppO/view){target="_blank"}  | 01/02 | 01/07 |
 | Reading - Applied Policy Study | Pages 1-3: [Buntaine et al. (2024)](https://drive.google.com/file/d/1bvW40xguud2Y_bRnxwjCCZSmAZALgQTn/view){target="_blank"} , [Glossary of Econometrics & Statistics Terms](https://docs.google.com/document/d/1RIudsVcYhWGpqC-Uftk9UTz3PIq6stVyEpT44EPNgpE/edit?usp=sharing){target="_blank"}  | 01/02 | 01/07 |
 | In Class (Thursday) | Reading Quiz | 01/08 | 01/08 |
-| Reading - *Mastering 'Metrics*  | A&P: Chapter 2  | 01/06 | 01/15 |
+| Reading - *Mastering 'Metrics*  | A&P: Chapter 2  | 01/08 | 01/15 |
 
 : {.hover .bordered tbl-colwidths="[20,30,20,30]"} 
 
