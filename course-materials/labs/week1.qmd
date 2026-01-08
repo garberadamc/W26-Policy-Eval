@@ -87,7 +87,7 @@ balance_summary %>%
   # Add a Spanner to group the data columns
   tab_spanner(
     label = "Randomized Groups",
-    columns = everything()
+    columns = c(stat_1, stat_2)
   ) %>%
   
   # Change column labels
