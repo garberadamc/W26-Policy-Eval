@@ -6,23 +6,30 @@ description: "January 13-16, 2026"
 
 ## {{< fa person-chalkboard title="a person pointing at a chalkboard" >}} Lecture Materials {#lecture-materials}
 
-| Lecture slides | Lab |  Resources |
-|----------------|------|------------|
-| [Lecture (TUES)](){target="_blank"} , [Lecture (THURS)](){target="_blank"} | [Handout: ](){target="_blank"} ,  [Repository: ](){target="_blank"} |  |
+| Lecture slides |  Resources |
+|----------------|------------|
+| [Lecture (TUES)](){target="_blank"}   | [Handout: ](){target="_blank"} ,  [Repository: ](){target="_blank"} | 
+|[Lecture (THURS)](){target="_blank"}   |         |
 
 : {.hover .bordered tbl-colwidths="[50,25,25]"} 
 
-<br>
+## {{< fa laptop title="a laptop" >}} Lab Materials {#lab-materials}
+
+| Lab Materials to Download | Lab Solution |
+|----------------|------------|
+| [Week 2 Lab]() | [Week 2 Lab Solution]() |
+: {.hover .bordered tbl-colwidths="[50,50]"}
+
 
 ## {{< fa pencil title="pencil" >}} Assignment Reminders {#assignment-reminders}
 
 | Assignment Type | Assignment Title                              | Date Assigned  | Date Due                   |
 |-----------------|-----------------------------------------------|----------------|----------------------------|
-| Assignment 1 | [Handout: HW1-LOBSTRS](https://garberadamc.github.io/project-site/hw1-lobstrs-eds241){target="_blank"} , [Repository: HW1-LOBSTRS](https://github.com/garberadamc/HW1-LOBSTRS-EDS241){target="_blank"} | 01/08 | 01/17 |
 | Mini-Assignment | [Topics of Interest - Spreadsheet (Add Topic/Study Here)](https://docs.google.com/spreadsheets/d/1Y_yOCy_gOJyNjAejjpi1RRh1_trb2fWhlooQRlByu6E/edit?usp=sharing){target="_blank"} | 01/08 | 01/12 |
 | Reading - *Mastering 'Metrics*  | A&P: Chapter 2  | 01/08 | 01/15 |
 | Reading - Generalized Linear Models  | [Carruthers et al., 2008](https://drive.google.com/file/d/1msSVHclxUO-zMbZTLHqksvDel9m51h0R/view?usp=sharing){target="_blank"} | 01/13 | 01/13 |
-| In Class (Thursday) | Reading Quiz | 01/08 | 01/08 |
+| In Class (Thursday) | Reading Quiz | 01/15 | 01/15 |
+| Assignment 1 | [Handout: HW1-LOBSTRS](https://garberadamc.github.io/project-site/hw1-lobstrs-eds241){target="_blank"} , [Repository: HW1-LOBSTRS](https://github.com/garberadamc/HW1-LOBSTRS-EDS241){target="_blank"} | 01/08 | 01/17 |
 
 : {.hover .bordered tbl-colwidths="[20,30,20,30]"} 
 
