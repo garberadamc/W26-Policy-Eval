@@ -8,7 +8,7 @@ description: "January 13-16, 2026"
 
 | Lecture slides |  Resources |
 |----------------|------------|
-| [Lecture (TUES)](){target="_blank"}   | [Handout: ](){target="_blank"} ,  [Repository: ](){target="_blank"} | 
+| [Lecture (TUES): Generalized Linear Models ](https://drive.google.com/file/d/1F2G9nDCaS_img_zBL7rBO6kRotkQbK40/view?usp=sharing){target="_blank"}   | [Handout: ](){target="_blank"} ,  [Repository: ](){target="_blank"} | 
 |[Lecture (THURS)](){target="_blank"}   |         |
 
 : {.hover .bordered tbl-colwidths="[50,25,25]"} 
