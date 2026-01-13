@@ -63,7 +63,7 @@ knitr::include_graphics("images/headshot-241.png")
 [**Adam Garber**]{.teal-text}\
 **Email:** [agarber\@ucsb.edu](mailto::agarber@ucsb.edu)\
 **Office hours (subject to change):**\
-Tuesday 12-2pm \@ BH 3520 (Office)\
+Tuesday 12-2pm \@ *BH 4329 (Manzanita Room)*\
 **Alternate instructor availability:**\
 Monday - Friday (by appointment)\
 

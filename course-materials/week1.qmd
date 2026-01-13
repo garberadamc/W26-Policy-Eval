@@ -13,7 +13,7 @@ description: "January 6-9, 2026"
 | Lecture slides | Resources |
 |----------------|------------|
 | [Lecture 1 (TUE): Intro. to Casual Inference](https://drive.google.com/file/d/1kUUpk7ZLbjHTIaLMnb2in40EXwhAbsgD/view?usp=sharing){target="_blank"}   | |
-|[Lecture 2 (THURS):Potenital Outcomes ](https://drive.google.com/file/d/1ZQvRgVOxu_QKmynCjb1vF1rKFrj1mwya/view?usp=sharing){target="_blank"}  | |
+|[Lecture 2 (THURS): Potenital Outcomes ](https://drive.google.com/file/d/1ZQvRgVOxu_QKmynCjb1vF1rKFrj1mwya/view?usp=sharing){target="_blank"}  | |
 
 : {.hover .bordered tbl-colwidths="[50,25,25]"} 
 
