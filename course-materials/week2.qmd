@@ -8,8 +8,8 @@ description: "January 13-16, 2026"
 
 | Lecture slides |  Resources |
 |----------------|------------|
-| [Lecture (TUES): Generalized Linear Models ](https://drive.google.com/file/d/1F2G9nDCaS_img_zBL7rBO6kRotkQbK40/view?usp=sharing){target="_blank"}   | [Handout: Modeling Count Outcomes](https://drive.google.com/file/d/1fY0JBGwxGo2pXw1dd2G63jtqH-i0Bjlk/view?usp=sharing){target="_blank"} ,  [Repository: ](){target="_blank"} | 
-|[Lecture (THURS)](){target="_blank"}   |         |
+| [Lecture (TUES): Generalized Linear Models ](https://drive.google.com/file/d/1F2G9nDCaS_img_zBL7rBO6kRotkQbK40/view?usp=sharing){target="_blank"}   | [](){target="_blank"} ,  [](){target="_blank"} | 
+|[Lecture (THURS): Modeling Count Outcomes](https://drive.google.com/file/d/1fY0JBGwxGo2pXw1dd2G63jtqH-i0Bjlk/view?usp=sharing){target="_blank"}   |         |
 
 : {.hover .bordered tbl-colwidths="[50,25,25]"} 
 
