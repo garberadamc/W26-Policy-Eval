@@ -39,6 +39,6 @@ Wednesday, 9:30-10:45 am
 
 #### Instructor: Adam Garber
 
-#### TA: Annie Adams
+#### Co Instructor: Annie Adams
 
 ![](figures/island_mark.png)
