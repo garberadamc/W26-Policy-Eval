@@ -17,7 +17,7 @@ description: "January 13-16, 2026"
 
 | Lab Materials to Download | Lab Solution |
 |----------------|------------|
-| [Week 2 Lab]() | [Week 2 Lab Solution](labs/week2.qmd) |
+| [Week 2 Lab](https://downgit.github.io/#/home?url=https://github.com/annieradams/EDS241-Weekly-Labs/tree/main/week2) | [Week 2 Lab Solution](labs/week2.qmd) |
 : {.hover .bordered tbl-colwidths="[50,50]"}
 
 
