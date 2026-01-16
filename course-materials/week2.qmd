@@ -17,7 +17,7 @@ description: "January 13-16, 2026"
 
 | Lab Materials to Download | Lab Solution |
 |----------------|------------|
-| [Week 2 Lab]() | [Week 2 Lab Solution]() |
+| [Week 2 Lab]() | [Week 2 Lab Solution](labs/week2.qmd) |
 : {.hover .bordered tbl-colwidths="[50,50]"}
 
 

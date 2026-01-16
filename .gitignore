@@ -5,7 +5,9 @@
 
 /.quarto/
 course-materials/labs/week1_notes.qmd
+course-materials/labs/week2_notes.qmd
 docs/course-materials/labs/week1_notes.html
+docs/course-materials/labs/week2_notes.html
 .DS_Store
 **/.DS_Store
 **/*.quarto_ipynb

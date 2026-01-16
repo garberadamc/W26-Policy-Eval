@@ -10,9 +10,10 @@ execute:
 ---
 ### Map of Treatment Assignment Zones in Nansana, Uganda 
 
-![](images/S5_Buntaine24.png)
 
-    * SOURCE: Figure from Buntaine et al., 2024 (S5; Supplemental Materials)
+```{r, fig.cap="Figure from Buntaine et al., 2024 (S5; Supplemental Materials)", echo=FALSE}
+knitr::include_graphics("images/S5_Buntaine24.png")
+```
 
 ### Open source data & applied study:
 
@@ -66,6 +67,9 @@ library(performance) # Check model diagnostics
 
 
 ```{r}
+#| echo: false
+#| eval: true
+
 # Read in waste pile count data
 counts_gpx <- read_csv(here::here("course-materials", "labs", "data", "waste_pile_counts_gpx.csv")) %>% 
     rename("waste_piles" = "total",
@@ -75,7 +79,26 @@ counts_gpx <- read_csv(here::here("course-materials", "labs", "data", "waste_pil
       "post_treatment_1","post_treatment_2","post_treatment_3",
       "post_treatment_4","post_treatment_5"))
 
-# Select subset of post-treatment periods (remove time point 5)
+# Select subset of post-treatment periods
+post_treat_subset <- counts_gpx %>% 
+   filter(survey == "post_treatment_4")
+
+head(post_treat_subset)
+```
+
+```{r}
+#| echo: true
+#| eval: false
+# Read in waste pile count data
+counts_gpx <- read_csv(here::here( "data", "waste_pile_counts_gpx.csv")) %>% 
+    rename("waste_piles" = "total",
+           "rain_0_48hrs" = "rf_0_to_48_hours",
+           "rain_49_168hrs" = "rf_49_to_168_hours") %>% 
+    filter(survey%in%c(
+      "post_treatment_1","post_treatment_2","post_treatment_3",
+      "post_treatment_4","post_treatment_5"))
+
+# Select subset of post-treatment periods
 post_treat_subset <- counts_gpx %>% 
    filter(survey == "post_treatment_4")
 
@@ -329,6 +352,7 @@ export_summs(m4_control, m5_control2, robust = "HC2",
 ```
 :::{.callout-tip}
 ## Are neighborhoods independent?
+
 We have another issue which may bias our treatment effect - the neighborhoods were paired together. We have to account for this paired data feature which is called clustered data. Clustered data violates the regression assumption that observations are independent and identically distributed (i.i.d). In-other-words, the data has within group dependencies, paired neighborhoods will likely be more similar than un-paired neighborhoods. 
 :::
 
