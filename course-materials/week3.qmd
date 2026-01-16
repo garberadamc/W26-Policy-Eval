@@ -19,9 +19,9 @@ description: "Week 3: January 20-23, 2026"
 
 | Assignment Type | Assignment Title                              | Date Assigned  | Date Due                   |
 |-----------------|-----------------------------------------------|----------------|----------------------------|
-| End of Class Survey | [EOC-Week2](){target="_blank"} | 01/13 | 01/13, 11:55pm |
-| Assignment | [Handout: ](){target="_blank"} , [Repository: ](){target="_blank"} | 01/13 | 01/13 |
-| Reading - Generalized Linear Models  | [Carruthers et al., 2008](){target="_blank"} | 01/13 | 01/13 |
+| Finish Reading Study | [Buntaine et al. (2024)](https://drive.google.com/file/d/1bvW40xguud2Y_bRnxwjCCZSmAZALgQTn/view){target="_blank"} , [ADD HERE -> Qs for Prof. Buntaine](https://docs.google.com/spreadsheets/d/1q0kQg3bUkkz5Kv4uTzRd8uEUsbfnavpAvBNHqwdCQgY/edit?usp=sharing){target="_blank"}  |  01/16 | 01/22 |
+| Reading - Intro. to Natural Experiments  | [Larsen et al., 2019](https://drive.google.com/file/d/1r4KI5SwPpb41PTB_8C7NM9Rrz8RH4GBm/view?usp=drive_link){target="_blank"} |  01/16 | 01/22 |
+| Reading - *Mastering 'Metrics* | A&P: Chapter 5 | 01/16 | 01/22 |
 
 : {.hover .bordered tbl-colwidths="[20,30,20,30]"} 
 
