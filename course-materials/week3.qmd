@@ -1,6 +1,6 @@
 ---
-title: "Week 3: "
-subtitle: "Guest Speaker: Professor Mark Buntaine - Experimental Study Design"
+title: "Week 3: Difference-in-Difference"
+subtitle: "[Thursday] Guest Speaker: Professor Mark Buntaine - Experimental Study Design"
 description: "Week 3: January 20-23, 2026"
 ---
 
@@ -9,7 +9,7 @@ description: "Week 3: January 20-23, 2026"
 
 | Lecture slides | Lab |  Resources |
 |----------------|------|------------|
-| [Lecture (TUES)](){target="_blank"} , [Lecture (THURS)](){target="_blank"} | [Handout: ](){target="_blank"} ,  [Repository: ](){target="_blank"} |  |
+| [Lecture (TUES): Difference-in-Difference](https://drive.google.com/file/d/14bm8n3x43MKjEK2_PIewbjPNrQSpRbgf/view?usp=sharing){target="_blank"} , [Lecture (THURS)](){target="_blank"} | [](){target="_blank"} ,  [](){target="_blank"} |  |
 
 : {.hover .bordered tbl-colwidths="[50,25,25]"} 
 
