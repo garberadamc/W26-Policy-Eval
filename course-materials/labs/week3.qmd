@@ -1,0 +1,53 @@
+---
+title: "Lab 3: Difference-in-Difference"
+author: "Annie Adams"
+date: "`r Sys.Date()`"
+format: html
+execute:
+  execute-dir: project
+---
+
+
+Overall goals : 
+- Outcome ($Y$): Nitrogen Dioxide ($NO_2$), which is primarily produced by vehicle traffic
+- Treatment Group: Los Angeles (Early, strict lockdown)
+- Control Group: Phoenix (Later, shorter lockdown)
+
+```{r}
+library(tidyverse)
+```
+
+
+```{r}
+LA_2019 <- read_csv(here::here("course-materials", "labs", "data", "DiD", "LA_2019.csv")) %>% filter(`Local Site Name` == "West Los Angeles") %>% mutate(city = "LA", year = 2019)
+
+LA_2020 <- read_csv(here::here("course-materials", "labs", "data", "DiD", "LA_2020.csv")) %>% filter(`Local Site Name` == "West Los Angeles") %>% mutate(city = "LA", year = 2020)
+
+Phoenix_2019 <- read_csv(here::here("course-materials", "labs", "data", "DiD", "phoenix_2019.csv")) %>% filter(`Local Site Name` == "WEST PHOENIX") %>% 
+  mutate(city = "Phoenix", year = 2019)
+
+Phoenix_2020 <- read_csv(here::here("course-materials", "labs", "data", "DiD", "phoenix_2020.csv")) %>% filter(`Local Site Name` == "WEST PHOENIX") %>% 
+mutate(city = "Phoenix", year = 2020)
+
+# Combine all into one master data frame
+did_data <- bind_rows(LA_2019, LA_2020, Phoenix_2019, Phoenix_2020)
+
+```
+
+
+```{r}
+did_data <- did_data %>%
+  mutate(
+    date = mdy(Date), 
+    month = month(date),
+    day = day(date),
+    treated = ifelse(County == "Los Angeles", 1, 0), # Assign trt vs control
+
+    is_post = ifelse(month > 3 | (month == 3 & day >= 19), 1, 0) # Sep obs into post and pre, Post is after California lock on 3/19/2020
+  ) %>%
+  # Keep only March and April 
+  filter(month %in% c(3, 4))
+```
+
+
+
