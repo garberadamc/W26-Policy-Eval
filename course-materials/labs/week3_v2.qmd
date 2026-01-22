@@ -21,8 +21,6 @@ On March 19th, 2020, California Governor Gavin Newsom issued a Statewide shelter
 - Treatment Group: Los Angeles (Early, strict lockdown)
 - Control Group: Phoenix (Later, shorter lockdown)
 
-> The Question: Can we use Phoenix as a "mirror" for what would have happened in LA without a lockdown?
-
 
 ```{r}
 #| message: FALSE
@@ -59,11 +57,9 @@ did_data_az_ca <- bind_rows(LA_2019, LA_2020, Phoenix_2019, Phoenix_2020) %>% cl
 
 ### Parallel Trends
 
-A DiD is only valid if the Treatment and Control groups were moving in the same direction before the intervention hit. Let's see if we pass the parallel trends assumption. 
+A DiD is only valid if the Treatment and Control groups were moving in the same direction before the policy hit. Let's see if we pass the parallel trends assumption. 
 
 ```{r}
-#| message: FALSE
-#| warning: false
 weekly_la_phx <- did_data_az_ca %>%
   mutate(
     date_obj = mdy(date),
@@ -97,6 +93,7 @@ ggplot(weekly_la_phx, aes(x = week, y = mean_no2, color = city)) +
   theme_minimal() +
   scale_color_brewer(palette = "Set1")
 ```
+
 
 :::{.callout-tip}
 
@@ -157,12 +154,12 @@ summary(la_phx_did)
 ```
 -->
 
+Let's move on to two other counties that may display more of a parallel trend. 
+
 
 ## DiD # 2: Dona Ana County, NM and El Paso County, TX
 
-To improve our study, we will look at two counties that share a border: Dona Ana County, NM (Treated) and El Paso County, TX (Control). Because they share the same desert air and weather patterns, El Paso is a much "cleaner" control group for Dona Ana.
-
- 
+This DiD is for Dona Ana County in New Mexico and El Paso County in Texas. These are bordering counties that had two different lockdown scenarios. 
 
 - Outcome ($Y$): Nitrogen Dioxide ($NO_2$), which is primarily produced by vehicle traffic
 - Treatment Group: Dona Ana County, NM (Early, strict lockdown)
@@ -215,11 +212,11 @@ TX_2020 <- read_csv(here::here("week3", "data", "tx_2020.csv")) %>%
 did_data_nm_tx <- bind_rows(NM_2019, NM_2020, TX_2019, TX_2020) %>% clean_names()
 ```
 
-#### DiD # 2: Parallel Trends Assumption
+
 
 ```{r}
 #| message: FALSE
-#| warning: FALSE
+#| warning: false
 
 did_weekly <- did_data_nm_tx %>%
   mutate(
@@ -258,7 +255,7 @@ ggplot(did_weekly, aes(x = week, y = mean_no2, color = state)) +
 Notice how much more "in sync" these two lines are compared to LA and Phoenix. Why is a border comparison (same weather, same air) usually considered "cleaner" than comparing two distant cities?
 :::
 
-### Getting ready for DiD
+### Get ready for DiD
 
 In order to include treatment and time as part of our DiD, we need to create dummy variables for them. We will create a variable `treated` that will be = 1 for New Mexico (the "treated" group in our scenario will be a stricter lockdown), and will be = 0 for Texas (the "control" group in our scenario will be the more relaxed lockdown.) 
 
@@ -318,22 +315,9 @@ tx_nm_did <- lm(daily_max_1_hour_no2_concentration ~ treated * is_post,
 summary(tx_nm_did)
 ```
 
-:::{.callout-tip title="Comprehension Check"}
+:::{callout-tip}
 What does this treatment effect of .6052 mean? Talk with a partner! 
 :::
 
-:::{.callout-warning}
 
-Wait! Does our 2020 data tell the whole story? What if the drop we were experiencing in NO2 were due to seasonal trends, and were bound to happen with or without a lockdown? 
-:::
 
-Discussion Questions: 
-
-1.Why is it vital for the lines of the Treatment group (NM) and Control group (TX) to be parallel before the lockdown starts?
-
-2. Look at your summary(tx_nm_did) output. Which specific coefficient represents the "Treatment Effect" (the actual impact of the lockdown)?  Is this coefficient statistically significant at the 5% level ($p < 0.05$)? Explain what that $p$-value tells us about the relationship between the lockdown and $NO_2$.
-
-3. The DiD framework relies on a "Counterfactual"—the idea of what would have happened to New Mexico if it hadn't locked down. In this lab, what serves as our counterfactual?
-If a massive dust storm hit both El Paso and Dona Ana on March 25th, would that ruin our DiD estimate? Why or why not? (Hint: Think about whether the storm affects both groups equally).
-
-4. Government mandates (lockdowns) are the "Treatment," but the actual "Cause" of lower $NO_2$ is fewer cars on the road. If people in El Paso (the "Control" group) got scared and stayed home just as much as people in New Mexico (the "Treated" group) despite the lack of a legal mandate, what would happen to our DiD estimate? Would it get larger or smaller?
