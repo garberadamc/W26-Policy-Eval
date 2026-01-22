@@ -15,7 +15,7 @@ Use the Difference-in-Differences (DiD) framework to estimate the impact of COVI
 
 In this scenario, we compare two major Southwestern hubs that faced very different lockdown mandates in March 2019: Los Angeles, CA and Phoenix, AZ. 
 
-** Add lockdown info for both cities **
+On March 19th, 2020, California Governor Gavin Newsom issued a Statewide shelter in place order. Phoenix, AZ did not start their lockdown until March 31, 2020. The strictness of the lockdown varied from city to city. In Arizona, hair salons and golf courses were allowed to stay open ( https://www.nbcnews.com/news/us-news/arizona-mayors-slam-covid-19-stay-home-order-allows-hair-n1174186), while Los Angeles had a stricter lockdown order that did not permit such businesses to operate.   
 
 - Outcome ($Y$): Nitrogen Dioxide ($NO_2$), which is primarily produced by vehicle traffic
 - Treatment Group: Los Angeles (Early, strict lockdown)
@@ -24,6 +24,7 @@ In this scenario, we compare two major Southwestern hubs that faced very differe
 
 ```{r}
 library(tidyverse)
+library(janitor)
 ```
 
 
@@ -41,7 +42,7 @@ Phoenix_2020 <- read_csv(here::here("course-materials", "labs", "data", "DiD", "
 mutate(city = "Phoenix", year = 2020)
 
 # Combine all into one master data frame
-did_data_az_ca <- bind_rows(LA_2019, LA_2020, Phoenix_2019, Phoenix_2020)
+did_data_az_ca <- bind_rows(LA_2019, LA_2020, Phoenix_2019, Phoenix_2020) %>% clean_names()
 
 ```
 
@@ -52,13 +53,13 @@ A DiD is only valid if the Treatment and Control groups were moving in the same 
 ```{r}
 weekly_la_phx <- did_data_az_ca %>%
   mutate(
-    date_obj = mdy(Date),
+    date_obj = mdy(date),
     week = floor_date(date_obj, unit = "week")
   ) %>%
   filter(year == 2020, month(date_obj) %in% c(2, 3, 4)) %>%
   group_by(week, city) %>%
   summarize(
-    mean_no2 = mean(`Daily Max 1-hour NO2 Concentration`, na.rm = TRUE), 
+    mean_no2 = mean(daily_max_1_hour_no2_concentration, na.rm = TRUE), 
     .groups = "drop"
   )
 
@@ -95,10 +96,12 @@ Look at the lines before the dashed vertical line. Are they moving together? If 
 
 We need to create dummy variables that we will use in our model! Specifically, we want to specify the treatment and time period for each observation. 
 
+
+
 ```{r}
 did_data_az_ca <- did_data_az_ca %>%
   mutate(
-    date_obj = mdy(Date),
+    date_obj = mdy(date),
     #treatment = NM, control = TX
     treated = ifelse(city == "LA", 1, 0),
 
@@ -107,10 +110,35 @@ did_data_az_ca <- did_data_az_ca %>%
   )
 ```
 
+### Estimating the treatment effect 
+
+The simplest form of estimating the treatment effect can be denoted by : 
+
+$(Y_{\text{treat, post}} - Y_{\text{treat, pre}}) - (Y_{\text{control, post}} - Y_{\text{control, pre}})$
+
+Another way to estimate DiD (and the way we will often use in this course), is to use regression. 
+
+$$y = \beta_0 + \beta_1 \cdot \text{treat} + \beta_2 \cdot \text{year} + \beta_3 \cdot (\text{treat} \times \text{year})$$
+
+Let's start by manually calculating the treatment effect using the first formula. 
+
+```{r}
+y_trt_post <- did_data_az_ca %>% filter(treated == 1, is_post  == 1, year == 2020) %>% summarise(mean(daily_max_1_hour_no2_concentration)) %>% pull()
+
+y_trt_pre <- did_data_az_ca %>% filter(treated == 1, is_post  == 0, year == 2020) %>% summarise(mean(daily_max_1_hour_no2_concentration)) %>% pull()
+
+y_con_post <- did_data_az_ca %>% filter(treated == 0, is_post  == 1, year == 2020) %>% summarise(mean(daily_max_1_hour_no2_concentration)) %>% pull()
+
+y_con_pre <- did_data_az_ca %>% filter(treated == 0, is_post  == 0, year == 2020) %>% summarise(mean(daily_max_1_hour_no2_concentration)) %>% pull()
+
+trt_effect <- (y_trt_post- y_trt_pre) - (y_con_post - y_con_pre)
+
+print(paste("The treatment effect is", round(trt_effect,4)))
+```
 
 
 ```{r}
-la_phx_did <- lm(`Daily Max 1-hour NO2 Concentration` ~ treated * is_post, 
+la_phx_did <- lm(daily_max_1_hour_no2_concentration ~ treated + is_post + treated:is_post, 
                  data = filter(did_data_az_ca, year == 2020))
 
 summary(la_phx_did)
@@ -142,21 +170,21 @@ TX_2020 <- read_csv(here::here("course-materials", "labs", "data", "DiD", "tx_20
 
 
 # Combine all into one master data frame
-did_data <- bind_rows(NM_2019, NM_2020, TX_2019, TX_2020)
+did_data_nm_tx <- bind_rows(NM_2019, NM_2020, TX_2019, TX_2020) %>% clean_names()
 ```
 
 
 ```{r}
-did_weekly <- did_data %>%
+did_weekly <- did_data_nm_tx %>%
   mutate(
-    date_obj = mdy(Date),
+    date_obj = mdy(date),
     week = floor_date(date_obj, unit = "week")
   ) %>%
 
   filter(year == 2020, month(date_obj) %in% c(2, 3, 4)) %>%
   group_by(week, state) %>%
   summarize(
-    mean_no2 = mean(`Daily Max 1-hour NO2 Concentration`, na.rm = TRUE), 
+    mean_no2 = mean(daily_max_1_hour_no2_concentration, na.rm = TRUE), 
     .groups = "drop"
   )
 
@@ -170,7 +198,7 @@ ggplot(did_weekly, aes(x = week, y = mean_no2, color = state)) +
   geom_vline(xintercept = as.Date("2020-03-23"), linetype = "dashed", color = "gray30", size = 1) +
   annotate("label", x = as.Date("2020-03-24"), y = 35, label = "NM Lockdown Starts", hjust = 0, size = 2.5) +
   labs(
-    title = "Weekly NO2 Trends: NM vs TX",
+    title = "Weekly 2020 NO2 Trends: NM vs TX",
     x = "Date",
     y = "Weekly Avg NO2 (ppb)",
     color = "State"
@@ -186,21 +214,49 @@ Notice how much more "in sync" these two lines are compared to LA and Phoenix. W
 
 
 ```{r}
-did_data <- did_data %>%
+did_data_nm_tx <- did_data_nm_tx %>%
   mutate(
-    date_obj = mdy(Date),
+    date_obj = mdy(date),
     #treatment = NM, control = TX
-    treated = ifelse(state == "NM", 1, 0),
+    treated = ifelse(state == "New Mexico", 1, 0),
 
     # Post = after Mar 23
     is_post = ifelse(date_obj >= as.Date("2020-03-23"), 1, 0)
   )
 ```
 
+### Estimating the treatment effect 
+
+Just like we did above, we will estimate the treatment effect both manually and with a regression model. 
+
+The manual way of estimating the treatment effect can be denoted by : 
+
+$(Y_{\text{treat, post}} - Y_{\text{treat, pre}}) - (Y_{\text{control, post}} - Y_{\text{control, pre}})$
+
+
 
 ```{r}
-tx_nm_did <- lm(`Daily Max 1-hour NO2 Concentration` ~ treated * is_post, 
-                 data = filter(did_data, year == 2020))
+y_trt_post <- did_data_nm_tx %>% filter(treated == 1, is_post  == 1, year == 2020) %>% summarise(mean(daily_max_1_hour_no2_concentration)) %>% pull()
+
+y_trt_pre <- did_data_nm_tx %>% filter(treated == 1, is_post  == 0, year == 2020) %>% summarise(mean(daily_max_1_hour_no2_concentration)) %>% pull()
+
+y_con_post <- did_data_nm_tx %>% filter(treated == 0, is_post  == 1, year == 2020) %>% summarise(mean(daily_max_1_hour_no2_concentration)) %>% pull()
+
+y_con_pre <- did_data_nm_tx %>% filter(treated == 0, is_post  == 0, year == 2020) %>% summarise(mean(daily_max_1_hour_no2_concentration)) %>% pull()
+
+trt_effect <- (y_trt_post- y_trt_pre) - (y_con_post - y_con_pre)
+
+print(paste("The treatment effect is", round(trt_effect,4)))
+```
+
+Now, lets use a regression to estimate our treatment effect!
+
+$$y = \beta_0 + \beta_1 \cdot \text{treat} + \beta_2 \cdot \text{year} + \beta_3 \cdot (\text{treat} \times \text{year})$$
+
+
+```{r}
+tx_nm_did <- lm(daily_max_1_hour_no2_concentration ~ treated * is_post, 
+                 data = filter(did_data_nm_tx, year == 2020))
 
 summary(tx_nm_did)
 ```
