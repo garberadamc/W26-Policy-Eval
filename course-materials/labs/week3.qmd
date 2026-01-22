@@ -8,15 +8,17 @@ execute:
 ---
 
 
-Overall goals : 
-- Outcome ($Y$): Nitrogen Dioxide ($NO_2$), which is primarily produced by vehicle traffic
-- Treatment Group: Los Angeles (Early, strict lockdown)
-- Control Group: Phoenix (Later, shorter lockdown)
-
 ```{r}
 library(tidyverse)
 ```
 
+
+## Los Angeles and Phoenix County
+These two counties faced very different lockdown mandates in March 2019.
+
+- Outcome ($Y$): Nitrogen Dioxide ($NO_2$), which is primarily produced by vehicle traffic
+- Treatment Group: Los Angeles (Early, strict lockdown)
+- Control Group: Phoenix (Later, shorter lockdown)
 
 ```{r}
 LA_2019 <- read_csv(here::here("course-materials", "labs", "data", "DiD", "LA_2019.csv")) %>% filter(`Local Site Name` == "West Los Angeles") %>% mutate(city = "LA", year = 2019)
@@ -30,7 +32,119 @@ Phoenix_2020 <- read_csv(here::here("course-materials", "labs", "data", "DiD", "
 mutate(city = "Phoenix", year = 2020)
 
 # Combine all into one master data frame
-did_data <- bind_rows(LA_2019, LA_2020, Phoenix_2019, Phoenix_2020)
+did_data_az_ca <- bind_rows(LA_2019, LA_2020, Phoenix_2019, Phoenix_2020)
+
+```
+
+
+```{r}
+weekly_la_phx <- did_data_az_ca %>%
+  mutate(
+    date_obj = mdy(Date),
+    week = floor_date(date_obj, unit = "week")
+  ) %>%
+  filter(year == 2020, month(date_obj) %in% c(2, 3, 4)) %>%
+  group_by(week, city) %>%
+  summarize(
+    mean_no2 = mean(`Daily Max 1-hour NO2 Concentration`, na.rm = TRUE), 
+    .groups = "drop"
+  )
+
+# Create line plot of phx and LA
+ggplot(weekly_la_phx, aes(x = week, y = mean_no2, color = city)) +
+  geom_line(size = 1.2) +
+  geom_point(size = 2.5) +
+  
+  # Add CA lockdown start date dashed line
+  geom_vline(xintercept = as.Date("2020-03-19"), linetype = "dashed", color = "gray30", size = 1) +
+
+  # Add CA lockdown start date label
+  annotate("label", x = as.Date("2020-03-20"), y = 30, 
+           label = "CA Lockdown \n Starts", hjust = 0, size = 3) +
+           
+  labs(
+    title = "Weekly NO2 Trends: Los Angeles vs. Phoenix",
+    x = "Date",
+    y = "Weekly Avg NO2 (ppb)",
+    color = "City"
+  ) +
+  theme_minimal() +
+  scale_color_brewer(palette = "Set1")
+```
+
+```{r}
+did_data_az_ca <- did_data_az_ca %>%
+  mutate(
+    date_obj = mdy(Date),
+    #treatment = NM, control = TX
+    treated = ifelse(city == "LA", 1, 0),
+
+    # Post = after Mar 23
+    is_post = ifelse(date_obj >= as.Date("2020-03-23"), 1, 0)
+  )
+```
+
+
+
+```{r}
+la_phx_did <- lm(`Daily Max 1-hour NO2 Concentration` ~ treated * is_post, 
+                 data = filter(did_data_az_ca, year == 2020))
+
+summary(la_phx_did)
+```
+## NEW MEXICO AND TEXAS 
+
+This DiD is for Dona Ana County in New Mexico and El Paso County in Texas. These are bordering counties that had two different lockdown scenarios. 
+
+```{r}
+NM_2019 <- read_csv(here::here("course-materials", "labs", "data", "DiD", "nm_2019.csv")) %>%  mutate(state = "NM", year = 2019, 
+      `County FIPS Code`  = as.numeric(`County FIPS Code`))                                                                                   
+
+NM_2020 <- read_csv(here::here("course-materials", "labs", "data", "DiD", "nm_2020.csv")) %>%  mutate(state = "NM", year = 2020,                       `County FIPS Code`  = as.numeric(`County FIPS Code`))
+
+TX_2019 <- read_csv(here::here("course-materials", "labs", "data", "DiD", "tx_2019.csv")) %>% 
+  mutate(state = "TX", year = 2019)
+
+TX_2020 <- read_csv(here::here("course-materials", "labs", "data", "DiD", "tx_2020.csv")) %>% 
+  mutate(state = "TX", year = 2020)
+
+
+# Combine all into one master data frame
+did_data <- bind_rows(NM_2019, NM_2020, TX_2019, TX_2020)
+```
+
+
+```{r}
+did_weekly <- did_data %>%
+  mutate(
+    date_obj = mdy(Date),
+    week = floor_date(date_obj, unit = "week")
+  ) %>%
+
+  filter(year == 2020, month(date_obj) %in% c(2, 3, 4)) %>%
+  group_by(week, state) %>%
+  summarize(
+    mean_no2 = mean(`Daily Max 1-hour NO2 Concentration`, na.rm = TRUE), 
+    .groups = "drop"
+  )
+
+ggplot(did_weekly, aes(x = week, y = mean_no2, color = state)) +
+
+  geom_line(size = 1.2) +
+
+  geom_point(size = 3) +
+  
+  # Vertical line for the NM Lockdown (March 23, 2020)
+  geom_vline(xintercept = as.Date("2020-03-23"), linetype = "dashed", color = "gray30", size = 1) +
+  annotate("label", x = as.Date("2020-03-24"), y = 35, label = "NM Lockdown Starts", hjust = 0, size = 2.5) +
+  labs(
+    title = "Weekly NO2 Trends: NM vs TX",
+    x = "Date",
+    y = "Weekly Avg NO2 (ppb)",
+    color = "State"
+  ) +
+  theme_minimal() +
+  scale_color_brewer(palette = "Set1")
 
 ```
 
@@ -38,16 +152,21 @@ did_data <- bind_rows(LA_2019, LA_2020, Phoenix_2019, Phoenix_2020)
 ```{r}
 did_data <- did_data %>%
   mutate(
-    date = mdy(Date), 
-    month = month(date),
-    day = day(date),
-    treated = ifelse(County == "Los Angeles", 1, 0), # Assign trt vs control
+    date_obj = mdy(Date),
+    #treatment = NM, control = TX
+    treated = ifelse(state == "NM", 1, 0),
 
-    is_post = ifelse(month > 3 | (month == 3 & day >= 19), 1, 0) # Sep obs into post and pre, Post is after California lock on 3/19/2020
-  ) %>%
-  # Keep only March and April 
-  filter(month %in% c(3, 4))
+    # Post = after Mar 23
+    is_post = ifelse(date_obj >= as.Date("2020-03-23"), 1, 0)
+  )
 ```
 
 
+
+```{r}
+tx_nm_did <- lm(`Daily Max 1-hour NO2 Concentration` ~ treated * is_post, 
+                 data = filter(did_data, year == 2020))
+
+summary(tx_nm_did)
+```
 
