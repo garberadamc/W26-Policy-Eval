@@ -601,54 +601,55 @@ F-statistic: 36.23 on 3 and 710 DF,  p-value: < 2.2e-16
 <p><span class="math display">\[y = \beta_0 + \beta_1 \cdot \text{treat} + \beta_2 \cdot \text{year} + \beta_3 \cdot (\text{treat} \times \text{year})\]</span></p>
 <p>Let’s start by manually calculating the treatment effect using the first formula.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>y_trt_post <span class="ot">&lt;-</span> did_data_nm_tx <span class="sc">%&gt;%</span> <span class="fu">filter</span>(treated <span class="sc">==</span> <span class="dv">1</span>, is_post  <span class="sc">==</span> <span class="dv">1</span>, year <span class="sc">==</span> <span class="dv">2020</span>) <span class="sc">%&gt;%</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>y_trt_post <span class="ot">&lt;-</span> did_data_nm_tx <span class="sc">%&gt;%</span> <span class="fu">filter</span>(treated <span class="sc">==</span> <span class="dv">1</span>, is_post  <span class="sc">==</span> <span class="dv">1</span>, year <span class="sc">==</span> <span class="dv">2020</span>,  <span class="fu">month</span>(date_obj) <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>)) <span class="sc">%&gt;%</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="fu">mean</span>(daily_max_1_hour_no2_concentration)) <span class="sc">%&gt;%</span> <span class="fu">pull</span>()</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>y_trt_pre <span class="ot">&lt;-</span> did_data_nm_tx <span class="sc">%&gt;%</span> <span class="fu">filter</span>(treated <span class="sc">==</span> <span class="dv">1</span>, is_post  <span class="sc">==</span> <span class="dv">0</span>, year <span class="sc">==</span> <span class="dv">2020</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>y_trt_pre <span class="ot">&lt;-</span> did_data_nm_tx <span class="sc">%&gt;%</span> <span class="fu">filter</span>(treated <span class="sc">==</span> <span class="dv">1</span>, is_post  <span class="sc">==</span> <span class="dv">0</span>, year <span class="sc">==</span> <span class="dv">2020</span>,  <span class="fu">month</span>(date_obj) <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>)) <span class="sc">%&gt;%</span></span>
 <span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="fu">mean</span>(daily_max_1_hour_no2_concentration)) <span class="sc">%&gt;%</span> <span class="fu">pull</span>()</span>
 <span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>y_con_post <span class="ot">&lt;-</span> did_data_nm_tx <span class="sc">%&gt;%</span> <span class="fu">filter</span>(treated <span class="sc">==</span> <span class="dv">0</span>, is_post  <span class="sc">==</span> <span class="dv">1</span>, year <span class="sc">==</span> <span class="dv">2020</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>y_con_post <span class="ot">&lt;-</span> did_data_nm_tx <span class="sc">%&gt;%</span> <span class="fu">filter</span>(treated <span class="sc">==</span> <span class="dv">0</span>, is_post  <span class="sc">==</span> <span class="dv">1</span>, year <span class="sc">==</span> <span class="dv">2020</span>,  <span class="fu">month</span>(date_obj) <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>)) <span class="sc">%&gt;%</span></span>
 <span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="fu">mean</span>(daily_max_1_hour_no2_concentration)) <span class="sc">%&gt;%</span> <span class="fu">pull</span>()</span>
 <span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>y_con_pre <span class="ot">&lt;-</span> did_data_nm_tx <span class="sc">%&gt;%</span> <span class="fu">filter</span>(treated <span class="sc">==</span> <span class="dv">0</span>, is_post  <span class="sc">==</span> <span class="dv">0</span>, year <span class="sc">==</span> <span class="dv">2020</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>y_con_pre <span class="ot">&lt;-</span> did_data_nm_tx <span class="sc">%&gt;%</span> <span class="fu">filter</span>(treated <span class="sc">==</span> <span class="dv">0</span>, is_post  <span class="sc">==</span> <span class="dv">0</span>, year <span class="sc">==</span> <span class="dv">2020</span>,  <span class="fu">month</span>(date_obj) <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>)) <span class="sc">%&gt;%</span></span>
 <span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="fu">mean</span>(daily_max_1_hour_no2_concentration)) <span class="sc">%&gt;%</span> <span class="fu">pull</span>()</span>
 <span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>trt_effect <span class="ot">&lt;-</span> (y_trt_post<span class="sc">-</span> y_trt_pre) <span class="sc">-</span> (y_con_post <span class="sc">-</span> y_con_pre)</span>
 <span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">"The treatment effect is"</span>, <span class="fu">round</span>(trt_effect,<span class="dv">4</span>)))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "The treatment effect is 0.6052"</code></pre>
+<pre><code>[1] "The treatment effect is -3.5162"</code></pre>
 </div>
 </div>
 <p>Now, lets use a regression to estimate our treatment effect and see if we get a similar result!</p>
 <p><span class="math display">\[y = \beta_0 + \beta_1 \cdot \text{treat} + \beta_2 \cdot \text{year} + \beta_3 \cdot (\text{treat} \times \text{year})\]</span></p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>tx_nm_did <span class="ot">&lt;-</span> <span class="fu">lm</span>(daily_max_1_hour_no2_concentration <span class="sc">~</span> treated <span class="sc">*</span> is_post, </span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>                 <span class="at">data =</span> <span class="fu">filter</span>(did_data_nm_tx, year <span class="sc">==</span> <span class="dv">2020</span>))</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>                 <span class="at">data =</span> <span class="fu">filter</span>(did_data_nm_tx, year <span class="sc">==</span> <span class="dv">2020</span>, <span class="fu">month</span>(date_obj) <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>) ))</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(tx_nm_did)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Call:
 lm(formula = daily_max_1_hour_no2_concentration ~ treated * is_post, 
-    data = filter(did_data_nm_tx, year == 2020))
+    data = filter(did_data_nm_tx, year == 2020, month(date_obj) %in% 
+        c(2, 3, 4)))
 
 Residuals:
     Min      1Q  Median      3Q     Max 
--27.165 -11.336  -1.815   8.484  48.735 
+-26.019  -5.821  -0.280   6.512  20.681 
 
 Coefficients:
                 Estimate Std. Error t value Pr(&gt;|t|)    
-(Intercept)      34.6480     1.5967  21.700  &lt; 2e-16 ***
-treated         -10.1542     2.2158  -4.583 5.48e-06 ***
-is_post          -4.5830     1.8320  -2.502   0.0126 *  
-treated:is_post   0.6052     2.5292   0.239   0.8110    
+(Intercept)       32.863      1.314  25.003  &lt; 2e-16 ***
+treated          -10.583      1.868  -5.665 6.06e-08 ***
+is_post           -3.943      2.043  -1.930   0.0553 .  
+treated:is_post   -3.516      2.863  -1.228   0.2210    
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
-Residual standard error: 13.83 on 670 degrees of freedom
-Multiple R-squared:  0.1241,    Adjusted R-squared:  0.1202 
-F-statistic: 31.65 on 3 and 670 DF,  p-value: &lt; 2.2e-16</code></pre>
+Residual standard error: 9.386 on 172 degrees of freedom
+Multiple R-squared:  0.3488,    Adjusted R-squared:  0.3374 
+F-statistic: 30.71 on 3 and 172 DF,  p-value: 5.978e-16</code></pre>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled" title="Comprehension Check">
@@ -661,7 +662,7 @@ F-statistic: 31.65 on 3 and 670 DF,  p-value: &lt; 2.2e-16</code></pre>
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>What does this treatment effect of .6052 mean? Talk with a partner!</p>
+<p>What does this treatment effect of -3.5 mean? Talk with a partner!</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-warning callout-titled">
