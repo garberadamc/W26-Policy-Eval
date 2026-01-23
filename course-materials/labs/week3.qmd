@@ -1,5 +1,6 @@
 ---
 title: "Lab 3: Difference-in-Difference"
+subtitle: "COVID-19 Lockdowns and the Search for a Perfect Counterfactual"
 author: "Annie Adams"
 date: "`r Sys.Date()`"
 format: html
@@ -11,11 +12,25 @@ execute:
 
 Use the Difference-in-Differences (DiD) framework to estimate the impact of COVID-19 lockdowns on air pollution ($NO_2$).
 
+
+```{r}
+#| echo: false
+#| label: fig-lockdown
+#| fig-cap: "Words on the Orpheum theater marquee try to bring levity to the current situation along the normally bustling commercial area on Broadway in downtown Los Angeles. Source: [LA Times](https://www.latimes.com/california/story/2020-03-27/coronavirus-spotlight-broadway-in-downtown-los-angeles)"
+#| out-width: "60%"
+#| fig-align: "center"
+
+knitr::include_graphics("images/LA_lockdown.png")
+
+```
+In March 2020, counties across the United States responded to the start of what would be the COVID 19 Pandemic. While every state faced the same biological threat, governors responded with vastly different mandates. Some states, like California and New Mexico, implemented strict "Stay at Home" orders early on. Others, like Arizona and Texas, opted for more relaxed restrictions, allowing businesses like golf courses and salons to remain open longer.In this lab, we will use a Difference-in-Difference (DiD) framework to isolate the impact of these varying lockdown levels. By comparing "strict" counties to their more "relaxed" neighbors, we can determine if the severity of the lockdown had a measurable impact on $NO_2$ levels— a key indicator of vehicle traffic and urban activity.
+
 ## DiD # 1: Los Angeles, CA vs Phoenix, AZ
 
 In this scenario, we compare two major Southwestern hubs that faced very different lockdown mandates in March 2019: Los Angeles, CA and Phoenix, AZ. 
 
-On March 19th, 2020, California Governor Gavin Newsom issued a Statewide shelter in place order. Phoenix, AZ did not start their lockdown until March 31, 2020. The strictness of the lockdown varied from city to city. In Arizona, hair salons and golf courses were allowed to stay open ( https://www.nbcnews.com/news/us-news/arizona-mayors-slam-covid-19-stay-home-order-allows-hair-n1174186), while Los Angeles had a stricter lockdown order that did not permit such businesses to operate.   
+On March 19th, 2020, California Governor Gavin Newsom issued a Statewide shelter in place order. Phoenix, AZ did not start their lockdown until March 31, 2020. The strictness of the lockdown varied from city to city. In Arizona, [hair salons and golf courses were allowed to stay open]( https://www.nbcnews.com/news/us-news/arizona-mayors-slam-covid-19-stay-home-order-allows-hair-n117418), while Los Angeles had a [stricter lockdown](https://covid19.lacounty.gov/wp-content/uploads/HOO_Safer-at-Home-Order-for-Control-of-COVID_04102020.pdf) order that did not permit such businesses to operate.   
+We will use these varying lockdown levels to see if the severity/ strictness of the lockdown had an impact on NO2 levels.  
 
 - Outcome ($Y$): Nitrogen Dioxide ($NO_2$), which is primarily produced by vehicle traffic
 - Treatment Group: Los Angeles (Early, strict lockdown)
@@ -29,12 +44,24 @@ On March 19th, 2020, California Governor Gavin Newsom issued a Statewide shelter
 #| warning: false
 library(tidyverse)
 library(janitor)
+library(lubridate)
 ```
 
+## About the Data
+
+### Data Source
+
+Air quality data for this analysis was obtained from the U.S. Environmental 
+Protection Agency's (EPA) [Outdoor Air Quality Data](https://www.epa.gov/outdoor-air-quality-data/download-daily-data) 
+portal. The dataset includes daily measurements of nitrogen dioxide (NO2) 
+concentrations from monitoring stations in Los Angeles, California and Phoenix, 
+Arizona.
 
 #### Read in LA and Phoenix EPA Data
 
 ```{r}
+#| echo: false
+#| eval: true
 #| message: FALSE
 #| warning: false
 LA_2019 <- read_csv(here::here("course-materials", "labs", "data", "DiD", "LA_2019.csv")) %>%
@@ -57,6 +84,33 @@ did_data_az_ca <- bind_rows(LA_2019, LA_2020, Phoenix_2019, Phoenix_2020) %>% cl
 
 ```
 
+
+```{r}
+#| echo: true
+#| eval: false
+#| message: FALSE
+#| warning: false
+LA_2019 <- read_csv(here::here("week3" ,"data",  "LA_2019.csv")) %>%
+  filter(`Local Site Name` == "West Los Angeles") %>% mutate(city = "LA", year = 2019)
+
+
+LA_2020 <- read_csv(here::here("week3" ,"data", "LA_2020.csv")) %>% 
+  filter(`Local Site Name` == "West Los Angeles") %>% mutate(city = "LA", year = 2020)
+
+Phoenix_2019 <- read_csv(here::here("week3" ,"data", "phoenix_2019.csv")) %>% 
+  filter(`Local Site Name` == "WEST PHOENIX") %>% 
+  mutate(city = "Phoenix", year = 2019)
+
+Phoenix_2020 <- read_csv(here::here("week3" ,"data", "phoenix_2020.csv")) %>% 
+  filter(`Local Site Name` == "WEST PHOENIX") %>% 
+mutate(city = "Phoenix", year = 2020)
+
+# Combine all into one master data frame
+did_data_az_ca <- bind_rows(LA_2019, LA_2020, Phoenix_2019, Phoenix_2020) %>% clean_names()
+```
+
+
+
 ### Parallel Trends
 
 A DiD is only valid if the Treatment and Control groups were moving in the same direction before the intervention hit. Let's see if we pass the parallel trends assumption. 
@@ -64,6 +118,7 @@ A DiD is only valid if the Treatment and Control groups were moving in the same 
 ```{r}
 #| message: FALSE
 #| warning: false
+
 weekly_la_phx <- did_data_az_ca %>%
   mutate(
     date_obj = mdy(date),
@@ -103,7 +158,7 @@ ggplot(weekly_la_phx, aes(x = week, y = mean_no2, color = city)) +
 Look at the lines before the dashed vertical line. Are they moving together? If Phoenix is rising while LA is falling (or vice versa) before the lockdown, can we truly blame the lockdown for the difference we see afterward?
 :::
 
-<!--  PARALLEL TRENDS ASSUMPTION VIOLATED - dont continue
+<!--  PARALLEL TRENDS ASSUMPTION VIOLATED - don't continue
 ### Difference in Difference Model
 
 We need to create dummy variables that we will use in our model! Specifically, we want to specify the treatment and time period for each observation. 
@@ -324,12 +379,12 @@ What does this treatment effect of .6052 mean? Talk with a partner!
 
 :::{.callout-warning}
 
-Wait! Does our 2020 data tell the whole story? What if the drop we were experiencing in NO2 were due to seasonal trends, and were bound to happen with or without a lockdown? 
+Does our 2020 data tell the whole story? What if the drop we were experiencing in NO2 were due to seasonal trends, and were bound to happen with or without a lockdown? 
 :::
 
-Discussion Questions: 
+## Discussion Questions: 
 
-1.Why is it vital for the lines of the Treatment group (NM) and Control group (TX) to be parallel before the lockdown starts?
+1. Why is it vital for the lines of the Treatment group (NM) and Control group (TX) to be parallel before the lockdown starts?
 
 2. Look at your summary(tx_nm_did) output. Which specific coefficient represents the "Treatment Effect" (the actual impact of the lockdown)?  Is this coefficient statistically significant at the 5% level ($p < 0.05$)? Explain what that $p$-value tells us about the relationship between the lockdown and $NO_2$.
 

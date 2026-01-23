@@ -219,6 +219,7 @@ window.Quarto = {
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-page-left">
       <h1 class="title">Lab 3: Difference-in-Difference</h1>
+            <p class="subtitle lead">COVID-19 Lockdowns and the Search for a Perfect Counterfactual</p>
                       </div>
   </div>
     
@@ -252,8 +253,10 @@ window.Quarto = {
    
   <ul>
   <li><a href="#objective" id="toc-objective" class="nav-link active" data-scroll-target="#objective">Objective:</a></li>
-  <li><a href="#did-1-los-angeles-ca-vs-phoenix-az" id="toc-did-1-los-angeles-ca-vs-phoenix-az" class="nav-link" data-scroll-target="#did-1-los-angeles-ca-vs-phoenix-az">DiD # 1: Los Angeles, CA vs Phoenix, AZ</a>
+  <li><a href="#did-1-los-angeles-ca-vs-phoenix-az" id="toc-did-1-los-angeles-ca-vs-phoenix-az" class="nav-link" data-scroll-target="#did-1-los-angeles-ca-vs-phoenix-az">DiD # 1: Los Angeles, CA vs Phoenix, AZ</a></li>
+  <li><a href="#about-the-data" id="toc-about-the-data" class="nav-link" data-scroll-target="#about-the-data">About the Data</a>
   <ul class="collapse">
+  <li><a href="#data-source" id="toc-data-source" class="nav-link" data-scroll-target="#data-source">Data Source</a></li>
   <li><a href="#parallel-trends" id="toc-parallel-trends" class="nav-link" data-scroll-target="#parallel-trends">Parallel Trends</a></li>
   </ul></li>
   <li><a href="#did-2-dona-ana-county-nm-and-el-paso-county-tx" id="toc-did-2-dona-ana-county-nm-and-el-paso-county-tx" class="nav-link" data-scroll-target="#did-2-dona-ana-county-nm-and-el-paso-county-tx">DiD # 2: Dona Ana County, NM and El Paso County, TX</a>
@@ -261,6 +264,7 @@ window.Quarto = {
   <li><a href="#getting-ready-for-did" id="toc-getting-ready-for-did" class="nav-link" data-scroll-target="#getting-ready-for-did">Getting ready for DiD</a></li>
   <li><a href="#estimating-the-treatment-effect" id="toc-estimating-the-treatment-effect" class="nav-link" data-scroll-target="#estimating-the-treatment-effect">Estimating the treatment effect</a></li>
   </ul></li>
+  <li><a href="#discussion-questions" id="toc-discussion-questions" class="nav-link" data-scroll-target="#discussion-questions">Discussion Questions:</a></li>
   </ul>
 </nav>
     </div>
@@ -274,11 +278,27 @@ window.Quarto = {
 <section id="objective" class="level2">
 <h2 class="anchored" data-anchor-id="objective">Objective:</h2>
 <p>Use the Difference-in-Differences (DiD) framework to estimate the impact of COVID-19 lockdowns on air pollution (<span class="math inline">\(NO_2\)</span>).</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-lockdown" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-lockdown-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/LA_lockdown.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-lockdown-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Words on the Orpheum theater marquee try to bring levity to the current situation along the normally bustling commercial area on Broadway in downtown Los Angeles. Source: <a href="https://www.latimes.com/california/story/2020-03-27/coronavirus-spotlight-broadway-in-downtown-los-angeles">LA Times</a>
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>In March 2020, counties across the United States responded to the start of what would be the COVID 19 Pandemic. While every state faced the same biological threat, governors responded with vastly different mandates. Some states, like California and New Mexico, implemented strict “Stay at Home” orders early on. Others, like Arizona and Texas, opted for more relaxed restrictions, allowing businesses like golf courses and salons to remain open longer.In this lab, we will use a Difference-in-Difference (DiD) framework to isolate the impact of these varying lockdown levels. By comparing “strict” counties to their more “relaxed” neighbors, we can determine if the severity of the lockdown had a measurable impact on <span class="math inline">\(NO_2\)</span> levels— a key indicator of vehicle traffic and urban activity.</p>
 </section>
 <section id="did-1-los-angeles-ca-vs-phoenix-az" class="level2">
 <h2 class="anchored" data-anchor-id="did-1-los-angeles-ca-vs-phoenix-az">DiD # 1: Los Angeles, CA vs Phoenix, AZ</h2>
 <p>In this scenario, we compare two major Southwestern hubs that faced very different lockdown mandates in March 2019: Los Angeles, CA and Phoenix, AZ.</p>
-<p>On March 19th, 2020, California Governor Gavin Newsom issued a Statewide shelter in place order. Phoenix, AZ did not start their lockdown until March 31, 2020. The strictness of the lockdown varied from city to city. In Arizona, hair salons and golf courses were allowed to stay open ( https://www.nbcnews.com/news/us-news/arizona-mayors-slam-covid-19-stay-home-order-allows-hair-n1174186), while Los Angeles had a stricter lockdown order that did not permit such businesses to operate.</p>
+<p>On March 19th, 2020, California Governor Gavin Newsom issued a Statewide shelter in place order. Phoenix, AZ did not start their lockdown until March 31, 2020. The strictness of the lockdown varied from city to city. In Arizona, <a href="https://www.nbcnews.com/news/us-news/arizona-mayors-slam-covid-19-stay-home-order-allows-hair-n117418">hair salons and golf courses were allowed to stay open</a>, while Los Angeles had a <a href="https://covid19.lacounty.gov/wp-content/uploads/HOO_Safer-at-Home-Order-for-Control-of-COVID_04102020.pdf">stricter lockdown</a> order that did not permit such businesses to operate.<br>
+We will use these varying lockdown levels to see if the severity/ strictness of the lockdown had an impact on NO2 levels.</p>
 <ul>
 <li>Outcome (<span class="math inline">\(Y\)</span>): Nitrogen Dioxide (<span class="math inline">\(NO_2\)</span>), which is primarily produced by vehicle traffic</li>
 <li>Treatment Group: Los Angeles (Early, strict lockdown)</li>
@@ -289,29 +309,37 @@ window.Quarto = {
 </blockquote>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(janitor)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(janitor)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lubridate)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
+</section>
+<section id="about-the-data" class="level2">
+<h2 class="anchored" data-anchor-id="about-the-data">About the Data</h2>
+<section id="data-source" class="level3">
+<h3 class="anchored" data-anchor-id="data-source">Data Source</h3>
+<p>Air quality data for this analysis was obtained from the U.S. Environmental Protection Agency’s (EPA) <a href="https://www.epa.gov/outdoor-air-quality-data/download-daily-data">Outdoor Air Quality Data</a> portal. The dataset includes daily measurements of nitrogen dioxide (NO2) concentrations from monitoring stations in Los Angeles, California and Phoenix, Arizona.</p>
 <section id="read-in-la-and-phoenix-epa-data" class="level4">
 <h4 class="anchored" data-anchor-id="read-in-la-and-phoenix-epa-data">Read in LA and Phoenix EPA Data</h4>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>LA_2019 <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"course-materials"</span>, <span class="st">"labs"</span>, <span class="st">"data"</span>, <span class="st">"DiD"</span>, <span class="st">"LA_2019.csv"</span>)) <span class="sc">%&gt;%</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>LA_2019 <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"week3"</span> ,<span class="st">"data"</span>,  <span class="st">"LA_2019.csv"</span>)) <span class="sc">%&gt;%</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="st">`</span><span class="at">Local Site Name</span><span class="st">`</span> <span class="sc">==</span> <span class="st">"West Los Angeles"</span>) <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">city =</span> <span class="st">"LA"</span>, <span class="at">year =</span> <span class="dv">2019</span>)</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>LA_2020 <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"course-materials"</span>, <span class="st">"labs"</span>, <span class="st">"data"</span>, <span class="st">"DiD"</span>, <span class="st">"LA_2020.csv"</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>LA_2020 <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"week3"</span> ,<span class="st">"data"</span>, <span class="st">"LA_2020.csv"</span>)) <span class="sc">%&gt;%</span> </span>
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="st">`</span><span class="at">Local Site Name</span><span class="st">`</span> <span class="sc">==</span> <span class="st">"West Los Angeles"</span>) <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">city =</span> <span class="st">"LA"</span>, <span class="at">year =</span> <span class="dv">2020</span>)</span>
 <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>Phoenix_2019 <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"course-materials"</span>, <span class="st">"labs"</span>, <span class="st">"data"</span>, <span class="st">"DiD"</span>, <span class="st">"phoenix_2019.csv"</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>Phoenix_2019 <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"week3"</span> ,<span class="st">"data"</span>, <span class="st">"phoenix_2019.csv"</span>)) <span class="sc">%&gt;%</span> </span>
 <span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="st">`</span><span class="at">Local Site Name</span><span class="st">`</span> <span class="sc">==</span> <span class="st">"WEST PHOENIX"</span>) <span class="sc">%&gt;%</span> </span>
 <span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">city =</span> <span class="st">"Phoenix"</span>, <span class="at">year =</span> <span class="dv">2019</span>)</span>
 <span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>Phoenix_2020 <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"course-materials"</span>, <span class="st">"labs"</span>, <span class="st">"data"</span>, <span class="st">"DiD"</span>, <span class="st">"phoenix_2020.csv"</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>Phoenix_2020 <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"week3"</span> ,<span class="st">"data"</span>, <span class="st">"phoenix_2020.csv"</span>)) <span class="sc">%&gt;%</span> </span>
 <span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="st">`</span><span class="at">Local Site Name</span><span class="st">`</span> <span class="sc">==</span> <span class="st">"WEST PHOENIX"</span>) <span class="sc">%&gt;%</span> </span>
 <span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="fu">mutate</span>(<span class="at">city =</span> <span class="st">"Phoenix"</span>, <span class="at">year =</span> <span class="dv">2020</span>)</span>
 <span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Combine all into one master data frame</span></span>
 <span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>did_data_az_ca <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(LA_2019, LA_2020, Phoenix_2019, Phoenix_2020) <span class="sc">%&gt;%</span> <span class="fu">clean_names</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
+</section>
 </section>
 <section id="parallel-trends" class="level3">
 <h3 class="anchored" data-anchor-id="parallel-trends">Parallel Trends</h3>
@@ -352,7 +380,7 @@ window.Quarto = {
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="week3_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="week3_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -370,7 +398,7 @@ Tip
 <p>Look at the lines before the dashed vertical line. Are they moving together? If Phoenix is rising while LA is falling (or vice versa) before the lockdown, can we truly blame the lockdown for the difference we see afterward?</p>
 </div>
 </div>
-<!--  PARALLEL TRENDS ASSUMPTION VIOLATED - dont continue
+<!--  PARALLEL TRENDS ASSUMPTION VIOLATED - don't continue
 ### Difference in Difference Model
 
 We need to create dummy variables that we will use in our model! Specifically, we want to specify the treatment and time period for each observation. 
@@ -540,7 +568,7 @@ F-statistic: 36.23 on 3 and 710 DF,  p-value: < 2.2e-16
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="week3_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="week3_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -646,19 +674,21 @@ Warning
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Wait! Does our 2020 data tell the whole story? What if the drop we were experiencing in NO2 were due to seasonal trends, and were bound to happen with or without a lockdown?</p>
+<p>Does our 2020 data tell the whole story? What if the drop we were experiencing in NO2 were due to seasonal trends, and were bound to happen with or without a lockdown?</p>
 </div>
 </div>
-<p>Discussion Questions:</p>
-<p>1.Why is it vital for the lines of the Treatment group (NM) and Control group (TX) to be parallel before the lockdown starts?</p>
-<ol start="2" type="1">
+</section>
+</section>
+<section id="discussion-questions" class="level2">
+<h2 class="anchored" data-anchor-id="discussion-questions">Discussion Questions:</h2>
+<ol type="1">
+<li><p>Why is it vital for the lines of the Treatment group (NM) and Control group (TX) to be parallel before the lockdown starts?</p></li>
 <li><p>Look at your summary(tx_nm_did) output. Which specific coefficient represents the “Treatment Effect” (the actual impact of the lockdown)? Is this coefficient statistically significant at the 5% level (<span class="math inline">\(p &lt; 0.05\)</span>)? Explain what that <span class="math inline">\(p\)</span>-value tells us about the relationship between the lockdown and <span class="math inline">\(NO_2\)</span>.</p></li>
 <li><p>The DiD framework relies on a “Counterfactual”—the idea of what would have happened to New Mexico if it hadn’t locked down. In this lab, what serves as our counterfactual? If a massive dust storm hit both El Paso and Dona Ana on March 25th, would that ruin our DiD estimate? Why or why not? (Hint: Think about whether the storm affects both groups equally).</p></li>
 <li><p>Government mandates (lockdowns) are the “Treatment,” but the actual “Cause” of lower <span class="math inline">\(NO_2\)</span> is fewer cars on the road. If people in El Paso (the “Control” group) got scared and stayed home just as much as people in New Mexico (the “Treated” group) despite the lack of a legal mandate, what would happen to our DiD estimate? Would it get larger or smaller?</p></li>
 </ol>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->

@@ -19,7 +19,7 @@ description: "Week 3: January 20-23, 2026"
 
 | Lab Materials to Download | Lab Solution |
 |----------------|------------|
-| [Week 3 Lab]() | [Week 3 Lab Solution](labs/week3.qmd) |
+| [Week 3 Lab](https://downgit.github.io/#/home?url=https://github.com/annieradams/EDS241-Weekly-Labs/tree/main/week3) | [Week 3 Lab Solution](labs/week3.qmd) |
 : {.hover .bordered tbl-colwidths="[50,50]"}
 
 
