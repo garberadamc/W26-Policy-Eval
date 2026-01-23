@@ -344,16 +344,16 @@ $$y = \beta_0 + \beta_1 \cdot \text{treat} + \beta_2 \cdot \text{year} + \beta_3
 Let's start by manually calculating the treatment effect using the first formula. 
 
 ```{r}
-y_trt_post <- did_data_nm_tx %>% filter(treated == 1, is_post  == 1, year == 2020) %>%
+y_trt_post <- did_data_nm_tx %>% filter(treated == 1, is_post  == 1, year == 2020,  month(date_obj) %in% c(2, 3, 4)) %>%
   summarise(mean(daily_max_1_hour_no2_concentration)) %>% pull()
 
-y_trt_pre <- did_data_nm_tx %>% filter(treated == 1, is_post  == 0, year == 2020) %>%
+y_trt_pre <- did_data_nm_tx %>% filter(treated == 1, is_post  == 0, year == 2020,  month(date_obj) %in% c(2, 3, 4)) %>%
   summarise(mean(daily_max_1_hour_no2_concentration)) %>% pull()
 
-y_con_post <- did_data_nm_tx %>% filter(treated == 0, is_post  == 1, year == 2020) %>%
+y_con_post <- did_data_nm_tx %>% filter(treated == 0, is_post  == 1, year == 2020,  month(date_obj) %in% c(2, 3, 4)) %>%
   summarise(mean(daily_max_1_hour_no2_concentration)) %>% pull()
 
-y_con_pre <- did_data_nm_tx %>% filter(treated == 0, is_post  == 0, year == 2020) %>%
+y_con_pre <- did_data_nm_tx %>% filter(treated == 0, is_post  == 0, year == 2020,  month(date_obj) %in% c(2, 3, 4)) %>%
   summarise(mean(daily_max_1_hour_no2_concentration)) %>% pull()
 
 trt_effect <- (y_trt_post- y_trt_pre) - (y_con_post - y_con_pre)
@@ -368,13 +368,13 @@ $$y = \beta_0 + \beta_1 \cdot \text{treat} + \beta_2 \cdot \text{year} + \beta_3
 
 ```{r}
 tx_nm_did <- lm(daily_max_1_hour_no2_concentration ~ treated * is_post, 
-                 data = filter(did_data_nm_tx, year == 2020))
+                 data = filter(did_data_nm_tx, year == 2020, month(date_obj) %in% c(2, 3, 4) ))
 
 summary(tx_nm_did)
 ```
 
 :::{.callout-tip title="Comprehension Check"}
-What does this treatment effect of .6052 mean? Talk with a partner! 
+What does this treatment effect of -3.5 mean? Talk with a partner! 
 :::
 
 :::{.callout-warning}
