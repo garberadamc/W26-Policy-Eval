@@ -27,12 +27,12 @@ website:
             href: course-materials/week2.qmd
           - text: week 3 (1/20/26)
             href: course-materials/week3.qmd
-          #- text: week 4 (27/01/25)
-          #  href: course-materials/week4.qmd          
-          #- text: week 5 (03/02/25)
-          #  href: course-materials/week5.qmd
-          #- text: week 6 (10/02/25)
-          #  href: course-materials/week6.qmd        
+          - text: week 4 (1/27/25)
+            href: course-materials/week4.qmd          
+          - text: week 5 (2/03/25)
+            href: course-materials/week5.qmd
+          - text: week 6 (2/10/25)
+            href: course-materials/week6.qmd        
           #- text: week 7 (17/02/25)
           #  href: course-materials/week7.qmd
           #- text: week 8 (24/02/25)

@@ -1,44 +1,35 @@
 ---
 title: "Week 5: "
-subtitle: "Introduction to Natural Experiments"
-description: "Wednesday, February 5th, 2025"
+subtitle: ""
+description: "February 3-6, 2026"
 ---
 
 
 ## {{< fa person-chalkboard title="a person pointing at a chalkboard" >}} Lecture Materials {#lecture-materials}
 
-| Lecture slides | Lab | Answer key |
-|----------------|-----|------------|
-| [Lecture 5](https://drive.google.com/file/d/1vgmrn4C25WNNQrp6VRvy5qCJWh5LgMLK/view?usp=sharing){target="_blank"} | *NA* | *NA* |
-
+| Lecture slides |  Resources |
+|----------------|------------|
+| [Lecture (TUES):  ](){target="_blank"}  | [](){target="_blank"}  |  
+| [Lecture (THURS): ](){target="_blank"}  | [](){target="_blank"}  | 
 : {.hover .bordered tbl-colwidths="[50,25,25]"} 
+
+<br>
+
+## {{< fa laptop title="a laptop" >}} Lab Materials {#lab-materials}
+
+| Lab Materials to Download | Lab Solution |
+|----------------|------------|
+| [](){target="_blank"} | [](){target="_blank"} |
+: {.hover .bordered tbl-colwidths="[50,50]"}
+
 
 
 ## {{< fa pencil title="pencil" >}} Assignment Reminders {#assignment-reminders}
 
 | Assignment Type | Assignment Title                              | Date Assigned  | Date Due                   |
 |-----------------|-----------------------------------------------|----------------|----------------------------|
-| End of Class Survey | [EOC-Week5](https://docs.google.com/forms/d/e/1FAIpQLSfHwZ6rxctARaYdPJBguBVeYdIPqzhSaRUmQv6jHKY7LUY5TA/viewform?usp=sharing){target="_blank"} | 02/05/2025 | 02/05/2025, 11:55pm |
-| Reading - *Mastering 'Metrics*  | A&P: Chapter 3 - Instrumental Variables | 02/05/2025 | 02/05/2025 |
-| Reading - European Lobster MPA Study | [Moland et al., 2013](https://drive.google.com/file/d/1TjKa7gH9YVCSpG4HeWb7LFFbsqoSEYeQ/view?usp=sharing){target="_blank"} | 01/29/2025 |  |
-|Revise & Resubmit (Assignment 1) | [Instructions to Revise & Resubmit](){target="_blank"} | 02/05/2025 | 02/10/2025 (11:59pm)|
-
+| Reading - | [](){target="_blank"}  |  01/16 | 01/22 |
+| Reading -  | [](){target="_blank"} |  01/16 | 01/22 |
+| Reading - *Mastering 'Metrics* | A&P: Chapter 5 | 01/16 | 01/22 |
 
 : {.hover .bordered tbl-colwidths="[20,30,20,30]"} 
-
-::: {.left-text}
-
-## {{< fa person-chalkboard title="A person motioning at a chalkboard" >}} [**Extra resources**]{.teal-text .body-text-m}
-
-Create {`gganimate`} plot - Illustration of concept *unbiased estimator*: \
-
-- [Repo - unbiased-estimator-viz](https://github.com/garberadamc/unbiased-estimator-viz.git)
-
-> Extra credit: Create an animated plot that illustrates a concept relevant to EDS 241 (i.e, causal inference, statistics, design-based methods). Take a look at the examples made by Kristoffer Magnusson for inspiration!
-
-- **Cool animations - visualize statistical concepts:** ['R Psychologist' - Kristoffer Magnusson](https://rpsychologist.com/viz/)
-
-- **Reproducibility:** [Lowndes et al., 2017 - *Our path to better science in less time using open
-data science tools*](https://drive.google.com/file/d/1gEqGjKmrlt96k0a-JURtbIHnc_VIUiyK/view?usp=drive_link)
-
-::: 

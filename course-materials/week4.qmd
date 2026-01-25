@@ -1,27 +1,35 @@
 ---
 title: "Week 4: "
-subtitle: "Difference-in-Difference Applied to MPA Evaluation"
-description: "Wednesday, January 29, 2025"
+subtitle: ""
+description: "January 27-30, 2026"
 ---
 
 
 ## {{< fa person-chalkboard title="a person pointing at a chalkboard" >}} Lecture Materials {#lecture-materials}
 
-| Lecture slides | Lab | Answer key |
-|----------------|-----|------------|
-| [Lecture 4 - DiD](https://drive.google.com/file/d/1k5XwhonfxvDBKOqHp4KqVp30oG9Bshgg/view?usp=sharing){target="_blank"} | [Lab 2 - Repo](https://github.com/garberadamc/Lab2-EDS241-Moland13){target="_blank"}| [Lab Key - Handout](https://garberadamc.github.io/project-site/Lab2-Moland13_KEY){target="_blank"} |
-
+| Lecture slides |  Resources |
+|----------------|------------|
+| [Lecture (TUES):  ](){target="_blank"}  | [](){target="_blank"}  |  
+| [Lecture (THURS): ](){target="_blank"}  | [](){target="_blank"}  | 
 : {.hover .bordered tbl-colwidths="[50,25,25]"} 
+
+<br>
+
+## {{< fa laptop title="a laptop" >}} Lab Materials {#lab-materials}
+
+| Lab Materials to Download | Lab Solution |
+|----------------|------------|
+| [](){target="_blank"} | [](){target="_blank"} |
+: {.hover .bordered tbl-colwidths="[50,50]"}
+
 
 
 ## {{< fa pencil title="pencil" >}} Assignment Reminders {#assignment-reminders}
 
 | Assignment Type | Assignment Title                              | Date Assigned  | Date Due                   |
 |-----------------|-----------------------------------------------|----------------|----------------------------|
-| End of Class Survey | [EOC-Week4](https://forms.gle/qmx7PMQwZC1R6kAU6){target="_blank"} | 01/29/2025 | 01/29/2025, 11:55pm |
-| Reading - *Mastering 'Metrics*  | A&P: Chapter 4 - Regression Discontinuity | 01/29/2025 |  |
-| Reading - Lobster and cod benefit from small-scale northern marine protected areas: Inference from an empirical before–after control-impact study | [Moland et al., 2013](https://drive.google.com/file/d/1TjKa7gH9YVCSpG4HeWb7LFFbsqoSEYeQ/view?usp=sharing){target="_blank"} | 01/29/2025 |  |
+| Reading - | [](){target="_blank"}  |  01/16 | 01/22 |
+| Reading -  | [](){target="_blank"} |  01/16 | 01/22 |
+| Reading - *Mastering 'Metrics* | A&P: Chapter 5 | 01/16 | 01/22 |
 
 : {.hover .bordered tbl-colwidths="[20,30,20,30]"} 
-
-

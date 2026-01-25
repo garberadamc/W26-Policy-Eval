@@ -1,28 +1,35 @@
 ---
 title: "Week 7: "
 subtitle: "Guest Speaker - Professor Matto Mildenberger - Instrumental Variables"
-description: "Wednesday, February 19th, 2025"
+description: "February 17-20, 2026"
 ---
 
 
 ## {{< fa person-chalkboard title="a person pointing at a chalkboard" >}} Lecture Materials {#lecture-materials}
 
-| Lecture slides | Lab | Answer key |
-|----------------|-----|------------|
-| [Lecture 7](https://drive.google.com/file/d/1KHsf4Z9qaeKuyn2LdqdRKDnRG2h1I8fr/view?usp=sharing){target="_blank"} | *NA* | *NA* |
-
+| Lecture slides |  Resources |
+|----------------|------------|
+| [Lecture (TUES):  ](){target="_blank"}  | [](){target="_blank"}  |  
+| [Lecture (THURS): ](){target="_blank"}  | [](){target="_blank"}  | 
 : {.hover .bordered tbl-colwidths="[50,25,25]"} 
+
+<br>
+
+## {{< fa laptop title="a laptop" >}} Lab Materials {#lab-materials}
+
+| Lab Materials to Download | Lab Solution |
+|----------------|------------|
+| [](){target="_blank"} | [](){target="_blank"} |
+: {.hover .bordered tbl-colwidths="[50,50]"}
+
 
 
 ## {{< fa pencil title="pencil" >}} Assignment Reminders {#assignment-reminders}
 
 | Assignment Type | Assignment Title                              | Date Assigned  | Date Due                   |
 |-----------------|-----------------------------------------------|----------------|----------------------------|
-| End of Class Survey | [EOC-Week7](https://forms.gle/9UN1nPNJkuChG6tX6){target="_blank"} | 02/19/2025 | 02/19/2025, 11:55pm |
-| Assignment 2 | [Investigating Causal Inference Designs Applied in Environmental Science](https://docs.google.com/document/d/1c3RtddoEN-nXRerAWp4IgBvtw5zZyuBeezjmM3VM-QY/edit?usp=sharing){target="_blank"} | 02/10/2025 | 02/23/2025, 11:59pm |
-| Reading - Article | [Statistical Matching for Conservation Science - Schleicher et al., 2019 - ](https://drive.google.com/file/d/1WHszJRSS4ntpq2cYi4SoWYfaFu6bYPja/view?usp=sharing){target="_blank"} | 02/16/2025 | 
-| Reading - *Mastering 'Metrics*  | A&P: Chapter 6     | 02/12/2025 | 02/19/2025 |
+| Reading - | [](){target="_blank"}  |  01/16 | 01/22 |
+| Reading -  | [](){target="_blank"} |  01/16 | 01/22 |
+| Reading - *Mastering 'Metrics* | A&P: Chapter 5 | 01/16 | 01/22 |
 
 : {.hover .bordered tbl-colwidths="[20,30,20,30]"} 
-
-
