@@ -1,5 +1,5 @@
 ---
-title: "Week 4: "
+title: "Week 4: Fixed Effects & Matching Methods"
 subtitle: ""
 description: "January 27-30, 2026"
 ---
@@ -28,8 +28,8 @@ description: "January 27-30, 2026"
 
 | Assignment Type | Assignment Title                              | Date Assigned  | Date Due                   |
 |-----------------|-----------------------------------------------|----------------|----------------------------|
-| Reading - | [](){target="_blank"}  |  01/16 | 01/22 |
-| Reading -  | [](){target="_blank"} |  01/16 | 01/22 |
-| Reading - *Mastering 'Metrics* | A&P: Chapter 5 | 01/16 | 01/22 |
+| Reading - Matching in Env. Sci. | [Schleicher et al., 2019](https://drive.google.com/file/d/19kAFMfwu3JEeZDLj0UCe42tGjmgzeLaS/view?usp=sharing){target="_blank"}  |  01/16 | 01/22 |
+| Reading - Review "Within Estimator" Section of Article | [Larsen et al., 2019](https://drive.google.com/file/d/1r4KI5SwPpb41PTB_8C7NM9Rrz8RH4GBm/view?usp=drive_link){target="_blank"} |  01/16 | 01/22 |
+
 
 : {.hover .bordered tbl-colwidths="[20,30,20,30]"} 

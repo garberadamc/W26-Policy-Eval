@@ -33,8 +33,8 @@ website:
             href: course-materials/week5.qmd
           - text: week 6 (2/10/25)
             href: course-materials/week6.qmd        
-          #- text: week 7 (17/02/25)
-          #  href: course-materials/week7.qmd
+          - text: week 7 (2/17/25)
+            href: course-materials/week7.qmd
           #- text: week 8 (24/02/25)
           #  href: course-materials/week8.qmd    
           #- text: week 9 (03/03/25)
