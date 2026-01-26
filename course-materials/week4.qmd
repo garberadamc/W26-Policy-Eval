@@ -28,8 +28,9 @@ description: "January 27-30, 2026"
 
 | Assignment Type | Assignment Title                              | Date Assigned  | Date Due                   |
 |-----------------|-----------------------------------------------|----------------|----------------------------|
-| Reading - Matching in Env. Sci. | [Schleicher et al., 2019](https://drive.google.com/file/d/19kAFMfwu3JEeZDLj0UCe42tGjmgzeLaS/view?usp=sharing){target="_blank"}  |  01/16 | 01/22 |
-| Reading - Review "Within Estimator" Section of Article | [Larsen et al., 2019](https://drive.google.com/file/d/1r4KI5SwPpb41PTB_8C7NM9Rrz8RH4GBm/view?usp=drive_link){target="_blank"} |  01/16 | 01/22 |
+| Assignment 2 | [Handout: HW2-Matching-DiD](assignments/HW2_START.qmd){target="_blank"} , [Repository: HW2-Matching-DiD](https://github.com/garberadamc/HW2-Matching-DiD.git){target="_blank"} | 01/26 | 02/04 |
+| Reading - Matching in Env. Sci. | [Schleicher et al., 2019](https://drive.google.com/file/d/19kAFMfwu3JEeZDLj0UCe42tGjmgzeLaS/view?usp=sharing){target="_blank"}  |  01/26 | 01/29 |
+| Reading - Review "Within Estimator" Section of Article | [Larsen et al., 2019](https://drive.google.com/file/d/1r4KI5SwPpb41PTB_8C7NM9Rrz8RH4GBm/view?usp=drive_link){target="_blank"} |  01/26 | 01/29 |
 
 
 : {.hover .bordered tbl-colwidths="[20,30,20,30]"} 
