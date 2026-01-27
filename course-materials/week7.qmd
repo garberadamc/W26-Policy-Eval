@@ -9,7 +9,7 @@ description: "February 17-20, 2026"
 
 | Lecture slides |  Resources |
 |----------------|------------|
-| [Lecture (TUES):  ](){target="_blank"}  | [](){target="_blank"}  |  
+| [Lecture (TUES): ](){target="_blank"}  | [](){target="_blank"}  |  
 | [Lecture (THURS): ](){target="_blank"}  | [](){target="_blank"}  | 
 : {.hover .bordered tbl-colwidths="[50,25,25]"} 
 
