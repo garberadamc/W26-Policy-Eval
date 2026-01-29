@@ -218,7 +218,7 @@ summary(match_model)
 
 *Response:* _________________________
 
-Visuallize balance on the covariates using `plot()` with `type = "density"`
+Visualize balance on the covariates using `plot()` with `type = "density"`
 ```{r}
 plot(match_model, type = "density", interactive = FALSE,
      which.xs = ~dist_to_deep_water + ssta_freq + reef_exposure)
