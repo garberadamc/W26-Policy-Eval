@@ -10,7 +10,7 @@ description: "January 27-30, 2026"
 | Lecture slides |  Resources |
 |----------------|------------|
 | [Lecture (TUES): Fixed Effects + Matching](https://drive.google.com/file/d/1jn_eGHQKqdSBCeYmoQQZW5KmWsQpRE6d/view?usp=drive_link){target="_blank"}  | [](){target="_blank"}  |  
-| [Lecture (THURS): ](){target="_blank"}  | [](){target="_blank"}  | 
+| [Lecture (THURS): Matching/FE (Lab Exercise)](https://drive.google.com/file/d/1IqNEwyYhJZRV5kCwqf54gEV6OdJzwp6T/view?usp=sharing){target="_blank"}  | [](){target="_blank"}  | 
 : {.hover .bordered tbl-colwidths="[50,25,25]"} 
 
 <br>
