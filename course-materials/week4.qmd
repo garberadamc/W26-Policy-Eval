@@ -19,7 +19,7 @@ description: "January 27-30, 2026"
 
 | Lab Materials to Download | Lab Solution |
 |----------------|------------|
-| [](){target="_blank"} | [](){target="_blank"} |
+| [Week 4 Lab](https://downgit.github.io/#/home?url=https://github.com/annieradams/EDS241-Weekly-Labs/tree/main/week4){target="_blank"} | [Week 4 Lab Solution](labs/week4.qmd){target="_blank"} |
 : {.hover .bordered tbl-colwidths="[50,50]"}
 
 
