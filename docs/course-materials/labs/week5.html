@@ -270,24 +270,19 @@ window.Quarto = {
   <ul>
   <li><a href="#rdd-review" id="toc-rdd-review" class="nav-link active" data-scroll-target="#rdd-review">RDD Review</a></li>
   <li><a href="#study-review-environmental-regulation-and-economic-performance-evidence-from-forest-conservation-in-mexico" id="toc-study-review-environmental-regulation-and-economic-performance-evidence-from-forest-conservation-in-mexico" class="nav-link" data-scroll-target="#study-review-environmental-regulation-and-economic-performance-evidence-from-forest-conservation-in-mexico">Study Review: “Environmental Regulation and Economic Performance: Evidence from Forest Conservation in Mexico”</a></li>
-  <li><a href="#study-replication" id="toc-study-replication" class="nav-link" data-scroll-target="#study-replication">Study Replication</a></li>
-  <li><a href="#load-packages-study-data" id="toc-load-packages-study-data" class="nav-link" data-scroll-target="#load-packages-study-data">0. Load packages + study data</a>
+  <li><a href="#study-replication" id="toc-study-replication" class="nav-link" data-scroll-target="#study-replication">Study Replication</a>
   <ul class="collapse">
+  <li><a href="#load-packages-study-data" id="toc-load-packages-study-data" class="nav-link" data-scroll-target="#load-packages-study-data">0. Load packages + study data</a></li>
   <li><a href="#create-variable-description-table-for-key-variables-in-the-analysis" id="toc-create-variable-description-table-for-key-variables-in-the-analysis" class="nav-link" data-scroll-target="#create-variable-description-table-for-key-variables-in-the-analysis">1. Create variable description table for key variables in the analysis</a></li>
-  </ul></li>
-  <li><a href="#visualize-the-discontinuity-using-binned-means-bin-size-1" id="toc-visualize-the-discontinuity-using-binned-means-bin-size-1" class="nav-link" data-scroll-target="#visualize-the-discontinuity-using-binned-means-bin-size-1">2. Visualize the discontinuity using binned means (<code>bin size = 1</code>)</a>
-  <ul class="collapse">
+  <li><a href="#visualize-the-discontinuity-using-binned-means-bin-size-1" id="toc-visualize-the-discontinuity-using-binned-means-bin-size-1" class="nav-link" data-scroll-target="#visualize-the-discontinuity-using-binned-means-bin-size-1">2. Visualize the discontinuity using binned means (<code>bin size = 1</code>)</a></li>
   <li><a href="#plot-using-binned-data" id="toc-plot-using-binned-data" class="nav-link" data-scroll-target="#plot-using-binned-data">3. Plot using binned data</a></li>
-  </ul></li>
-  <li><a href="#insert-question" id="toc-insert-question" class="nav-link" data-scroll-target="#insert-question"><strong>INSERT QUESTION</strong></a>
-  <ul class="collapse">
   <li><a href="#run-rdd-analysis-using-ols" id="toc-run-rdd-analysis-using-ols" class="nav-link" data-scroll-target="#run-rdd-analysis-using-ols">4. Run RDD Analysis using OLS</a></li>
   <li><a href="#estimate-visualize-rdd-using-rdrobust" id="toc-estimate-visualize-rdd-using-rdrobust" class="nav-link" data-scroll-target="#estimate-visualize-rdd-using-rdrobust">4. Estimate &amp; Visualize RDD using <code>{rdrobust}</code></a></li>
   <li><a href="#estimate-global-rdd" id="toc-estimate-global-rdd" class="nav-link" data-scroll-target="#estimate-global-rdd">5. Estimate Global RDD</a></li>
   <li><a href="#visualize-the-rdd-discontinuity-using-rdplot" id="toc-visualize-the-rdd-discontinuity-using-rdplot" class="nav-link" data-scroll-target="#visualize-the-rdd-discontinuity-using-rdplot">6. Visualize the RDD discontinuity using <code>rdplot()</code>:</a></li>
   <li><a href="#estimate-separate-rdd-models-by-country-using-a-loop-function" id="toc-estimate-separate-rdd-models-by-country-using-a-loop-function" class="nav-link" data-scroll-target="#estimate-separate-rdd-models-by-country-using-a-loop-function">7. Estimate separate RDD models by country using a loop function 🔄</a></li>
   <li><a href="#generate-county-level-discontinuity-plots" id="toc-generate-county-level-discontinuity-plots" class="nav-link" data-scroll-target="#generate-county-level-discontinuity-plots">8. Generate county level discontinuity plots</a></li>
-  <li><a href="#print-combined-rdd-plots" id="toc-print-combined-rdd-plots" class="nav-link" data-scroll-target="#print-combined-rdd-plots">9. Print combined RDD Plots</a></li>
+  <li><a href="#print-combined-rdd-plots-by-country" id="toc-print-combined-rdd-plots-by-country" class="nav-link" data-scroll-target="#print-combined-rdd-plots-by-country">9. Print combined RDD Plots by country</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -334,9 +329,8 @@ window.Quarto = {
 <section id="study-replication" class="level2">
 <h2 class="anchored" data-anchor-id="study-replication">Study Replication</h2>
 <p>Using <code>Simulated_Deforestation_Data5.csv</code>, we will replicate Neal’s approach.</p>
-</section>
-<section id="load-packages-study-data" class="level2">
-<h2 class="anchored" data-anchor-id="load-packages-study-data">0. Load packages + study data</h2>
+<section id="load-packages-study-data" class="level3">
+<h3 class="anchored" data-anchor-id="load-packages-study-data">0. Load packages + study data</h3>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rdrobust)</span>
@@ -350,27 +344,28 @@ window.Quarto = {
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>sim_data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">here</span>(<span class="st">"week4"</span>, <span class="st">"Simulated_Deforestation_Data5.csv"</span>), <span class="at">show_col_types =</span> <span class="cn">FALSE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
+</section>
 <section id="create-variable-description-table-for-key-variables-in-the-analysis" class="level3">
 <h3 class="anchored" data-anchor-id="create-variable-description-table-for-key-variables-in-the-analysis">1. Create variable description table for key variables in the analysis</h3>
 <div class="cell">
 <div class="cell-output-display">
-<div id="glgneepymj" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#glgneepymj table {
+<div id="yqdztskwof" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#yqdztskwof table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#glgneepymj thead, #glgneepymj tbody, #glgneepymj tfoot, #glgneepymj tr, #glgneepymj td, #glgneepymj th {
+#yqdztskwof thead, #yqdztskwof tbody, #yqdztskwof tfoot, #yqdztskwof tr, #yqdztskwof td, #yqdztskwof th {
   border-style: none;
 }
 
-#glgneepymj p {
+#yqdztskwof p {
   margin: 0;
   padding: 0;
 }
 
-#glgneepymj .gt_table {
+#yqdztskwof .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -396,12 +391,12 @@ window.Quarto = {
   border-left-color: #D3D3D3;
 }
 
-#glgneepymj .gt_caption {
+#yqdztskwof .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#glgneepymj .gt_title {
+#yqdztskwof .gt_title {
   color: #333333;
   font-size: 20px;
   font-weight: initial;
@@ -413,7 +408,7 @@ window.Quarto = {
   border-bottom-width: 0;
 }
 
-#glgneepymj .gt_subtitle {
+#yqdztskwof .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -425,7 +420,7 @@ window.Quarto = {
   border-top-width: 0;
 }
 
-#glgneepymj .gt_heading {
+#yqdztskwof .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -437,13 +432,13 @@ window.Quarto = {
   border-right-color: #D3D3D3;
 }
 
-#glgneepymj .gt_bottom_border {
+#yqdztskwof .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#glgneepymj .gt_col_headings {
+#yqdztskwof .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -458,7 +453,7 @@ window.Quarto = {
   border-right-color: #D3D3D3;
 }
 
-#glgneepymj .gt_col_heading {
+#yqdztskwof .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -478,7 +473,7 @@ window.Quarto = {
   overflow-x: hidden;
 }
 
-#glgneepymj .gt_column_spanner_outer {
+#yqdztskwof .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -490,15 +485,15 @@ window.Quarto = {
   padding-right: 4px;
 }
 
-#glgneepymj .gt_column_spanner_outer:first-child {
+#yqdztskwof .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#glgneepymj .gt_column_spanner_outer:last-child {
+#yqdztskwof .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#glgneepymj .gt_column_spanner {
+#yqdztskwof .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -510,11 +505,11 @@ window.Quarto = {
   width: 100%;
 }
 
-#glgneepymj .gt_spanner_row {
+#yqdztskwof .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#glgneepymj .gt_group_heading {
+#yqdztskwof .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -540,7 +535,7 @@ window.Quarto = {
   text-align: left;
 }
 
-#glgneepymj .gt_empty_group_heading {
+#yqdztskwof .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -555,15 +550,15 @@ window.Quarto = {
   vertical-align: middle;
 }
 
-#glgneepymj .gt_from_md > :first-child {
+#yqdztskwof .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#glgneepymj .gt_from_md > :last-child {
+#yqdztskwof .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#glgneepymj .gt_row {
+#yqdztskwof .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -582,7 +577,7 @@ window.Quarto = {
   overflow-x: hidden;
 }
 
-#glgneepymj .gt_stub {
+#yqdztskwof .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -595,7 +590,7 @@ window.Quarto = {
   padding-right: 5px;
 }
 
-#glgneepymj .gt_stub_row_group {
+#yqdztskwof .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -609,15 +604,15 @@ window.Quarto = {
   vertical-align: top;
 }
 
-#glgneepymj .gt_row_group_first td {
+#yqdztskwof .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#glgneepymj .gt_row_group_first th {
+#yqdztskwof .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#glgneepymj .gt_summary_row {
+#yqdztskwof .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -627,16 +622,16 @@ window.Quarto = {
   padding-right: 5px;
 }
 
-#glgneepymj .gt_first_summary_row {
+#yqdztskwof .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#glgneepymj .gt_first_summary_row.thick {
+#yqdztskwof .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#glgneepymj .gt_last_summary_row {
+#yqdztskwof .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -646,7 +641,7 @@ window.Quarto = {
   border-bottom-color: #D3D3D3;
 }
 
-#glgneepymj .gt_grand_summary_row {
+#yqdztskwof .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -656,7 +651,7 @@ window.Quarto = {
   padding-right: 5px;
 }
 
-#glgneepymj .gt_first_grand_summary_row {
+#yqdztskwof .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -666,7 +661,7 @@ window.Quarto = {
   border-top-color: #D3D3D3;
 }
 
-#glgneepymj .gt_last_grand_summary_row_top {
+#yqdztskwof .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -676,11 +671,11 @@ window.Quarto = {
   border-bottom-color: #D3D3D3;
 }
 
-#glgneepymj .gt_striped {
+#yqdztskwof .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#glgneepymj .gt_table_body {
+#yqdztskwof .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -689,7 +684,7 @@ window.Quarto = {
   border-bottom-color: #D3D3D3;
 }
 
-#glgneepymj .gt_footnotes {
+#yqdztskwof .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -703,7 +698,7 @@ window.Quarto = {
   border-right-color: #D3D3D3;
 }
 
-#glgneepymj .gt_footnote {
+#yqdztskwof .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -712,7 +707,7 @@ window.Quarto = {
   padding-right: 5px;
 }
 
-#glgneepymj .gt_sourcenotes {
+#yqdztskwof .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -726,7 +721,7 @@ window.Quarto = {
   border-right-color: #D3D3D3;
 }
 
-#glgneepymj .gt_sourcenote {
+#yqdztskwof .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -734,72 +729,72 @@ window.Quarto = {
   padding-right: 5px;
 }
 
-#glgneepymj .gt_left {
+#yqdztskwof .gt_left {
   text-align: left;
 }
 
-#glgneepymj .gt_center {
+#yqdztskwof .gt_center {
   text-align: center;
 }
 
-#glgneepymj .gt_right {
+#yqdztskwof .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#glgneepymj .gt_font_normal {
+#yqdztskwof .gt_font_normal {
   font-weight: normal;
 }
 
-#glgneepymj .gt_font_bold {
+#yqdztskwof .gt_font_bold {
   font-weight: bold;
 }
 
-#glgneepymj .gt_font_italic {
+#yqdztskwof .gt_font_italic {
   font-style: italic;
 }
 
-#glgneepymj .gt_super {
+#yqdztskwof .gt_super {
   font-size: 65%;
 }
 
-#glgneepymj .gt_footnote_marks {
+#yqdztskwof .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#glgneepymj .gt_asterisk {
+#yqdztskwof .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#glgneepymj .gt_indent_1 {
+#yqdztskwof .gt_indent_1 {
   text-indent: 5px;
 }
 
-#glgneepymj .gt_indent_2 {
+#yqdztskwof .gt_indent_2 {
   text-indent: 10px;
 }
 
-#glgneepymj .gt_indent_3 {
+#yqdztskwof .gt_indent_3 {
   text-indent: 15px;
 }
 
-#glgneepymj .gt_indent_4 {
+#yqdztskwof .gt_indent_4 {
   text-indent: 20px;
 }
 
-#glgneepymj .gt_indent_5 {
+#yqdztskwof .gt_indent_5 {
   text-indent: 25px;
 }
 
-#glgneepymj .katex-display {
+#yqdztskwof .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#glgneepymj div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#yqdztskwof div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -869,9 +864,8 @@ window.Quarto = {
 </div>
 </div>
 </section>
-</section>
-<section id="visualize-the-discontinuity-using-binned-means-bin-size-1" class="level2">
-<h2 class="anchored" data-anchor-id="visualize-the-discontinuity-using-binned-means-bin-size-1">2. Visualize the discontinuity using binned means (<code>bin size = 1</code>)</h2>
+<section id="visualize-the-discontinuity-using-binned-means-bin-size-1" class="level3">
+<h3 class="anchored" data-anchor-id="visualize-the-discontinuity-using-binned-means-bin-size-1">2. Visualize the discontinuity using binned means (<code>bin size = 1</code>)</h3>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>data_binned <span class="ot">&lt;-</span> sim_data <span class="sc">%&gt;%</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">distance_bin =</span> <span class="fu">cut</span>(distance, <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">20</span>, <span class="dv">20</span>, <span class="at">by =</span> <span class="dv">1</span>), <span class="at">include.lowest =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span></span>
@@ -882,17 +876,21 @@ window.Quarto = {
 <span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">.groups =</span> <span class="st">"drop"</span></span>
 <span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
+</section>
 <section id="plot-using-binned-data" class="level3">
 <h3 class="anchored" data-anchor-id="plot-using-binned-data">3. Plot using binned data</h3>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data_binned, <span class="fu">aes</span>(<span class="at">x =</span> avg_distance, <span class="at">y =</span> avg_deforest, <span class="at">color =</span> <span class="fu">as.factor</span>(protected))) <span class="sc">+</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>rdd_lm <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(data_binned, <span class="fu">aes</span>(<span class="at">x =</span> avg_distance, <span class="at">y =</span> avg_deforest, <span class="at">color =</span> <span class="fu">as.factor</span>(protected))) <span class="sc">+</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="fu">aes</span>(<span class="at">group =</span> protected), <span class="at">se =</span> <span class="cn">TRUE</span>) <span class="sc">+</span></span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">0</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
 <span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Regression Discontinuity Plot (Binned by Distance)"</span>,</span>
 <span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Running Variable (Distance)"</span>, <span class="at">y =</span> <span class="st">"Deforestation Rate"</span>,</span>
 <span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">"Protected Area"</span>) <span class="sc">+</span></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>rdd_lm</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -901,10 +899,21 @@ window.Quarto = {
 </div>
 </div>
 </div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Comprehension Check">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Comprehension Check
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Interpret the plot above. What are the two lines representing and what do their trends reveal? Explain what the positive and negative values mean here (refer to the variable description for distance if you are unsure!).</p>
+<p>What would it mean if there were NO discontinuity at distance = 0? How would that change your interpretation of protected area effectiveness?</p>
+</div>
+</div>
 </section>
-</section>
-<section id="insert-question" class="level2">
-<h2 class="anchored" data-anchor-id="insert-question"><strong>INSERT QUESTION</strong></h2>
 <section id="run-rdd-analysis-using-ols" class="level3">
 <h3 class="anchored" data-anchor-id="run-rdd-analysis-using-ols">4. Run RDD Analysis using OLS</h3>
 <div class="cell">
@@ -1087,7 +1096,19 @@ protected:distance
 </table>
 </div>
 </div>
-<p><strong>INSERT QUESTION</strong></p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Comprehension Check">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Comprehension Check
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Based on the regression results, what is the estimated causal effect of protected area status on deforestation? Does this match what you see in the plot?</p>
+</div>
+</div>
 </section>
 <section id="estimate-visualize-rdd-using-rdrobust" class="level3">
 <h3 class="anchored" data-anchor-id="estimate-visualize-rdd-using-rdrobust">4. Estimate &amp; Visualize RDD using <code>{rdrobust}</code></h3>
@@ -1149,12 +1170,26 @@ Unique Obs.                  299889       300111
 =====================================================================</code></pre>
 </div>
 </div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Comprehension Check">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Comprehension Check
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The RD Effect here is -0.092, while in the previous regression table the ‘protected’ coefficient was -0.094. Why are they similar but not exactly the same? Which one should we trust more?</p>
+<p>What advantages does this ‘local polynomial regression’ approach have over the simple linear regression we saw before?</p>
+</div>
+</div>
 </section>
 <section id="visualize-the-rdd-discontinuity-using-rdplot" class="level3">
 <h3 class="anchored" data-anchor-id="visualize-the-rdd-discontinuity-using-rdplot">6. Visualize the RDD discontinuity using <code>rdplot()</code>:</h3>
 <p>This plot presents the local polynomial regression curves fit on either side of the cutoff.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rdplot</span>(</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>rdd_poly <span class="ot">&lt;-</span> <span class="fu">rdplot</span>(</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">y =</span> sim_data<span class="sc">$</span>deforest,</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">x =</span> sim_data<span class="sc">$</span>distance,</span>
 <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">c =</span> <span class="dv">0</span>,</span>
@@ -1169,6 +1204,43 @@ Unique Obs.                  299889       300111
 <p><img src="week5_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>rdd_poly</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Call: rdplot
+
+Number of Obs.               600000
+Kernel                      Uniform
+
+Number of Obs.               299889          300111
+Eff. Number of Obs.          299889          300111
+Order poly. fit (p)               4               4
+BW poly. fit (h)             20.000          20.000
+Number of bins scale          1.000           1.000</code></pre>
+</div>
+</div>
+<p>Let’s look at our results side by side.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>rdd_lm <span class="sc">+</span> rdd_poly<span class="sc">$</span>rdplot </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="week5_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Comprehension Check">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Comprehension Check
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Compare the two plots. What key differences do you notice between the left plot (binned linear) and the right plot (local polynomial)? Which one better captures the pattern in the data?</p>
 </div>
 </div>
 </section>
@@ -1188,24 +1260,24 @@ Unique Obs.                  299889       300111
 </div>
 </div>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>run_country_rdd <span class="ot">&lt;-</span> <span class="cf">function</span>(country_name) {</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  df_country <span class="ot">&lt;-</span> sim_data <span class="sc">%&gt;%</span> <span class="fu">filter</span>(country <span class="sc">==</span> country_name)</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    rdd_model <span class="ot">&lt;-</span> <span class="fu">rdrobust</span>(</span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>      <span class="at">y =</span> df_country<span class="sc">$</span>deforest,</span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>      <span class="at">x =</span> df_country<span class="sc">$</span>distance,</span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>      <span class="at">covs =</span> df_country <span class="sc">%&gt;%</span> <span class="fu">select</span>(slope_cat, road_cat, water_cat, soil_cat),</span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>      <span class="at">c =</span> <span class="dv">0</span>, </span>
-<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>      <span class="at">p =</span> <span class="dv">1</span>,</span>
-<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>      <span class="at">kernel =</span> <span class="st">"triangular"</span></span>
-<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Apply the function to all countries</span></span>
-<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>rdd_6country <span class="ot">&lt;-</span> <span class="fu">lapply</span>(<span class="fu">unique</span>(sim_data<span class="sc">$</span>country), run_country_rdd)</span>
-<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Print summary for `DRC`</span></span>
-<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(rdd_6country[[<span class="dv">3</span>]]) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>run_country_rdd <span class="ot">&lt;-</span> <span class="cf">function</span>(country_name) {</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  df_country <span class="ot">&lt;-</span> sim_data <span class="sc">%&gt;%</span> <span class="fu">filter</span>(country <span class="sc">==</span> country_name)</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>    rdd_model <span class="ot">&lt;-</span> <span class="fu">rdrobust</span>(</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>      <span class="at">y =</span> df_country<span class="sc">$</span>deforest,</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>      <span class="at">x =</span> df_country<span class="sc">$</span>distance,</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>      <span class="at">covs =</span> df_country <span class="sc">%&gt;%</span> <span class="fu">select</span>(slope_cat, road_cat, water_cat, soil_cat),</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>      <span class="at">c =</span> <span class="dv">0</span>, </span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>      <span class="at">p =</span> <span class="dv">1</span>,</span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>      <span class="at">kernel =</span> <span class="st">"triangular"</span></span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Apply the function to all countries</span></span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a>rdd_6country <span class="ot">&lt;-</span> <span class="fu">lapply</span>(<span class="fu">unique</span>(sim_data<span class="sc">$</span>country), run_country_rdd)</span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Print summary for `DRC`</span></span>
+<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(rdd_6country[[<span class="dv">3</span>]]) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Covariate-adjusted Sharp RD estimates using local polynomial regression.
 
@@ -1235,87 +1307,100 @@ Unique Obs.                   50031        49969
 <section id="generate-county-level-discontinuity-plots" class="level3">
 <h3 class="anchored" data-anchor-id="generate-county-level-discontinuity-plots">8. Generate county level discontinuity plots</h3>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create list to store plots</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>plot_list <span class="ot">&lt;-</span> <span class="fu">list</span>()</span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Loop across 6 countries and plot</span></span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (country_name <span class="cf">in</span> <span class="fu">unique</span>(sim_data<span class="sc">$</span>country)) {</span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>  df_country <span class="ot">&lt;-</span> sim_data <span class="sc">%&gt;%</span> <span class="fu">filter</span>(country <span class="sc">==</span> country_name)</span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a> p <span class="ot">&lt;-</span> <span class="fu">rdplot</span>(</span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>      <span class="at">y =</span> df_country<span class="sc">$</span>deforest,</span>
-<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>      <span class="at">x =</span> df_country<span class="sc">$</span>distance,</span>
-<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>      <span class="at">c =</span> <span class="dv">0</span>,</span>
-<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>      <span class="at">binselect =</span> <span class="st">"es"</span>,</span>
-<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>      <span class="at">title =</span> <span class="fu">paste</span>(country_name),</span>
-<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>      <span class="at">x.label=</span><span class="st">""</span>, <span class="at">y.label =</span> <span class="st">""</span>)</span>
-<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a> p <span class="ot">&lt;-</span> p<span class="sc">$</span>rdplot <span class="sc">+</span></span>
-<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>     <span class="fu">labs</span>(<span class="at">x=</span><span class="st">" "</span>,<span class="at">y=</span><span class="st">""</span>)</span>
-<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a> </span>
-<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a>  plot_list[[country_name]] <span class="ot">&lt;-</span> p  <span class="co"># Store each plot in the list</span></span>
-<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a>  }</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="week5_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="week5_files/figure-html/unnamed-chunk-12-2.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="week5_files/figure-html/unnamed-chunk-12-3.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="week5_files/figure-html/unnamed-chunk-12-4.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="week5_files/figure-html/unnamed-chunk-12-5.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="week5_files/figure-html/unnamed-chunk-12-6.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="print-combined-rdd-plots" class="level3">
-<h3 class="anchored" data-anchor-id="print-combined-rdd-plots">9. Print combined RDD Plots</h3>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>final_plot <span class="ot">&lt;-</span> <span class="fu">wrap_plots</span>(plot_list) <span class="sc">+</span> </span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_layout</span>(<span class="at">ncol =</span> <span class="dv">2</span>) <span class="sc">+</span>  </span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_annotation</span>(</span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Deforestation Rate"</span>,</span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">caption =</span> <span class="st">"Source: Simulation Data"</span></span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>final_plot</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create list to store plots</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>plot_list <span class="ot">&lt;-</span> <span class="fu">list</span>()</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Loop across 6 countries and plot</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (country_name <span class="cf">in</span> <span class="fu">unique</span>(sim_data<span class="sc">$</span>country)) {</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>  df_country <span class="ot">&lt;-</span> sim_data <span class="sc">%&gt;%</span> <span class="fu">filter</span>(country <span class="sc">==</span> country_name)</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a> p <span class="ot">&lt;-</span> <span class="fu">rdplot</span>(</span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>      <span class="at">y =</span> df_country<span class="sc">$</span>deforest,</span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>      <span class="at">x =</span> df_country<span class="sc">$</span>distance,</span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>      <span class="at">c =</span> <span class="dv">0</span>,</span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>      <span class="at">binselect =</span> <span class="st">"es"</span>,</span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>      <span class="at">title =</span> <span class="fu">paste</span>(country_name),</span>
+<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a>      <span class="at">x.label=</span><span class="st">""</span>, <span class="at">y.label =</span> <span class="st">""</span>)</span>
+<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a> p <span class="ot">&lt;-</span> p<span class="sc">$</span>rdplot <span class="sc">+</span></span>
+<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a>     <span class="fu">labs</span>(<span class="at">x=</span><span class="st">" "</span>,<span class="at">y=</span><span class="st">""</span>)</span>
+<span id="cb15-18"><a href="#cb15-18" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb15-19"><a href="#cb15-19" aria-hidden="true" tabindex="-1"></a>  plot_list[[country_name]] <span class="ot">&lt;-</span> p  <span class="co"># Store each plot in the list</span></span>
+<span id="cb15-20"><a href="#cb15-20" aria-hidden="true" tabindex="-1"></a>  }</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
 <p><img src="week5_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="week5_files/figure-html/unnamed-chunk-13-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="week5_files/figure-html/unnamed-chunk-13-3.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="week5_files/figure-html/unnamed-chunk-13-4.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="week5_files/figure-html/unnamed-chunk-13-5.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="week5_files/figure-html/unnamed-chunk-13-6.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="print-combined-rdd-plots-by-country" class="level3">
+<h3 class="anchored" data-anchor-id="print-combined-rdd-plots-by-country">9. Print combined RDD Plots by country</h3>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>final_plot <span class="ot">&lt;-</span> <span class="fu">wrap_plots</span>(plot_list) <span class="sc">+</span> </span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_layout</span>(<span class="at">ncol =</span> <span class="dv">2</span>) <span class="sc">+</span>  </span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_annotation</span>(</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Deforestation Rate"</span>,</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">caption =</span> <span class="st">"Source: Simulation Data"</span></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>final_plot</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="week5_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Comprehension Check">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Comprehension Check
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>How do the results of these countries compare with the results from Neal 2024?</p>
 </div>
 </div>
 

@@ -63,7 +63,7 @@ Protected areas are only about **30% effective** on average at preventing defore
 
 Using `Simulated_Deforestation_Data5.csv`, we will replicate Neal’s approach. 
 
-## 0. Load packages + study data 
+### 0. Load packages + study data 
 
 ```{r}
 library(tidyverse)
@@ -133,7 +133,7 @@ gt(variable_descriptions) %>%
 
 
 
-## 2. Visualize the discontinuity using binned means (`bin size = 1`)
+### 2. Visualize the discontinuity using binned means (`bin size = 1`)
 
 
 
@@ -152,7 +152,7 @@ data_binned <- sim_data %>%
 
 ### 3. Plot using binned data 
 ```{r}
-ggplot(data_binned, aes(x = avg_distance, y = avg_deforest, color = as.factor(protected))) +
+rdd_lm <- ggplot(data_binned, aes(x = avg_distance, y = avg_deforest, color = as.factor(protected))) +
   geom_point(alpha = 0.5) +
   geom_smooth(method = "lm", aes(group = protected), se = TRUE) +
   geom_vline(xintercept = 0, linetype = "dashed", color = "black") +
@@ -160,11 +160,18 @@ ggplot(data_binned, aes(x = avg_distance, y = avg_deforest, color = as.factor(pr
        x = "Running Variable (Distance)", y = "Deforestation Rate",
        color = "Protected Area") +
   theme_minimal()
+
+
+rdd_lm
 ```
 
 
-## **INSERT QUESTION**
+:::{.callout-tip title="Comprehension Check"}
+Interpret the plot above. What are the two lines representing and what do their trends reveal? Explain what the positive and negative values mean here (refer to the variable description for distance if you are unsure!). 
 
+
+What would it mean if there were NO discontinuity at distance = 0? How would that change your interpretation of protected area effectiveness?
+:::
 
 ### 4. Run RDD Analysis using OLS 
 ```{r}
@@ -182,7 +189,9 @@ summ(rdd_ols, digits = 3,
 ```
 
 
-**INSERT QUESTION**
+:::{.callout-tip title="Comprehension Check"}
+Based on the regression results, what is the estimated causal effect of protected area status on deforestation? Does this match what you see in the plot?
+:::
 
 
 ### 4. Estimate & Visualize RDD using `{rdrobust}` 
@@ -228,12 +237,20 @@ summary(global_rdd)
 ```
 
 
+
+:::{.callout-tip title= "Comprehension Check"}
+The RD Effect here is -0.092, while in the previous regression table the 'protected' coefficient was -0.094. Why are they similar but not exactly the same? Which one should we trust more?
+
+What advantages does this 'local polynomial regression' approach have over the simple linear regression we saw before?
+:::
+
+
 ### 6. Visualize the RDD discontinuity using `rdplot()`:
 
 This plot presents the local polynomial regression curves fit on either side of the cutoff.
 
 ```{r}
-rdplot(
+rdd_poly <- rdplot(
   y = sim_data$deforest,
   x = sim_data$distance,
   c = 0,
@@ -242,8 +259,20 @@ rdplot(
   x.label = "Distance to Protected Area Border (km)",
   y.label = "Deforestation Rate"
 )
+
+rdd_poly
 ```
 
+Let's look at our results side by side. 
+
+```{r}
+rdd_lm + rdd_poly$rdplot 
+```
+
+
+:::{.callout-tip title="Comprehension Check"}
+Compare the two plots. What key differences do you notice between the left plot (binned linear) and the right plot (local polynomial)? Which one better captures the pattern in the data?
+:::
 
 ### 7. Estimate separate RDD models by country using a loop function 🔄
 
@@ -300,7 +329,7 @@ for (country_name in unique(sim_data$country)) {
 
 
 
-### 9. Print combined RDD Plots
+### 9. Print combined RDD Plots by country
 ```{r}
 final_plot <- wrap_plots(plot_list) + 
   plot_layout(ncol = 2) +  
@@ -313,3 +342,7 @@ final_plot
 
 ```
 
+
+:::{.callout-tip title="Comprehension Check"}
+How do the results of these countries compare with the results from Neal 2024?
+:::
