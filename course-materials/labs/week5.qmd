@@ -15,9 +15,9 @@ knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
 
 ## RDD Review 
 
-Regression Discontinuity Design is a experimental method used to estimate the causal effects of a treatment by exploiting a "cutoff" or "threshold" in an assignment variable. 
+Regression Discontinuity Design is a natural experimental method used to estimate the causal effects of a treatment by exploiting a "cutoff" or "threshold" in an assignment variable. 
 
-- The assignment variable ($X$): A continuous measure used for assignment
+- The running variable ($X$): A continuous measure used for assignment
 
 - The Cutoff ($c$): The threshold rule
 
@@ -26,21 +26,15 @@ Regression Discontinuity Design is a experimental method used to estimate the ca
 
 
 
-
-
-
-
 ## Study Review:  "Environmental Regulation and Economic Performance: Evidence from Forest Conservation in Mexico"
-
-This lab uses open-access replication data from:
-
-> 
-
 
 
 This lab replicates the analysis from Neal (2024), which examines how effective government-protected forest areas are at preventing deforestation globally from 2000-2022. Using satellite data covering 7.4 billion forest observations and a regression discontinuity design, the study addresses a critical policy question:
 
 > **Does legal protection actually prevent forests from being cleared?**
+
+We will use simulated data to approximate the study estimates. The results should not be interpreted literally as simulated data necessarily includes assumptions that omit complexity found in the original study data.
+
 
 
 #### The Selection Bias Problem 
@@ -50,18 +44,18 @@ Governments don't randomly assign protection. They typically protect forests tha
 
 #### The RDD Solution 
 
-By comparing forests immediately on either side of protected area boundaries (within ~1.5km), the study isolates the causal effect of legal protection. Two forests 50 meters apart on opposite sides of a boundary are virtually identical except for protection status.
+By comparing forests immediately on either side of protected area boundaries (within ~1.5km), the study isolates the causal effect of legal protection. Two forests 50 meters apart on opposite sides of a boundary make for a good comparison except for protection status.
 
 
 #### The Findings
 
-Protected areas are only about **30% effective** on average at preventing deforestation. While some nations like New Zealand (89% effective), Finland (77%), and Canada (63%) show high effectiveness, many countries with critical biodiversity have essentially ineffective protection: Indonesia (11%), the Democratic Republic of Congo (4%), Bolivia (4%), and Venezuela (0%).
+Protected areas are only about **30% effective** on average at preventing deforestation. While some nations like New Zealand (89% effective), Finland (77%), and Canada (63%) show high effectiveness, many countries with critical biodiversity have relatively low protection efficacy: Indonesia (11%), the Democratic Republic of Congo (4%), Bolivia (4%), and Venezuela (0%).
 
 
 
 ## Study Replication
 
-Using `Simulated_Deforestation_Data5.csv`, we will replicate Neal’s approach. 
+Using `Simulated_Deforestation_Data6.csv`, we will replicate Neal’s approach. 
 
 ### 0. Load packages + study data 
 
@@ -81,7 +75,7 @@ Read in the simulated data
 #| echo: true
 
 
-sim_data <- read_csv(here("week4", "Simulated_Deforestation_Data5.csv"), show_col_types = FALSE)
+sim_data <- read_csv(here("week5", "Simulated_Deforestation_Data6.csv"), show_col_types = FALSE)
 ```
 
 
@@ -89,7 +83,7 @@ sim_data <- read_csv(here("week4", "Simulated_Deforestation_Data5.csv"), show_co
 #| eval: true
 #| echo: false
 
-sim_data <- read_csv(here("course-materials","labs", "data", "RDD", "Simulated_Deforestation_Data5.csv"), show_col_types = FALSE)
+sim_data <- read_csv(here("course-materials","labs", "data", "RDD", "Simulated_Deforestation_Data6.csv"), show_col_types = FALSE)
 ```
 
 
@@ -190,7 +184,7 @@ summ(rdd_ols, digits = 3,
 
 
 :::{.callout-tip title="Comprehension Check"}
-Based on the regression results, what is the estimated causal effect of protected area status on deforestation? Does this match what you see in the plot?
+Based on the regression results, what is the estimated causal effect of protected area status on deforestation? Does this match what you see in the plot? What does the interaction coefficient represent?
 :::
 
 
@@ -209,7 +203,7 @@ Default estimation options used by the `rdrobust()` function:
 
 **Bandwidth Optimization** (BW type: mserd): Bandwidth is optimized to balance accuracy & bias.
 
-**Bandwidth Estimate** (BW est. (h) = 5.729): The estimated range around the cutoff used to subset the data to estimate the treatment effect.
+**Bandwidth Estimate** (BW est. (h) = 2.207): The estimated range around the cutoff used to subset the data to estimate the treatment effect.
 
 **Kernel** (Triangular): Gives higher weight to data points close to the cutoff.
 
@@ -239,7 +233,7 @@ summary(global_rdd)
 
 
 :::{.callout-tip title= "Comprehension Check"}
-The RD Effect here is -0.092, while in the previous regression table the `protected` coefficient was -0.094. Why are they similar but not exactly the same? Which one should we trust more?
+The RD Effect here is -0.073, while in the previous regression table the `protected` coefficient was  -0.100. Why are they similar but not exactly the same? Which one should we trust more?
 
 What advantages does this 'local polynomial regression' approach have over the simple linear regression we saw before?
 :::

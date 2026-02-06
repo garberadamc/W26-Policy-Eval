@@ -19,7 +19,7 @@ description: "February 3-6, 2026"
 
 | Lab Materials to Download | Lab Solution |
 |----------------|------------|
-| [](){target="_blank"} | [Week 5 Lab Solution](labs/week5.qmd){target="_blank"} |
+| [Lab 5 Template qmd ](https://github.com/annieradams/EDS241-Weekly-Labs/blob/main/week5/week5.qmd) <br> [Lab 5 Data](https://drive.google.com/file/d/1d36jrQ1pJp_WhK5alagNa4bLK4nOSvaD/view){target="_blank"} | [Week 5 Lab Solution](labs/week5.qmd){target="_blank"} |
 : {.hover .bordered tbl-colwidths="[50,50]"}
 
 
