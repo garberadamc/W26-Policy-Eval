@@ -296,39 +296,36 @@ window.Quarto = {
 
 <section id="rdd-review" class="level2">
 <h2 class="anchored" data-anchor-id="rdd-review">RDD Review</h2>
-<p>Regression Discontinuity Design is a experimental method used to estimate the causal effects of a treatment by exploiting a “cutoff” or “threshold” in an assignment variable.</p>
+<p>Regression Discontinuity Design is a natural experimental method used to estimate the causal effects of a treatment by exploiting a “cutoff” or “threshold” in an assignment variable.</p>
 <ul>
-<li><p>The assignment variable (<span class="math inline">\(X\)</span>): A continuous measure used for assignment</p></li>
+<li><p>The running variable (<span class="math inline">\(X\)</span>): A continuous measure used for assignment</p></li>
 <li><p>The Cutoff (<span class="math inline">\(c\)</span>): The threshold rule</p></li>
 <li><p>Treatment rule (<span class="math inline">\(D\)</span>): What changes at the cutoff (policy / intervention)</p></li>
 </ul>
 </section>
 <section id="study-review-environmental-regulation-and-economic-performance-evidence-from-forest-conservation-in-mexico" class="level2">
 <h2 class="anchored" data-anchor-id="study-review-environmental-regulation-and-economic-performance-evidence-from-forest-conservation-in-mexico">Study Review: “Environmental Regulation and Economic Performance: Evidence from Forest Conservation in Mexico”</h2>
-<p>This lab uses open-access replication data from:</p>
-<blockquote class="blockquote">
-
-</blockquote>
 <p>This lab replicates the analysis from Neal (2024), which examines how effective government-protected forest areas are at preventing deforestation globally from 2000-2022. Using satellite data covering 7.4 billion forest observations and a regression discontinuity design, the study addresses a critical policy question:</p>
 <blockquote class="blockquote">
 <p><strong>Does legal protection actually prevent forests from being cleared?</strong></p>
 </blockquote>
+<p>We will use simulated data to approximate the study estimates. The results should not be interpreted literally as simulated data necessarily includes assumptions that omit complexity found in the original study data.</p>
 <section id="the-selection-bias-problem" class="level4">
 <h4 class="anchored" data-anchor-id="the-selection-bias-problem">The Selection Bias Problem</h4>
 <p>Governments don’t randomly assign protection. They typically protect forests that are already less likely to be cleared—remote areas, steep terrain, or poor soil quality. Simply comparing deforestation rates inside versus outside protected areas would be misleading.</p>
 </section>
 <section id="the-rdd-solution" class="level4">
 <h4 class="anchored" data-anchor-id="the-rdd-solution">The RDD Solution</h4>
-<p>By comparing forests immediately on either side of protected area boundaries (within ~1.5km), the study isolates the causal effect of legal protection. Two forests 50 meters apart on opposite sides of a boundary are virtually identical except for protection status.</p>
+<p>By comparing forests immediately on either side of protected area boundaries (within ~1.5km), the study isolates the causal effect of legal protection. Two forests 50 meters apart on opposite sides of a boundary make for a good comparison except for protection status.</p>
 </section>
 <section id="the-findings" class="level4">
 <h4 class="anchored" data-anchor-id="the-findings">The Findings</h4>
-<p>Protected areas are only about <strong>30% effective</strong> on average at preventing deforestation. While some nations like New Zealand (89% effective), Finland (77%), and Canada (63%) show high effectiveness, many countries with critical biodiversity have essentially ineffective protection: Indonesia (11%), the Democratic Republic of Congo (4%), Bolivia (4%), and Venezuela (0%).</p>
+<p>Protected areas are only about <strong>30% effective</strong> on average at preventing deforestation. While some nations like New Zealand (89% effective), Finland (77%), and Canada (63%) show high effectiveness, many countries with critical biodiversity have relatively low protection efficacy: Indonesia (11%), the Democratic Republic of Congo (4%), Bolivia (4%), and Venezuela (0%).</p>
 </section>
 </section>
 <section id="study-replication" class="level2">
 <h2 class="anchored" data-anchor-id="study-replication">Study Replication</h2>
-<p>Using <code>Simulated_Deforestation_Data5.csv</code>, we will replicate Neal’s approach.</p>
+<p>Using <code>Simulated_Deforestation_Data6.csv</code>, we will replicate Neal’s approach.</p>
 <section id="load-packages-study-data" class="level3">
 <h3 class="anchored" data-anchor-id="load-packages-study-data">0. Load packages + study data</h3>
 <div class="cell">
@@ -342,30 +339,30 @@ window.Quarto = {
 </div>
 <p>Read in the simulated data</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>sim_data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">here</span>(<span class="st">"week4"</span>, <span class="st">"Simulated_Deforestation_Data5.csv"</span>), <span class="at">show_col_types =</span> <span class="cn">FALSE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>sim_data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">here</span>(<span class="st">"week5"</span>, <span class="st">"Simulated_Deforestation_Data6.csv"</span>), <span class="at">show_col_types =</span> <span class="cn">FALSE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="create-variable-description-table-for-key-variables-in-the-analysis" class="level3">
 <h3 class="anchored" data-anchor-id="create-variable-description-table-for-key-variables-in-the-analysis">1. Create variable description table for key variables in the analysis</h3>
 <div class="cell">
 <div class="cell-output-display">
-<div id="rtuzvpkool" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#rtuzvpkool table {
+<div id="pyuowzblhb" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#pyuowzblhb table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#rtuzvpkool thead, #rtuzvpkool tbody, #rtuzvpkool tfoot, #rtuzvpkool tr, #rtuzvpkool td, #rtuzvpkool th {
+#pyuowzblhb thead, #pyuowzblhb tbody, #pyuowzblhb tfoot, #pyuowzblhb tr, #pyuowzblhb td, #pyuowzblhb th {
   border-style: none;
 }
 
-#rtuzvpkool p {
+#pyuowzblhb p {
   margin: 0;
   padding: 0;
 }
 
-#rtuzvpkool .gt_table {
+#pyuowzblhb .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -391,12 +388,12 @@ window.Quarto = {
   border-left-color: #D3D3D3;
 }
 
-#rtuzvpkool .gt_caption {
+#pyuowzblhb .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#rtuzvpkool .gt_title {
+#pyuowzblhb .gt_title {
   color: #333333;
   font-size: 20px;
   font-weight: initial;
@@ -408,7 +405,7 @@ window.Quarto = {
   border-bottom-width: 0;
 }
 
-#rtuzvpkool .gt_subtitle {
+#pyuowzblhb .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -420,7 +417,7 @@ window.Quarto = {
   border-top-width: 0;
 }
 
-#rtuzvpkool .gt_heading {
+#pyuowzblhb .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -432,13 +429,13 @@ window.Quarto = {
   border-right-color: #D3D3D3;
 }
 
-#rtuzvpkool .gt_bottom_border {
+#pyuowzblhb .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#rtuzvpkool .gt_col_headings {
+#pyuowzblhb .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -453,7 +450,7 @@ window.Quarto = {
   border-right-color: #D3D3D3;
 }
 
-#rtuzvpkool .gt_col_heading {
+#pyuowzblhb .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -473,7 +470,7 @@ window.Quarto = {
   overflow-x: hidden;
 }
 
-#rtuzvpkool .gt_column_spanner_outer {
+#pyuowzblhb .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -485,15 +482,15 @@ window.Quarto = {
   padding-right: 4px;
 }
 
-#rtuzvpkool .gt_column_spanner_outer:first-child {
+#pyuowzblhb .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#rtuzvpkool .gt_column_spanner_outer:last-child {
+#pyuowzblhb .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#rtuzvpkool .gt_column_spanner {
+#pyuowzblhb .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -505,11 +502,11 @@ window.Quarto = {
   width: 100%;
 }
 
-#rtuzvpkool .gt_spanner_row {
+#pyuowzblhb .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#rtuzvpkool .gt_group_heading {
+#pyuowzblhb .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -535,7 +532,7 @@ window.Quarto = {
   text-align: left;
 }
 
-#rtuzvpkool .gt_empty_group_heading {
+#pyuowzblhb .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -550,15 +547,15 @@ window.Quarto = {
   vertical-align: middle;
 }
 
-#rtuzvpkool .gt_from_md > :first-child {
+#pyuowzblhb .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#rtuzvpkool .gt_from_md > :last-child {
+#pyuowzblhb .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#rtuzvpkool .gt_row {
+#pyuowzblhb .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -577,7 +574,7 @@ window.Quarto = {
   overflow-x: hidden;
 }
 
-#rtuzvpkool .gt_stub {
+#pyuowzblhb .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -590,7 +587,7 @@ window.Quarto = {
   padding-right: 5px;
 }
 
-#rtuzvpkool .gt_stub_row_group {
+#pyuowzblhb .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -604,15 +601,15 @@ window.Quarto = {
   vertical-align: top;
 }
 
-#rtuzvpkool .gt_row_group_first td {
+#pyuowzblhb .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#rtuzvpkool .gt_row_group_first th {
+#pyuowzblhb .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#rtuzvpkool .gt_summary_row {
+#pyuowzblhb .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -622,16 +619,16 @@ window.Quarto = {
   padding-right: 5px;
 }
 
-#rtuzvpkool .gt_first_summary_row {
+#pyuowzblhb .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#rtuzvpkool .gt_first_summary_row.thick {
+#pyuowzblhb .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#rtuzvpkool .gt_last_summary_row {
+#pyuowzblhb .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -641,7 +638,7 @@ window.Quarto = {
   border-bottom-color: #D3D3D3;
 }
 
-#rtuzvpkool .gt_grand_summary_row {
+#pyuowzblhb .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -651,7 +648,7 @@ window.Quarto = {
   padding-right: 5px;
 }
 
-#rtuzvpkool .gt_first_grand_summary_row {
+#pyuowzblhb .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -661,7 +658,7 @@ window.Quarto = {
   border-top-color: #D3D3D3;
 }
 
-#rtuzvpkool .gt_last_grand_summary_row_top {
+#pyuowzblhb .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -671,11 +668,11 @@ window.Quarto = {
   border-bottom-color: #D3D3D3;
 }
 
-#rtuzvpkool .gt_striped {
+#pyuowzblhb .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#rtuzvpkool .gt_table_body {
+#pyuowzblhb .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -684,7 +681,7 @@ window.Quarto = {
   border-bottom-color: #D3D3D3;
 }
 
-#rtuzvpkool .gt_footnotes {
+#pyuowzblhb .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -698,7 +695,7 @@ window.Quarto = {
   border-right-color: #D3D3D3;
 }
 
-#rtuzvpkool .gt_footnote {
+#pyuowzblhb .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -707,7 +704,7 @@ window.Quarto = {
   padding-right: 5px;
 }
 
-#rtuzvpkool .gt_sourcenotes {
+#pyuowzblhb .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -721,7 +718,7 @@ window.Quarto = {
   border-right-color: #D3D3D3;
 }
 
-#rtuzvpkool .gt_sourcenote {
+#pyuowzblhb .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -729,72 +726,72 @@ window.Quarto = {
   padding-right: 5px;
 }
 
-#rtuzvpkool .gt_left {
+#pyuowzblhb .gt_left {
   text-align: left;
 }
 
-#rtuzvpkool .gt_center {
+#pyuowzblhb .gt_center {
   text-align: center;
 }
 
-#rtuzvpkool .gt_right {
+#pyuowzblhb .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#rtuzvpkool .gt_font_normal {
+#pyuowzblhb .gt_font_normal {
   font-weight: normal;
 }
 
-#rtuzvpkool .gt_font_bold {
+#pyuowzblhb .gt_font_bold {
   font-weight: bold;
 }
 
-#rtuzvpkool .gt_font_italic {
+#pyuowzblhb .gt_font_italic {
   font-style: italic;
 }
 
-#rtuzvpkool .gt_super {
+#pyuowzblhb .gt_super {
   font-size: 65%;
 }
 
-#rtuzvpkool .gt_footnote_marks {
+#pyuowzblhb .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#rtuzvpkool .gt_asterisk {
+#pyuowzblhb .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#rtuzvpkool .gt_indent_1 {
+#pyuowzblhb .gt_indent_1 {
   text-indent: 5px;
 }
 
-#rtuzvpkool .gt_indent_2 {
+#pyuowzblhb .gt_indent_2 {
   text-indent: 10px;
 }
 
-#rtuzvpkool .gt_indent_3 {
+#pyuowzblhb .gt_indent_3 {
   text-indent: 15px;
 }
 
-#rtuzvpkool .gt_indent_4 {
+#pyuowzblhb .gt_indent_4 {
   text-indent: 20px;
 }
 
-#rtuzvpkool .gt_indent_5 {
+#pyuowzblhb .gt_indent_5 {
   text-indent: 25px;
 }
 
-#rtuzvpkool .katex-display {
+#pyuowzblhb .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#rtuzvpkool div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#pyuowzblhb div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -954,13 +951,13 @@ p
 (Intercept)
 </td>
 <td style="text-align:right;">
-0.298
+0.194
 </td>
 <td style="text-align:right;">
 0.001
 </td>
 <td style="text-align:right;">
-475.575
+266.385
 </td>
 <td style="text-align:right;">
 0.000
@@ -971,13 +968,13 @@ p
 protected
 </td>
 <td style="text-align:right;">
--0.094
+-0.100
 </td>
 <td style="text-align:right;">
 0.000
 </td>
 <td style="text-align:right;">
--253.637
+-232.183
 </td>
 <td style="text-align:right;">
 0.000
@@ -988,13 +985,13 @@ protected
 distance
 </td>
 <td style="text-align:right;">
--0.002
+-0.003
 </td>
 <td style="text-align:right;">
 0.000
 </td>
 <td style="text-align:right;">
--101.864
+-129.687
 </td>
 <td style="text-align:right;">
 0.000
@@ -1005,13 +1002,13 @@ distance
 slope_cat
 </td>
 <td style="text-align:right;">
-0.019
+-0.013
 </td>
 <td style="text-align:right;">
 0.000
 </td>
 <td style="text-align:right;">
-103.900
+-61.804
 </td>
 <td style="text-align:right;">
 0.000
@@ -1022,13 +1019,13 @@ slope_cat
 road_cat
 </td>
 <td style="text-align:right;">
--0.104
+-0.009
 </td>
 <td style="text-align:right;">
 0.000
 </td>
 <td style="text-align:right;">
--526.436
+-38.902
 </td>
 <td style="text-align:right;">
 0.000
@@ -1039,13 +1036,13 @@ road_cat
 water_cat
 </td>
 <td style="text-align:right;">
-0.013
+-0.006
 </td>
 <td style="text-align:right;">
 0.001
 </td>
 <td style="text-align:right;">
-23.983
+-9.466
 </td>
 <td style="text-align:right;">
 0.000
@@ -1056,13 +1053,13 @@ water_cat
 soil_cat
 </td>
 <td style="text-align:right;">
--0.018
+0.009
 </td>
 <td style="text-align:right;">
 0.000
 </td>
 <td style="text-align:right;">
--87.815
+39.823
 </td>
 <td style="text-align:right;">
 0.000
@@ -1073,13 +1070,13 @@ soil_cat
 protected:distance
 </td>
 <td style="text-align:right;">
--0.002
+0.002
 </td>
 <td style="text-align:right;">
 0.000
 </td>
 <td style="text-align:right;">
--68.857
+62.829
 </td>
 <td style="text-align:right;">
 0.000
@@ -1106,7 +1103,7 @@ protected:distance
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Based on the regression results, what is the estimated causal effect of protected area status on deforestation? Does this match what you see in the plot?</p>
+<p>Based on the regression results, what is the estimated causal effect of protected area status on deforestation? Does this match what you see in the plot? What does the interaction coefficient represent?</p>
 </div>
 </div>
 </section>
@@ -1120,7 +1117,7 @@ protected:distance
 <h5 class="anchored" data-anchor-id="interpreting-output">Interpreting output:</h5>
 <p>Default estimation options used by the <code>rdrobust()</code> function:</p>
 <p><strong>Bandwidth Optimization</strong> (BW type: mserd): Bandwidth is optimized to balance accuracy &amp; bias.</p>
-<p><strong>Bandwidth Estimate</strong> (BW est. (h) = 5.729): The estimated range around the cutoff used to subset the data to estimate the treatment effect.</p>
+<p><strong>Bandwidth Estimate</strong> (BW est. (h) = 2.207): The estimated range around the cutoff used to subset the data to estimate the treatment effect.</p>
 <p><strong>Kernel</strong> (Triangular): Gives higher weight to data points close to the cutoff.</p>
 <p><strong>Variance Estimation</strong> (VCE method: NN): Instead of assuming equal variance across all observations, the error estimates are adjusted to account for variability near the cutoff.</p>
 </section>
@@ -1154,19 +1151,19 @@ Kernel                   Triangular
 VCE method                       NN
 
 Number of Obs.               299889       300111
-Eff. Number of Obs.           85646        86071
+Eff. Number of Obs.           32971        33065
 Order est. (p)                    1            1
 Order bias  (q)                   2            2
-BW est. (h)                   5.729        5.729
-BW bias (b)                   9.034        9.034
-rho (h/b)                     0.634        0.634
+BW est. (h)                   2.207        2.207
+BW bias (b)                   4.851        4.851
+rho (h/b)                     0.455        0.455
 Unique Obs.                  299889       300111
 
 =====================================================================
                    Point    Robust Inference
                 Estimate         z     P&gt;|z|      [ 95% C.I. ]       
 ---------------------------------------------------------------------
-     RD Effect    -0.092   -99.939     0.000    [-0.094 , -0.090]    
+     RD Effect    -0.073   -58.640     0.000    [-0.075 , -0.070]    
 =====================================================================</code></pre>
 </div>
 </div>
@@ -1180,7 +1177,7 @@ Unique Obs.                  299889       300111
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>The RD Effect here is -0.092, while in the previous regression table the <code>protected</code> coefficient was -0.094. Why are they similar but not exactly the same? Which one should we trust more?</p>
+<p>The RD Effect here is -0.073, while in the previous regression table the <code>protected</code> coefficient was -0.100. Why are they similar but not exactly the same? Which one should we trust more?</p>
 <p>What advantages does this ‘local polynomial regression’ approach have over the simple linear regression we saw before?</p>
 </div>
 </div>
@@ -1287,19 +1284,19 @@ Kernel                   Triangular
 VCE method                       NN
 
 Number of Obs.                50031        49969
-Eff. Number of Obs.           15992        16021
+Eff. Number of Obs.            6693         6733
 Order est. (p)                    1            1
 Order bias  (q)                   2            2
-BW est. (h)                   6.369        6.369
-BW bias (b)                  11.882       11.882
-rho (h/b)                     0.536        0.536
+BW est. (h)                   2.667        2.667
+BW bias (b)                   6.075        6.075
+rho (h/b)                     0.439        0.439
 Unique Obs.                   50031        49969
 
 =====================================================================
                    Point    Robust Inference
                 Estimate         z     P&gt;|z|      [ 95% C.I. ]       
 ---------------------------------------------------------------------
-     RD Effect     0.001     1.049     0.294    [-0.001 , 0.005]     
+     RD Effect     0.001     1.460     0.144    [-0.001 , 0.004]     
 =====================================================================</code></pre>
 </div>
 </div>

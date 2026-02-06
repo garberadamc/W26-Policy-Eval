@@ -18,6 +18,9 @@ docs/course-materials/labs/week4_notes_files/
 _freeze/course-materials/labs/week4_notes/
 course-materials/labs/data/RDD/
 course-materials/labs/week5_notes.qmd
+_freeze/course-materials/labs/week5_notes/
+docs/course-materials/labs/week5_notes.html
+docs/course-materials/labs/week5_notes_files/
 .DS_Store
 **/.DS_Store
 **/*.quarto_ipynb
