@@ -17,11 +17,11 @@ knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
 
 Regression Discontinuity Design is a experimental method used to estimate the causal effects of a treatment by exploiting a "cutoff" or "threshold" in an assignment variable. 
 
-- The assignmnet variable ($X$): A continuous measure (e.g., $NO_2$ levels, age, or distance) used to determine treatment eligibility.
+- The assignment variable ($X$): A continuous measure used for assignment
 
-- The Cutoff ($c$): The specific value of the running variable where the treatment status changes abruptly.
+- The Cutoff ($c$): The threshold rule
 
-- The causal effect is identified by the "jump" or "discontinuity" in the outcome variable at the cutoff point.
+- Treatment rule ($D$): What changes at the cutoff (policy / intervention)
 
 
 
@@ -55,7 +55,7 @@ By comparing forests immediately on either side of protected area boundaries (wi
 
 #### The Findings
 
-Protected areas are only about **30% effective** on average at preventing deforestation—a discouragingly low figure that varies dramatically across countries. While some nations like New Zealand (89% effective), Finland (77%), and Canada (63%) show high effectiveness, many countries with critical biodiversity have essentially ineffective protection: Indonesia (11%), the Democratic Republic of Congo (4%), Bolivia (4%), and Venezuela (0%).
+Protected areas are only about **30% effective** on average at preventing deforestation. While some nations like New Zealand (89% effective), Finland (77%), and Canada (63%) show high effectiveness, many countries with critical biodiversity have essentially ineffective protection: Indonesia (11%), the Democratic Republic of Congo (4%), Bolivia (4%), and Venezuela (0%).
 
 
 
@@ -154,7 +154,7 @@ data_binned <- sim_data %>%
 ```{r}
 rdd_lm <- ggplot(data_binned, aes(x = avg_distance, y = avg_deforest, color = as.factor(protected))) +
   geom_point(alpha = 0.5) +
-  geom_smooth(method = "lm", aes(group = protected), se = TRUE) +
+  geom_smooth(method = "lm", aes(group = protected)) +
   geom_vline(xintercept = 0, linetype = "dashed", color = "black") +
   labs(title = "Regression Discontinuity Plot (Binned by Distance)",
        x = "Running Variable (Distance)", y = "Deforestation Rate",
@@ -239,7 +239,7 @@ summary(global_rdd)
 
 
 :::{.callout-tip title= "Comprehension Check"}
-The RD Effect here is -0.092, while in the previous regression table the 'protected' coefficient was -0.094. Why are they similar but not exactly the same? Which one should we trust more?
+The RD Effect here is -0.092, while in the previous regression table the `protected` coefficient was -0.094. Why are they similar but not exactly the same? Which one should we trust more?
 
 What advantages does this 'local polynomial regression' approach have over the simple linear regression we saw before?
 :::

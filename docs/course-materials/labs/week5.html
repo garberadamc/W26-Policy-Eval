@@ -298,9 +298,9 @@ window.Quarto = {
 <h2 class="anchored" data-anchor-id="rdd-review">RDD Review</h2>
 <p>Regression Discontinuity Design is a experimental method used to estimate the causal effects of a treatment by exploiting a “cutoff” or “threshold” in an assignment variable.</p>
 <ul>
-<li><p>The assignmnet variable (<span class="math inline">\(X\)</span>): A continuous measure (e.g., <span class="math inline">\(NO_2\)</span> levels, age, or distance) used to determine treatment eligibility.</p></li>
-<li><p>The Cutoff (<span class="math inline">\(c\)</span>): The specific value of the running variable where the treatment status changes abruptly.</p></li>
-<li><p>The causal effect is identified by the “jump” or “discontinuity” in the outcome variable at the cutoff point.</p></li>
+<li><p>The assignment variable (<span class="math inline">\(X\)</span>): A continuous measure used for assignment</p></li>
+<li><p>The Cutoff (<span class="math inline">\(c\)</span>): The threshold rule</p></li>
+<li><p>Treatment rule (<span class="math inline">\(D\)</span>): What changes at the cutoff (policy / intervention)</p></li>
 </ul>
 </section>
 <section id="study-review-environmental-regulation-and-economic-performance-evidence-from-forest-conservation-in-mexico" class="level2">
@@ -323,7 +323,7 @@ window.Quarto = {
 </section>
 <section id="the-findings" class="level4">
 <h4 class="anchored" data-anchor-id="the-findings">The Findings</h4>
-<p>Protected areas are only about <strong>30% effective</strong> on average at preventing deforestation—a discouragingly low figure that varies dramatically across countries. While some nations like New Zealand (89% effective), Finland (77%), and Canada (63%) show high effectiveness, many countries with critical biodiversity have essentially ineffective protection: Indonesia (11%), the Democratic Republic of Congo (4%), Bolivia (4%), and Venezuela (0%).</p>
+<p>Protected areas are only about <strong>30% effective</strong> on average at preventing deforestation. While some nations like New Zealand (89% effective), Finland (77%), and Canada (63%) show high effectiveness, many countries with critical biodiversity have essentially ineffective protection: Indonesia (11%), the Democratic Republic of Congo (4%), Bolivia (4%), and Venezuela (0%).</p>
 </section>
 </section>
 <section id="study-replication" class="level2">
@@ -349,23 +349,23 @@ window.Quarto = {
 <h3 class="anchored" data-anchor-id="create-variable-description-table-for-key-variables-in-the-analysis">1. Create variable description table for key variables in the analysis</h3>
 <div class="cell">
 <div class="cell-output-display">
-<div id="yqdztskwof" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#yqdztskwof table {
+<div id="rtuzvpkool" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#rtuzvpkool table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#yqdztskwof thead, #yqdztskwof tbody, #yqdztskwof tfoot, #yqdztskwof tr, #yqdztskwof td, #yqdztskwof th {
+#rtuzvpkool thead, #rtuzvpkool tbody, #rtuzvpkool tfoot, #rtuzvpkool tr, #rtuzvpkool td, #rtuzvpkool th {
   border-style: none;
 }
 
-#yqdztskwof p {
+#rtuzvpkool p {
   margin: 0;
   padding: 0;
 }
 
-#yqdztskwof .gt_table {
+#rtuzvpkool .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -391,12 +391,12 @@ window.Quarto = {
   border-left-color: #D3D3D3;
 }
 
-#yqdztskwof .gt_caption {
+#rtuzvpkool .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#yqdztskwof .gt_title {
+#rtuzvpkool .gt_title {
   color: #333333;
   font-size: 20px;
   font-weight: initial;
@@ -408,7 +408,7 @@ window.Quarto = {
   border-bottom-width: 0;
 }
 
-#yqdztskwof .gt_subtitle {
+#rtuzvpkool .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -420,7 +420,7 @@ window.Quarto = {
   border-top-width: 0;
 }
 
-#yqdztskwof .gt_heading {
+#rtuzvpkool .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -432,13 +432,13 @@ window.Quarto = {
   border-right-color: #D3D3D3;
 }
 
-#yqdztskwof .gt_bottom_border {
+#rtuzvpkool .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#yqdztskwof .gt_col_headings {
+#rtuzvpkool .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -453,7 +453,7 @@ window.Quarto = {
   border-right-color: #D3D3D3;
 }
 
-#yqdztskwof .gt_col_heading {
+#rtuzvpkool .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -473,7 +473,7 @@ window.Quarto = {
   overflow-x: hidden;
 }
 
-#yqdztskwof .gt_column_spanner_outer {
+#rtuzvpkool .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -485,15 +485,15 @@ window.Quarto = {
   padding-right: 4px;
 }
 
-#yqdztskwof .gt_column_spanner_outer:first-child {
+#rtuzvpkool .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#yqdztskwof .gt_column_spanner_outer:last-child {
+#rtuzvpkool .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#yqdztskwof .gt_column_spanner {
+#rtuzvpkool .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -505,11 +505,11 @@ window.Quarto = {
   width: 100%;
 }
 
-#yqdztskwof .gt_spanner_row {
+#rtuzvpkool .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#yqdztskwof .gt_group_heading {
+#rtuzvpkool .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -535,7 +535,7 @@ window.Quarto = {
   text-align: left;
 }
 
-#yqdztskwof .gt_empty_group_heading {
+#rtuzvpkool .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -550,15 +550,15 @@ window.Quarto = {
   vertical-align: middle;
 }
 
-#yqdztskwof .gt_from_md > :first-child {
+#rtuzvpkool .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#yqdztskwof .gt_from_md > :last-child {
+#rtuzvpkool .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#yqdztskwof .gt_row {
+#rtuzvpkool .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -577,7 +577,7 @@ window.Quarto = {
   overflow-x: hidden;
 }
 
-#yqdztskwof .gt_stub {
+#rtuzvpkool .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -590,7 +590,7 @@ window.Quarto = {
   padding-right: 5px;
 }
 
-#yqdztskwof .gt_stub_row_group {
+#rtuzvpkool .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -604,15 +604,15 @@ window.Quarto = {
   vertical-align: top;
 }
 
-#yqdztskwof .gt_row_group_first td {
+#rtuzvpkool .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#yqdztskwof .gt_row_group_first th {
+#rtuzvpkool .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#yqdztskwof .gt_summary_row {
+#rtuzvpkool .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -622,16 +622,16 @@ window.Quarto = {
   padding-right: 5px;
 }
 
-#yqdztskwof .gt_first_summary_row {
+#rtuzvpkool .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#yqdztskwof .gt_first_summary_row.thick {
+#rtuzvpkool .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#yqdztskwof .gt_last_summary_row {
+#rtuzvpkool .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -641,7 +641,7 @@ window.Quarto = {
   border-bottom-color: #D3D3D3;
 }
 
-#yqdztskwof .gt_grand_summary_row {
+#rtuzvpkool .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -651,7 +651,7 @@ window.Quarto = {
   padding-right: 5px;
 }
 
-#yqdztskwof .gt_first_grand_summary_row {
+#rtuzvpkool .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -661,7 +661,7 @@ window.Quarto = {
   border-top-color: #D3D3D3;
 }
 
-#yqdztskwof .gt_last_grand_summary_row_top {
+#rtuzvpkool .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -671,11 +671,11 @@ window.Quarto = {
   border-bottom-color: #D3D3D3;
 }
 
-#yqdztskwof .gt_striped {
+#rtuzvpkool .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#yqdztskwof .gt_table_body {
+#rtuzvpkool .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -684,7 +684,7 @@ window.Quarto = {
   border-bottom-color: #D3D3D3;
 }
 
-#yqdztskwof .gt_footnotes {
+#rtuzvpkool .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -698,7 +698,7 @@ window.Quarto = {
   border-right-color: #D3D3D3;
 }
 
-#yqdztskwof .gt_footnote {
+#rtuzvpkool .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -707,7 +707,7 @@ window.Quarto = {
   padding-right: 5px;
 }
 
-#yqdztskwof .gt_sourcenotes {
+#rtuzvpkool .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -721,7 +721,7 @@ window.Quarto = {
   border-right-color: #D3D3D3;
 }
 
-#yqdztskwof .gt_sourcenote {
+#rtuzvpkool .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -729,72 +729,72 @@ window.Quarto = {
   padding-right: 5px;
 }
 
-#yqdztskwof .gt_left {
+#rtuzvpkool .gt_left {
   text-align: left;
 }
 
-#yqdztskwof .gt_center {
+#rtuzvpkool .gt_center {
   text-align: center;
 }
 
-#yqdztskwof .gt_right {
+#rtuzvpkool .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#yqdztskwof .gt_font_normal {
+#rtuzvpkool .gt_font_normal {
   font-weight: normal;
 }
 
-#yqdztskwof .gt_font_bold {
+#rtuzvpkool .gt_font_bold {
   font-weight: bold;
 }
 
-#yqdztskwof .gt_font_italic {
+#rtuzvpkool .gt_font_italic {
   font-style: italic;
 }
 
-#yqdztskwof .gt_super {
+#rtuzvpkool .gt_super {
   font-size: 65%;
 }
 
-#yqdztskwof .gt_footnote_marks {
+#rtuzvpkool .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#yqdztskwof .gt_asterisk {
+#rtuzvpkool .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#yqdztskwof .gt_indent_1 {
+#rtuzvpkool .gt_indent_1 {
   text-indent: 5px;
 }
 
-#yqdztskwof .gt_indent_2 {
+#rtuzvpkool .gt_indent_2 {
   text-indent: 10px;
 }
 
-#yqdztskwof .gt_indent_3 {
+#rtuzvpkool .gt_indent_3 {
   text-indent: 15px;
 }
 
-#yqdztskwof .gt_indent_4 {
+#rtuzvpkool .gt_indent_4 {
   text-indent: 20px;
 }
 
-#yqdztskwof .gt_indent_5 {
+#rtuzvpkool .gt_indent_5 {
   text-indent: 25px;
 }
 
-#yqdztskwof .katex-display {
+#rtuzvpkool .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#yqdztskwof div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#rtuzvpkool div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -882,7 +882,7 @@ window.Quarto = {
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>rdd_lm <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(data_binned, <span class="fu">aes</span>(<span class="at">x =</span> avg_distance, <span class="at">y =</span> avg_deforest, <span class="at">color =</span> <span class="fu">as.factor</span>(protected))) <span class="sc">+</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="fu">aes</span>(<span class="at">group =</span> protected), <span class="at">se =</span> <span class="cn">TRUE</span>) <span class="sc">+</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="fu">aes</span>(<span class="at">group =</span> protected)) <span class="sc">+</span></span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">0</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
 <span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Regression Discontinuity Plot (Binned by Distance)"</span>,</span>
 <span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Running Variable (Distance)"</span>, <span class="at">y =</span> <span class="st">"Deforestation Rate"</span>,</span>
@@ -1180,7 +1180,7 @@ Unique Obs.                  299889       300111
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>The RD Effect here is -0.092, while in the previous regression table the ‘protected’ coefficient was -0.094. Why are they similar but not exactly the same? Which one should we trust more?</p>
+<p>The RD Effect here is -0.092, while in the previous regression table the <code>protected</code> coefficient was -0.094. Why are they similar but not exactly the same? Which one should we trust more?</p>
 <p>What advantages does this ‘local polynomial regression’ approach have over the simple linear regression we saw before?</p>
 </div>
 </div>
