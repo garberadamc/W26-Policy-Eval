@@ -28,8 +28,7 @@ description: "February 17-20, 2026"
 
 | Assignment Type | Assignment Title                              | Date Assigned  | Date Due                   |
 |-----------------|-----------------------------------------------|----------------|----------------------------|
-| Reading - | [](){target="_blank"}  |  01/16 | 01/22 |
-| Reading -  | [](){target="_blank"} |  01/16 | 01/22 |
-| Reading - *Mastering 'Metrics* | A&P: Chapter 5 | 01/16 | 01/22 |
+| Reading -  | [](){target="_blank"} |  |   |
+| Reading - *Mastering 'Metrics* | A&P: |  |  |
 
 : {.hover .bordered tbl-colwidths="[20,30,20,30]"} 
