@@ -1,5 +1,5 @@
 ---
-title: "Week 6: "
+title: "Week 6: Instrumental Variable Design"
 subtitle: ""
 description: "February 10-13, 2026"
 ---
@@ -9,7 +9,7 @@ description: "February 10-13, 2026"
 
 | Lecture slides |  Resources |
 |----------------|------------|
-| [Lecture (TUES):  ](){target="_blank"}  | [](){target="_blank"}  |  
+| [Lecture (TUES): Instrumental Variables - Part 1 ](https://drive.google.com/file/d/1XhHCQ9ciJEcyZqYWhzhcLBqVa5Wei6qE/view?usp=sharing){target="_blank"}  | [](){target="_blank"}  |  
 | [Lecture (THURS): ](){target="_blank"}  | [](){target="_blank"}  | 
 : {.hover .bordered tbl-colwidths="[50,25,25]"} 
 
