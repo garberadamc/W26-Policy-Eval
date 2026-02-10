@@ -28,6 +28,7 @@ description: "February 10-13, 2026"
 
 | Assignment Type | Assignment Title                              | Date Assigned  | Date Due                   |
 |-----------------|-----------------------------------------------|----------------|----------------------------|
-| Reading - *Mastering 'Metrics* | A&P: Chapter 3 (Instrumental Variables) | 02/09 | 012/11 |
-| Reading - Focus on Instrumental Variable Analysis | [Stokes, 2015 ](https://drive.google.com/file/d/1y2Okzjq2EA43AW5JzCvFS8ecLpeP6NKh/view?usp=sharing){target="_blank"} | 02/09 | 012/11 |
+| Assignment 3 | [Handout: HW3-Instrumental-Variables](assignments/HW3_IV_START.qmd){target="_blank"} , [Repository: HW3-IV-Stokes15](https://github.com/garberadamc/HW3-IV-Stokes15.git){target="_blank"} | 02/10 | 02/17 |
+| Reading - *Mastering 'Metrics* | A&P: Chapter 3 (Instrumental Variables) | 02/09 | 02/11 |
+| Reading - Focus on Instrumental Variable Analysis | [Stokes, 2015 ](https://drive.google.com/file/d/1y2Okzjq2EA43AW5JzCvFS8ecLpeP6NKh/view?usp=sharing){target="_blank"} | 02/09 | 02/11 |
 : {.hover .bordered tbl-colwidths="[20,30,20,30]"} 
