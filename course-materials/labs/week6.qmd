@@ -1,0 +1,225 @@
+---
+title: "Lab Week 6: Instrumental Variables"
+subtitle: ""
+author: "EDS 241 / ESM 244"
+format:
+  html:
+date: "February 13, 2026"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
+```
+
+# IV Review
+
+
+# Lab Overview
+
+
+
+# Analysis
+
+## Setup
+
+#### Load Packages
+
+```{r setup}
+
+
+#install.packages("gtrendsR") 
+#install.packages("ivreg")
+remotes::install_github("ropensci/rnoaa")
+library(tidyverse)
+library(dplyr)
+library(ggplot2)
+library(gtrendsR)     # For getting google trends data
+library(ivreg)        # For 2SLS
+library(lubridate)    # Date handling
+library(rnoaa)        # NOAA weather data
+library(jtools)
+
+set.seed(241244)
+```
+
+
+#### Load in Data
+
+We'll use California 2023 data for PM2.5 and precipitation from EPA's AQS.
+
+```{r}
+#| eval: true
+#| echo: false
+pm25 <- read_csv(here::here("course-materials", "labs", "data", "daily_88101_2023.csv")) %>% janitor::clean_names() %>% 
+  mutate(date = mdy(date_local)) %>% 
+  filter(county_code == "037") 
+```
+
+
+```{r}
+#| eval: false
+#| echo: true
+pm25 <- read_csv(here::here("week6", "daily_88101_2023.csv")) %>% 
+  janitor::clean_names() %>%  
+  mutate(date = mdy(date_local)) %>% 
+  filter(county_code == "037") 
+```
+
+
+
+We will also be using daily precipitation data from a NOAA API. After following the Pre Lab Prep instructions to request an API Key, paste the key that was sent to your email in the designated area below. 
+
+```{r}
+options(noaakey = "YOUR-NOAA-TOKEN-HERE")
+```
+
+
+```{r}
+#| echo: false
+#| eval: true
+options(noaakey = "	cpzWQUCzAafTrWqgPQEXAMHEbHcXzVBr")
+```
+
+
+
+```{r}
+# Get data for stations
+precip_raw <- ghcnd_search(
+    stationid = "USC00045933", # Downtown LA Station
+    var = "PRCP",
+    date_min = "2023-01-01",
+    date_max = "2023-12-31"
+  ) %>%
+  pluck("prcp") %>%                  # Extract the prcp data frame 
+  select(id, date, prcp) %>%
+  mutate(date = as.Date(date))
+
+# 3. Quick Summary
+summary(precip_raw)
+```
+
+#### Get Google trends data on respitory illness
+```{r}
+# Query Google Trends for California
+trends <- gtrends(
+  keyword = "asthma inhaler",
+  geo = "US-CA-803",# LA code
+  time = "2023-01-01 2023-12-31",
+  onlyInterest = TRUE
+)
+
+trends_df <- trends$interest_over_time %>%
+  select(date, hits) %>%
+  mutate(
+    date = as.Date(date),
+    asthma_index = as.numeric(hits)
+  ) %>%
+  filter(!is.na(asthma_index)) %>%
+  select(date, asthma_index)
+```
+
+
+
+
+## Data Cleaning
+
+```{r}
+precip <- precip_raw %>%
+  filter(!is.na(prcp)) %>% 
+  mutate(
+    precip_in = prcp / 254,           # Convert to inches
+    precip_in = ifelse(precip_in < 0, 0, precip_in)  # Remove any error codes
+  ) %>%
+  select(station_id = id, date, precip_in)
+
+
+# Merge data
+data <- pm25 %>%
+  left_join(
+    precip %>% select(station_id, date, precip_in),
+    by = "date"
+  ) %>%
+  filter(!is.na(precip_in))
+```
+
+
+```{r}
+# Aggregate data to weekly (since google trends is weekly)
+
+
+# Create week variable (Sunday start)
+data <- data %>%
+  mutate(week_start = floor_date(date, "week", week_start = 7))
+
+# Aggregate to county-week level
+data_weekly <- data %>%
+  group_by(week_start) %>%
+  summarise(
+    pm25_mean = mean(aqi, na.rm= TRUE),
+    precip_total = sum(precip_in),
+    .groups = "drop"
+  ) 
+
+
+# Merge with Google Trends
+data_weekly_joined <- data_weekly %>%
+  left_join(trends_df, by = c("week_start" = "date")) %>%
+  filter(!is.na(asthma_index))
+```
+
+
+
+## EDA 
+
+
+
+## Model
+
+```{r}
+m1_ols <- lm(asthma_index ~ pm25_mean, data = data_weekly_joined)
+
+summary(m1_ols)
+```
+
+```{r}
+m2_ols_fe <-lm(asthma_index ~ pm25_mean + factor(month(week_start)) ,
+             data = data_weekly_joined)
+summary(m2_ols_fe)
+```
+
+
+```{r}
+first_stage <- lm(pm25_mean ~ precip_total + factor(month(week_start)), 
+                  data = data_weekly_joined)
+
+export_summs(first_stage, digits = 3,
+             model.names = c("First stage: Average PM 2.5"),
+             coefs = c("(Intercept)", "precip_total")) 
+```
+
+```{r}
+
+data_weekly_joined$pm25_hat <- predict(first_stage)
+
+second_stage <- lm(asthma_index ~ pm25_hat + factor(month(week_start)), 
+                   data = data_weekly_joined)
+
+export_summs(second_stage, digits = 3, 
+             model.names = c("Second stage: Asthma Index"),
+             coefs = c("(Intercept)", "pm25_hat"))
+```
+
+
+
+```{r}
+m3_ivreg <- ivreg(asthma_index ~ pm25_mean + factor(month(week_start)) | 
+                  precip_total + factor(month(week_start)), 
+                  data = data_weekly_joined)
+
+export_summs(m3_ivreg, digits = 3,
+             model.names = c("IV Regression (ivreg)"),
+             coefs = c("pm25_mean"))
+```
+
+
+
