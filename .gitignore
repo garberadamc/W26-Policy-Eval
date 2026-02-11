@@ -23,6 +23,11 @@ course-materials/labs/data/daily_88101_2023.csv
 _freeze/course-materials/labs/week5_notes/
 course-materials/labs/week5_notes.qmd
 
+course-materials/labs/data/RDD/
+course-materials/labs/week5_notes.qmd
+_freeze/course-materials/labs/week5_notes/
+docs/course-materials/labs/week5_notes.html
+docs/course-materials/labs/week5_notes_files/
 .DS_Store
 **/.DS_Store
 **/*.quarto_ipynb

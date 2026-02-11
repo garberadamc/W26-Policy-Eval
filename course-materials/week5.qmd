@@ -10,7 +10,7 @@ description: "February 3-6, 2026"
 | Lecture slides |  Resources |
 |----------------|------------|
 | [Lecture (TUES): Regression Discontinuity Designs](https://drive.google.com/file/d/1xO48j5qLzsFfyequXVQUAxBDcym3B6fj/view?usp=drive_link){target="_blank"}  | [](){target="_blank"}  |  
-| [Lecture (THURS): ](){target="_blank"}  | [](){target="_blank"}  | 
+| [Lecture (THURS): RDD (Part 2)](https://drive.google.com/file/d/1yBuB165kltlWA3-1cc5hFqAYuzxOGPIE/view?usp=drive_link){target="_blank"}  | [](){target="_blank"}  | 
 : {.hover .bordered tbl-colwidths="[50,25,25]"} 
 
 <br>
@@ -19,7 +19,7 @@ description: "February 3-6, 2026"
 
 | Lab Materials to Download | Lab Solution |
 |----------------|------------|
-| [](){target="_blank"} | [](){target="_blank"} |
+| [Lab 5 Template qmd ](https://github.com/annieradams/EDS241-Weekly-Labs/blob/main/week5/week5.qmd) <br> [Lab 5 Data](https://drive.google.com/file/d/1d36jrQ1pJp_WhK5alagNa4bLK4nOSvaD/view){target="_blank"} | [Week 5 Lab Solution](labs/week5.qmd){target="_blank"} |
 : {.hover .bordered tbl-colwidths="[50,50]"}
 
 
@@ -28,10 +28,6 @@ description: "February 3-6, 2026"
 
 | Assignment Type | Assignment Title                              | Date Assigned  | Date Due                   |
 |-----------------|-----------------------------------------------|----------------|----------------------------|
-
-| Reading - *Mastering 'Metrics* | A&P: Chapter 3 | 01/29 | 02/04 |
-| Reading - | [](){target="_blank"}  |  01/16 | 01/22 |
-| Reading -  | [](){target="_blank"} |  01/16 | 01/22 |
-
-
+| Reading - *Mastering 'Metrics* | A&P: Chapter 4 | 01/29 | 02/05 |
+| Reading - Forest Protection Study | [Neal, 2024](https://drive.google.com/file/d/1ktj5u8x8TOEtPtYvjjRKnOlr-kcDy-2d/view?usp=sharing){target="_blank"}  | 01/29 | 02/05 |
 : {.hover .bordered tbl-colwidths="[20,30,20,30]"} 
