@@ -1,6 +1,6 @@
 ---
 title: "Week 7: "
-subtitle: "Guest Speaker - Professor Matto Mildenberger - Instrumental Variables"
+subtitle: ""
 description: "February 17-20, 2026"
 ---
 
