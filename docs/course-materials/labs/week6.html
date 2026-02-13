@@ -331,7 +331,7 @@ window.Quarto = {
 <section id="two-stage-least-squares-2sls" class="level2">
 <h2 class="anchored" data-anchor-id="two-stage-least-squares-2sls">Two-Stage Least Squares (2SLS)</h2>
 <p>The most common IV estimator is <strong>Two-Stage Least Squares (2SLS)</strong>:</p>
-<p><strong>First stage</strong>: Regress the endogenous treatment on the instrument(s) and any exogenous controls: <span class="math display">\[D_i = \beta_0 + \beta_1 Z_i\]</span> where <span class="math inline">\(W\)</span> are exogenous control variables. Save the predicted values <span class="math inline">\(\hat{D}\)</span>.</p>
+<p><strong>First stage</strong>: Regress the endogenous treatment on the instrument(s): <span class="math display">\[D_i = \beta_0 + \beta_1 Z_i\]</span> Save the predicted values <span class="math inline">\(\hat{D}\)</span>.</p>
 <p><strong>Second stage</strong>: Regress the outcome on the predicted values from the first stage and the same controls: <span class="math display">\[Y_i = \beta_0 + \beta_1 \hat{D}_i\]</span></p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -378,10 +378,10 @@ Important
 </section>
 <section id="our-instrument-precipitation" class="level2">
 <h2 class="anchored" data-anchor-id="our-instrument-precipitation">Our Instrument: Precipitation</h2>
-<p>We propose using <strong>weekly precipitation</strong> as an instrument (<span class="math inline">\(Z\)</span>) for PM2.5 (<span class="math inline">\(D\)</span>). The logic:</p>
+<p>We propose using <strong>weekly precipitation</strong> as an instrument (<span class="math inline">\(Z\)</span>) for PM2.5 (<span class="math inline">\(X\)</span>). The logic:</p>
 <ul>
 <li><strong>Relevance</strong>: Rainfall is a mechanism for removing particulate matter from the atmosphere (“wet deposition”). Weeks with more rain should have lower PM2.5 — we can test this.</li>
-<li><strong>Exclusion restriction</strong>: Rainfall affects asthma inhaler searches (<span class="math inline">\(Y\)</span>) <em>only</em> through its effect on air quality (<span class="math inline">\(D\)</span>), not directly. This is the assumption we must argue. It is more plausible if we control for seasonal patterns (month fixed effects), since precipitation’s main pathway to respiratory outcomes is through air quality.</li>
+<li><strong>Exclusion restriction</strong>: Rainfall affects asthma inhaler searches (<span class="math inline">\(Y\)</span>) <em>only</em> through its effect on air quality (<span class="math inline">\(X\)</span>), not directly. This is the assumption we must argue. It is more plausible if we control for seasonal patterns (month fixed effects), since precipitation’s main pathway to respiratory outcomes is through air quality.</li>
 </ul>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -437,6 +437,19 @@ Warning
 </tbody>
 </table>
 <p>Since Google Trends data is weekly, we will aggregate all daily data to the weekly level before merging.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>We will be using the <code>rnoaa</code> package to obtain our precipitation data. To do so, you need to request an API key. Enter your email at this <a href="https://www.ncdc.noaa.gov/cdo-web/token">link</a>, and an API key will be sent to you within ~ 2 minutes.</p>
+</div>
+</div>
 <div class="callout callout-style-default callout-tip callout-titled" title="Comprehension Check">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -448,7 +461,6 @@ Warning
 </div>
 <div class="callout-body-container callout-body">
 <ol type="1">
-<li>What omitted variables could drive both PM2.5 and asthma searches upward simultaneously?</li>
 <li>Can you think of a scenario in which precipitation might violate the exclusion restriction even after controlling for month fixed effects?</li>
 </ol>
 </div>
@@ -592,17 +604,17 @@ Columns: 4
 $ week_start   &lt;date&gt; 2023-01-01, 2023-01-08, 2023-01-15, 2023-01-22, 2023-01-…
 $ pm25_mean    &lt;dbl&gt; 7.300000, 9.088235, 7.211765, 9.664706, 8.576471, 9.35263…
 $ precip_total &lt;dbl&gt; 6.6850394, 13.6338583, 4.1574803, 0.0000000, 1.7086614, 5…
-$ asthma_index &lt;dbl&gt; 43, 68, 69, 42, 66, 75, 90, 54, 74, 75, 73, 82, 55, 62, 7…</code></pre>
+$ asthma_index &lt;dbl&gt; 43, 68, 69, 42, 66, 75, 90, 54, 74, 75, 73, 82, 55, 61, 7…</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(data_weekly_joined)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>   week_start           pm25_mean       precip_total     asthma_index   
- Min.   :2023-01-01   Min.   : 6.820   Min.   : 0.000   Min.   : 35.00  
- 1st Qu.:2023-04-02   1st Qu.: 8.433   1st Qu.: 0.000   1st Qu.: 53.00  
- Median :2023-07-02   Median :10.325   Median : 0.000   Median : 66.00  
- Mean   :2023-07-02   Mean   :11.028   Mean   : 1.595   Mean   : 63.11  
- 3rd Qu.:2023-10-01   3rd Qu.:12.994   3rd Qu.: 1.709   3rd Qu.: 75.00  
- Max.   :2023-12-31   Max.   :20.271   Max.   :13.634   Max.   :100.00  </code></pre>
+<pre><code>   week_start           pm25_mean       precip_total     asthma_index
+ Min.   :2023-01-01   Min.   : 6.820   Min.   : 0.000   Min.   : 35  
+ 1st Qu.:2023-04-02   1st Qu.: 8.433   1st Qu.: 0.000   1st Qu.: 53  
+ Median :2023-07-02   Median :10.325   Median : 0.000   Median : 65  
+ Mean   :2023-07-02   Mean   :11.028   Mean   : 1.595   Mean   : 63  
+ 3rd Qu.:2023-10-01   3rd Qu.:12.994   3rd Qu.: 1.709   3rd Qu.: 75  
+ Max.   :2023-12-31   Max.   :20.271   Max.   :13.634   Max.   :100  </code></pre>
 </div>
 </div>
 <p>:::{.callout-tip title = “Comprehension Check} How many observations do we have in our final dataset? Is this a lot or a little for regression analysis? What implications does a small sample size have for our estimates? :::</p>
@@ -670,18 +682,18 @@ lm(formula = asthma_index ~ pm25_mean, data = data_weekly_joined)
 
 Residuals:
     Min      1Q  Median      3Q     Max 
--28.145 -10.530   3.011  11.797  35.956 
+-28.028 -10.363   2.108  11.794  36.189 
 
 Coefficients:
             Estimate Std. Error t value Pr(&gt;|t|)    
-(Intercept)  60.5204     7.2912   8.300 4.94e-11 ***
-pm25_mean     0.2351     0.6324   0.372    0.712    
+(Intercept)  60.7398     7.2812   8.342 4.26e-11 ***
+pm25_mean     0.2049     0.6315   0.325    0.747    
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
-Residual standard error: 15.48 on 51 degrees of freedom
-Multiple R-squared:  0.002703,  Adjusted R-squared:  -0.01685 
-F-statistic: 0.1382 on 1 and 51 DF,  p-value: 0.7116</code></pre>
+Residual standard error: 15.46 on 51 degrees of freedom
+Multiple R-squared:  0.002061,  Adjusted R-squared:  -0.01751 
+F-statistic: 0.1053 on 1 and 51 DF,  p-value: 0.7469</code></pre>
 </div>
 </div>
 <p><strong>Interpretation</strong>: The coefficient on <code>pm25_mean</code> tells us the estimated change in the asthma inhaler search index associated with a one-unit increase in weekly mean AQI. But remember — this estimate is likely biased due to omitted variables.</p>
@@ -701,29 +713,29 @@ lm(formula = asthma_index ~ pm25_mean + factor(month(week_start)),
 
 Residuals:
     Min      1Q  Median      3Q     Max 
--32.327 -10.493   1.336  10.810  30.200 
+-32.570 -10.758   1.283  10.645  30.181 
 
 Coefficients:
                             Estimate Std. Error t value Pr(&gt;|t|)    
-(Intercept)                  52.1878    10.4359   5.001 1.18e-05 ***
-pm25_mean                     0.6468     0.9084   0.712    0.481    
-factor(month(week_start))2   15.8474    10.7288   1.477    0.147    
-factor(month(week_start))3   14.0945    10.7434   1.312    0.197    
-factor(month(week_start))4    2.5608    10.7699   0.238    0.813    
-factor(month(week_start))5   -3.8914    10.9415  -0.356    0.724    
-factor(month(week_start))6    7.4701    10.8045   0.691    0.493    
-factor(month(week_start))7   -0.7651    11.9733  -0.064    0.949    
-factor(month(week_start))8   -3.4961    11.0509  -0.316    0.753    
-factor(month(week_start))9    8.5553    11.5725   0.739    0.464    
-factor(month(week_start))10   7.9187    10.6074   0.747    0.460    
-factor(month(week_start))11  -3.6829    10.7354  -0.343    0.733    
-factor(month(week_start))12   2.5709    10.9704   0.234    0.816    
+(Intercept)                  52.6780    10.4139   5.058 9.83e-06 ***
+pm25_mean                     0.5882     0.9065   0.649    0.520    
+factor(month(week_start))2   15.8295    10.7062   1.479    0.147    
+factor(month(week_start))3   14.0542    10.7208   1.311    0.197    
+factor(month(week_start))4    2.3998    10.7472   0.223    0.824    
+factor(month(week_start))5   -3.7518    10.9185  -0.344    0.733    
+factor(month(week_start))6    7.5543    10.7817   0.701    0.488    
+factor(month(week_start))7   -0.1517    11.9481  -0.013    0.990    
+factor(month(week_start))8   -3.5744    11.0277  -0.324    0.748    
+factor(month(week_start))9    8.0856    11.5481   0.700    0.488    
+factor(month(week_start))10   8.3253    10.5850   0.787    0.436    
+factor(month(week_start))11  -4.1528    10.7128  -0.388    0.700    
+factor(month(week_start))12   2.8452    10.9473   0.260    0.796    
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
-Residual standard error: 15.99 on 40 degrees of freedom
-Multiple R-squared:  0.1657,    Adjusted R-squared:  -0.08463 
-F-statistic: 0.6619 on 12 and 40 DF,  p-value: 0.7762</code></pre>
+Residual standard error: 15.95 on 40 degrees of freedom
+Multiple R-squared:  0.1664,    Adjusted R-squared:  -0.08372 
+F-statistic: 0.6652 on 12 and 40 DF,  p-value: 0.7732</code></pre>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled" title="Comprehension Check">
@@ -826,17 +838,17 @@ F-statistic: 0.6619 on 12 and 40 DF,  p-value: 0.7762</code></pre>
 </thead>
 <tbody>
 <tr>
-<th class="huxtable-cell huxtable-header" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;      font-weight: normal;">(Intercept)</th><td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;">114.038&nbsp;</td></tr>
+<th class="huxtable-cell huxtable-header" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;      font-weight: normal;">(Intercept)</th><td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;">113.466&nbsp;</td></tr>
 <tr>
-<th class="huxtable-cell huxtable-header" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;      font-weight: normal;"></th><td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">(87.383)</td></tr>
+<th class="huxtable-cell huxtable-header" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;      font-weight: normal;"></th><td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">(87.113)</td></tr>
 <tr>
-<th class="huxtable-cell huxtable-header" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;      font-weight: normal;">pm25_hat</th><td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">-6.744&nbsp;</td></tr>
+<th class="huxtable-cell huxtable-header" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;      font-weight: normal;">pm25_hat</th><td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">-6.676&nbsp;</td></tr>
 <tr>
-<th class="huxtable-cell huxtable-header" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;      font-weight: normal;"></th><td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;">(10.407)</td></tr>
+<th class="huxtable-cell huxtable-header" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;      font-weight: normal;"></th><td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;">(10.375)</td></tr>
 <tr>
 <th class="huxtable-cell huxtable-header" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;      font-weight: normal;">N</th><td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;">53&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
 <tr>
-<th class="huxtable-cell huxtable-header" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0.8pt 0pt;      font-weight: normal;">R2</th><td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0.8pt 0pt;">0.164&nbsp;</td></tr>
+<th class="huxtable-cell huxtable-header" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0.8pt 0pt;      font-weight: normal;">R2</th><td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0.8pt 0pt;">0.166&nbsp;</td></tr>
 <tr>
 <th class="huxtable-cell huxtable-header" colspan="2" style="border-style: solid solid solid solid; border-width: 0.8pt 0pt 0pt 0pt;      font-weight: normal;">*** p &lt; 0.001; ** p &lt; 0.01; * p &lt; 0.05.</th></tr>
 </tbody>
@@ -881,21 +893,21 @@ Warning
 </thead>
 <tbody>
 <tr>
-<th class="huxtable-cell huxtable-header" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;      font-weight: normal;">pm25_mean</th><td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;">-6.744&nbsp;</td></tr>
+<th class="huxtable-cell huxtable-header" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;      font-weight: normal;">pm25_mean</th><td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;">-6.676&nbsp;</td></tr>
 <tr>
-<th class="huxtable-cell huxtable-header" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;      font-weight: normal;"></th><td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;">(16.940)</td></tr>
+<th class="huxtable-cell huxtable-header" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;      font-weight: normal;"></th><td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;">(16.745)</td></tr>
 <tr>
 <th class="huxtable-cell huxtable-header" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;      font-weight: normal;">nobs</th><td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;">53&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
 <tr>
-<th class="huxtable-cell huxtable-header" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;      font-weight: normal;">r.squared</th><td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">-1.215&nbsp;</td></tr>
+<th class="huxtable-cell huxtable-header" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;      font-weight: normal;">r.squared</th><td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">-1.172&nbsp;</td></tr>
 <tr>
-<th class="huxtable-cell huxtable-header" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;      font-weight: normal;">adj.r.squared</th><td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">-1.880&nbsp;</td></tr>
+<th class="huxtable-cell huxtable-header" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;      font-weight: normal;">adj.r.squared</th><td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">-1.824&nbsp;</td></tr>
 <tr>
-<th class="huxtable-cell huxtable-header" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;      font-weight: normal;">sigma</th><td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">26.052&nbsp;</td></tr>
+<th class="huxtable-cell huxtable-header" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;      font-weight: normal;">sigma</th><td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">25.753&nbsp;</td></tr>
 <tr>
-<th class="huxtable-cell huxtable-header" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;      font-weight: normal;">statistic</th><td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">0.247&nbsp;</td></tr>
+<th class="huxtable-cell huxtable-header" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;      font-weight: normal;">statistic</th><td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">0.255&nbsp;</td></tr>
 <tr>
-<th class="huxtable-cell huxtable-header" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;      font-weight: normal;">p.value</th><td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">0.994&nbsp;</td></tr>
+<th class="huxtable-cell huxtable-header" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;      font-weight: normal;">p.value</th><td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">0.993&nbsp;</td></tr>
 <tr>
 <th class="huxtable-cell huxtable-header" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;      font-weight: normal;">df</th><td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">13.000&nbsp;</td></tr>
 <tr>
@@ -925,13 +937,13 @@ Warning
 </thead>
 <tbody>
 <tr>
-<th class="huxtable-cell huxtable-header" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;      font-weight: normal;">pm25_mean</th><td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;">0.235&nbsp;</td><td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;">0.647&nbsp;</td><td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;">-6.744&nbsp;</td></tr>
+<th class="huxtable-cell huxtable-header" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;      font-weight: normal;">pm25_mean</th><td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;">0.205&nbsp;</td><td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;">0.588&nbsp;</td><td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;">-6.676&nbsp;</td></tr>
 <tr>
-<th class="huxtable-cell huxtable-header" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;      font-weight: normal;"></th><td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;">(0.632)</td><td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;">(0.908)</td><td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;">(16.940)</td></tr>
+<th class="huxtable-cell huxtable-header" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;      font-weight: normal;"></th><td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;">(0.632)</td><td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;">(0.906)</td><td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;">(16.745)</td></tr>
 <tr>
 <th class="huxtable-cell huxtable-header" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;      font-weight: normal;">N</th><td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;">53&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;">53&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;">53&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
 <tr>
-<th class="huxtable-cell huxtable-header" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0.8pt 0pt;      font-weight: normal;">R2</th><td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0.8pt 0pt;">0.003&nbsp;</td><td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0.8pt 0pt;">0.166&nbsp;</td><td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0.8pt 0pt;">-1.215&nbsp;</td></tr>
+<th class="huxtable-cell huxtable-header" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0.8pt 0pt;      font-weight: normal;">R2</th><td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0.8pt 0pt;">0.002&nbsp;</td><td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0.8pt 0pt;">0.166&nbsp;</td><td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0.8pt 0pt;">-1.172&nbsp;</td></tr>
 <tr>
 <th class="huxtable-cell huxtable-header" colspan="4" style="border-style: solid solid solid solid; border-width: 0.8pt 0pt 0pt 0pt;      font-weight: normal;">*** p &lt; 0.001; ** p &lt; 0.01; * p &lt; 0.05.</th></tr>
 </tbody>
@@ -955,7 +967,7 @@ Warning
 <div class="callout-body-container callout-body">
 <ol type="1">
 <li><p><strong>Validity of the instrument</strong>: We argued that precipitation satisfies the exclusion restriction because it affects asthma searches only through PM2.5. Can you think of a mechanism by which precipitation could <em>directly</em> affect asthma searches, bypassing PM2.5? If such a relationship exists, how would it bias our IV estimate?</p></li>
-<li><p><strong>LATE interpretation</strong>: IV estimates capture the <strong>Local Average Treatment Effect (LATE)</strong> — the effect for “compliers,” i.e., observations whose PM2.5 levels are actually moved by changes in precipitation. Who are the “compliers” in this setting, and how might this affect the generalizability of our estimate?</p></li>
+<li><p>Given that our first-stage F-statistic was below 10 even without controls, which of the following changes could plausibly strengthen precipitation as an instrument for PM2.5?</p></li>
 <li><p><strong>Alternative instruments</strong>: Can you propose another variable that might serve as an instrument for PM2.5? Explain why it would satisfy relevance and the exclusion restriction.</p></li>
 <li><p><strong>Four key assumptions</strong>: List the four key assumptions required for the IV strategy (2SLS) to identify a causal effect, and briefly explain what each one means in the context of this study.</p></li>
 </ol>
