@@ -97,6 +97,10 @@ We combine three datasets for Los Angeles County in 2023:
 
 Since Google Trends data is weekly, we will aggregate all daily data to the weekly level before merging.
 
+:::{.callout-tip}
+We will be using the `rnoaa` package to obtain our precipitation data. To do so, you need to request an API key. Enter your email at this [link](https://www.ncdc.noaa.gov/cdo-web/token), and an API key will be sent to you within ~ 2 minutes. 
+:::
+
 
 :::{.callout-tip title="Comprehension Check"}
 1. What omitted variables could drive both PM2.5 and asthma searches upward simultaneously?
