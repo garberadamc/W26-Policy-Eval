@@ -15,6 +15,12 @@ description: "February 10-13, 2026"
 
 <br>
 
+
+## {{< fa clipboard-list title="a clipboard with a To Do list" >}} Pre-lab Prep {#pre-lab-prep} 
+
+We will be using the `rnoaa` package to obtain our precipitation data. To do so, you need to request an API key. Enter your email at this [link](https://www.ncdc.noaa.gov/cdo-web/token), and an API key will be sent to you within ~ 2 minutes. 
+
+
 ## {{< fa laptop title="a laptop" >}} Lab Materials {#lab-materials}
 
 | Lab Materials to Download | Lab Solution |

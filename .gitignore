@@ -29,6 +29,10 @@ course-materials/labs/week5_notes.qmd
 _freeze/course-materials/labs/week5_notes/
 docs/course-materials/labs/week5_notes.html
 docs/course-materials/labs/week5_notes_files/
+docs/course-materials/labs/lab6_notes.html
+docs/course-materials/labs/lab6_notes_files/
+_freeze/course-materials/labs/lab6_notes/
+course-materials/labs/lab6_notes.knit.md
 .DS_Store
 **/.DS_Store
 **/*.quarto_ipynb

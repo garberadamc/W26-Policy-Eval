@@ -42,9 +42,9 @@ The relevance condition is testable (we can check whether $Z$ predicts $D$ in a 
 
 The most common IV estimator is **Two-Stage Least Squares (2SLS)**:
 
-**First stage**: Regress the endogenous treatment on the instrument(s) and any exogenous controls:
+**First stage**: Regress the endogenous treatment on the instrument(s):
 $$D_i = \beta_0 + \beta_1 Z_i$$ 
-where $W$ are exogenous control variables. Save the predicted values $\hat{D}$.
+Save the predicted values $\hat{D}$.
 
 **Second stage**: Regress the outcome on the predicted values from the first stage and the same controls:
 $$Y_i = \beta_0 + \beta_1 \hat{D}_i$$ 
@@ -75,10 +75,10 @@ What are the potential sources of endogeneity?
 
 ## Our Instrument: Precipitation
 
-We propose using **weekly precipitation** as an instrument ($Z$) for PM2.5 ($D$). The logic:
+We propose using **weekly precipitation** as an instrument ($Z$) for PM2.5 ($X$). The logic:
 
 - **Relevance**: Rainfall is a mechanism for removing particulate matter from the atmosphere ("wet deposition"). Weeks with more rain should have lower PM2.5 — we can test this.
-- **Exclusion restriction**: Rainfall affects asthma inhaler searches ($Y$) *only* through its effect on air quality ($D$), not directly. This is the assumption we must argue. It is more plausible if we control for seasonal patterns (month fixed effects), since precipitation's main pathway to respiratory outcomes is through air quality.
+- **Exclusion restriction**: Rainfall affects asthma inhaler searches ($Y$) *only* through its effect on air quality ($X$), not directly. This is the assumption we must argue. It is more plausible if we control for seasonal patterns (month fixed effects), since precipitation's main pathway to respiratory outcomes is through air quality.
 
 :::{.callout-warning}
 The exclusion restriction is not bulletproof. One could argue that wet weather keeps people indoors (changing exposure patterns) or that humidity itself triggers asthma. We include month fixed effects to absorb seasonal confounders, but you should always think critically about remaining threats.
@@ -103,8 +103,7 @@ We will be using the `rnoaa` package to obtain our precipitation data. To do so,
 
 
 :::{.callout-tip title="Comprehension Check"}
-1. What omitted variables could drive both PM2.5 and asthma searches upward simultaneously?
-2. Can you think of a scenario in which precipitation might violate the exclusion restriction even after controlling for month fixed effects?
+1. Can you think of a scenario in which precipitation might violate the exclusion restriction even after controlling for month fixed effects?
 :::
 
 
@@ -432,7 +431,7 @@ export_summs(m1_ols, m2_ols_fe, m3_ivreg,
 1. **Validity of the instrument**: We argued that precipitation satisfies the exclusion restriction because it affects asthma searches only through PM2.5. Can you think of a mechanism by which precipitation could *directly* affect asthma searches, bypassing PM2.5? If such a relationship exists, how would it bias our IV estimate?
 
 
-2. **LATE interpretation**: IV estimates capture the **Local Average Treatment Effect (LATE)** — the effect for "compliers," i.e., observations whose PM2.5 levels are actually moved by changes in precipitation. Who are the "compliers" in this setting, and how might this affect the generalizability of our estimate?
+2. Given that our first-stage F-statistic was below 10 even without controls, which of the following changes could plausibly strengthen precipitation as an instrument for PM2.5?
 
 3. **Alternative instruments**: Can you propose another variable that might serve as an instrument for PM2.5? Explain why it would satisfy relevance and the exclusion restriction.
 
