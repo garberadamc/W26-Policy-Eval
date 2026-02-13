@@ -36,24 +36,24 @@ $$\text{Cov}(Z, D) \neq 0$$
 2. **Exclusion restriction**: $Z$ must affect $Y$ *only* through $D$ — it cannot have a direct effect on $Y$ or be correlated with unobserved determinants of $Y$.
 $$\text{Cov}(Z, \varepsilon) = 0$$
 
-The relevance condition is testable (we can check whether $Z$ predicts $D$ in a regression). The exclusion restriction is **not directly testable** and must be argued on theoretical or contextual grounds.
+The relevance condition is testable (we can check whether $Z$ predicts $D$ in a regression). The exclusion restriction is **not directly testable** and must be argued theoretically.
 
 ## Two-Stage Least Squares (2SLS)
 
 The most common IV estimator is **Two-Stage Least Squares (2SLS)**:
 
 **First stage**: Regress the endogenous treatment on the instrument(s) and any exogenous controls:
-$$D = \gamma_0 + \gamma_1 Z + \gamma_2 W + \nu$$
+$$D_i = \beta_0 + \beta_1 Z_i$$ 
 where $W$ are exogenous control variables. Save the predicted values $\hat{D}$.
 
 **Second stage**: Regress the outcome on the predicted values from the first stage and the same controls:
-$$Y = \beta_0 + \beta_1 \hat{D} + \beta_2 W + \varepsilon$$
+$$Y_i = \beta_0 + \beta_1 \hat{D}_i$$ 
 
-The coefficient $\beta_1$ is the IV estimate of the causal effect of $D$ on $Y$. Because $\hat{D}$ is constructed only from variation in $Z$ (and $W$), it is purged of the endogenous component.
 
 :::{.callout-important}
-When performing 2SLS manually (running two separate regressions), the standard errors from the second stage are **incorrect** because they don't account for the fact that $\hat{D}$ is itself estimated. In practice we use dedicated functions like `ivreg()` that compute correct standard errors. We'll do both in this lab so you can see the mechanics, but always report results from the dedicated IV estimator.
+When performing 2SLS manually (running two separate regressions), the standard errors from the second stage are incorrect because they don't account for the fact that $\hat{D}$ is itself estimated. In practice we use dedicated functions like `ivreg()` that compute correct standard errors. We'll do both in this lab so you can see the mechanics, but always report results from the dedicated IV estimator.
 :::
+
 # Lab Overview
 
 ## Research Question
@@ -67,7 +67,7 @@ When performing 2SLS manually (running two separate regressions), the standard e
 
 ## The Endogeneity Problem in Our Setting
 
-If we simply regress our measure of respiratory illness ($Y$) on PM2.5 concentrations ($X$), our estimate will likely be biased. Consider the potential sources of endogeneity:
+If we simply regress our measure of respiratory illness ($Y$) on PM2.5 concentrations ($X$), our estimate will likely be biased. 
 
 :::{.callout-tip title="Comprehension Check"}
 What are the potential sources of endogeneity?
@@ -111,12 +111,12 @@ Since Google Trends data is weekly, we will aggregate all daily data to the week
 
 #### Load Packages
 
-```{r setup}
+```{r load-packages}
 
 
 #install.packages("gtrendsR") 
 #install.packages("ivreg")
-remotes::install_github("ropensci/rnoaa")
+#remotes::install_github("ropensci/rnoaa")
 library(tidyverse)
 library(dplyr)
 library(ggplot2)
@@ -132,24 +132,22 @@ set.seed(241244)
 
 #### Load in Data
 
-We'll use California 2023 data for PM2.5 and precipitation from EPA's AQS. We filter to LA County (county code `"037"`).
+We'll use LA County 2023 data for PM2.5 and precipitation from EPA's AQS.
 
 ```{r}
 #| eval: true
 #| echo: false
-pm25 <- read_csv(here::here("course-materials", "labs", "data", "daily_88101_2023.csv")) %>% janitor::clean_names() %>% 
-  mutate(date = mdy(date_local)) %>% 
-  filter(county_code == "037") 
+pm25 <- read_csv(here::here("course-materials", "labs", "data", "daily_pm25_LA.csv")) %>% janitor::clean_names() %>% 
+  mutate(date = mdy(date)) 
 ```
 
 
 ```{r}
 #| eval: false
 #| echo: true
-pm25 <- read_csv(here::here("week6", "daily_88101_2023.csv")) %>% 
+pm25 <- read_csv(here::here("week6", "daily_pm25_LA.csv")) %>% 
   janitor::clean_names() %>%  
-  mutate(date = mdy(date_local)) %>% 
-  filter(county_code == "037") 
+  mutate(date = mdy(date))
 ```
 
 
@@ -248,7 +246,7 @@ data <- data %>%
 data_weekly <- data %>%
   group_by(week_start) %>%
   summarise(
-    pm25_mean = mean(aqi, na.rm= TRUE),
+    pm25_mean = mean(daily_mean_pm2_5_concentration, na.rm= TRUE),
     precip_total = sum(precip_in),
     .groups = "drop"
   ) 
@@ -272,8 +270,42 @@ How many observations do we have in our final dataset? Is this a lot or a little
 :::
 
 
-## EDA 
+## Exploratory Data Analysis
 
+Before diving into models, let's visualize our three key variables and their relationships.
+
+
+#### Relationship Between PM2.5 and Asthma Searches (the relationship we want to estimate)
+
+```{r}
+
+ggplot(data_weekly_joined, aes(x = pm25_mean, y = asthma_index)) +
+  geom_point(alpha = 0.6, color = "darkgreen", size = 2) +
+  geom_smooth(method = "lm", se = TRUE, color = "dodgerblue", linewidth = 1) +
+  labs(
+    x = "Weekly Mean PM 2.5 (AQI)",
+    y = "Asthma Inhaler Search Index",
+    title = "PM 2.5 vs. Asthma Inhaler Searches"
+  ) +
+  theme_minimal()
+```
+
+#### Relationship Between Precipitation and PM2.5 (first-stage relationship)
+
+This is the key relationship for our instrument. Does more rain lead to lower PM2.5?
+
+```{r}
+
+ggplot(data_weekly_joined, aes(x = precip_total, y = pm25_mean)) +
+  geom_point(alpha = 0.6, color = "darkgreen", size = 2) +
+  geom_smooth(method = "lm", se = TRUE, color = "dodgerblue", linewidth = 1) +
+  labs(
+    x = "Weekly Total Precipitation (in)",
+    y = "Weekly Mean PM 2.5 (AQI)",
+    title = "Precipitation vs. PM2.5"
+  ) +
+  theme_minimal()
+```
 
 
 ## Model
@@ -339,7 +371,7 @@ first_stage_summary$fstatistic[1]
 
 ### Step 4: Second Stage (Manual 2SLS)
 
-Using the predicted values ($\hat{X}$) from the first stage, we now estimate the second stage. This isolates the variation in PM2.5 that is driven *only* by precipitation ($Z$).
+Using the predicted values ($\hat{X}$) from the first stage, we now estimate the second stage. This isolates the variation in PM 2.5 that is driven *only* by precipitation ($Z$).
 
 ```{r}
 
@@ -354,7 +386,7 @@ export_summs(second_stage, digits = 3,
 ```
 
 :::{.callout-warning}
-Remember: the standard errors from this manual second stage are **not correct** for inference. They don't account for the estimation uncertainty in $\hat{X}$ from the first stage. Always use `ivreg()` for your actual results.
+Remember: the standard errors from this manual second stage are not correct for inference. They don't account for the estimation uncertainty in $\hat{X}$ from the first stage. Use `ivreg()` for your actual results.
 :::
 
 
@@ -388,4 +420,19 @@ export_summs(m1_ols, m2_ols_fe, m3_ivreg,
              coefs = c("pm25_mean"))
 ```
 
+# Discussion & Reflection
+
+:::{.callout-tip title="Comprehension Check"}
+
+
+1. **Validity of the instrument**: We argued that precipitation satisfies the exclusion restriction because it affects asthma searches only through PM2.5. Can you think of a mechanism by which precipitation could *directly* affect asthma searches, bypassing PM2.5? If such a relationship exists, how would it bias our IV estimate?
+
+
+2. **LATE interpretation**: IV estimates capture the **Local Average Treatment Effect (LATE)** — the effect for "compliers," i.e., observations whose PM2.5 levels are actually moved by changes in precipitation. Who are the "compliers" in this setting, and how might this affect the generalizability of our estimate?
+
+3. **Alternative instruments**: Can you propose another variable that might serve as an instrument for PM2.5? Explain why it would satisfy relevance and the exclusion restriction.
+
+
+4. **Four key assumptions**:  List the four key assumptions required for the IV strategy (2SLS) to identify a causal effect, and briefly explain what each one means in the context of this study.
+:::
 
