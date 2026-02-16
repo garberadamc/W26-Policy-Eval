@@ -1,5 +1,5 @@
 ---
-title: "Week 7: "
+title: "Week 7: Synthetic Control Method"
 subtitle: ""
 description: "February 17-20, 2026"
 ---
@@ -9,8 +9,8 @@ description: "February 17-20, 2026"
 
 | Lecture slides |  Resources |
 |----------------|------------|
-| [Lecture (TUES): ](){target="_blank"}  | [](){target="_blank"}  |  
-| [Lecture (THURS): ](){target="_blank"}  | [](){target="_blank"}  | 
+| [Lecture (TUES): Instrumental Variables (continued)](){target="_blank"}  | [](){target="_blank"}  |  
+| [Lecture (THURS): Synthetic Control](){target="_blank"}  | [](){target="_blank"}  | 
 : {.hover .bordered tbl-colwidths="[50,25,25]"} 
 
 <br>
@@ -28,7 +28,6 @@ description: "February 17-20, 2026"
 
 | Assignment Type | Assignment Title                              | Date Assigned  | Date Due                   |
 |-----------------|-----------------------------------------------|----------------|----------------------------|
-| Reading -  | [](){target="_blank"} |  |   |
-| Reading - *Mastering 'Metrics* | A&P: |  |  |
-
+| Reading - Group Topic Assignments  | Read Assigned/Suggested Article | 2/16  | 2/19 |
+| Reading - Synthetic Control Article | [Abadie et al., 2021](https://drive.google.com/file/d/1D52MvHprR9806zLDX-cZMtXcM2ZOU4mK/view?usp=sharing){target="_blank"} | 2/16  | 2/19 |
 : {.hover .bordered tbl-colwidths="[20,30,20,30]"} 
