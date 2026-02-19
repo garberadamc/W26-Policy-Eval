@@ -1,0 +1,121 @@
+---
+title: "Lab: Synthetic Control Method (SCM)"
+subtitle: "Simulated Dataset: California Cap-and-Trade SCM Lab"
+author: "EDS241 / ESM244"
+format: html
+editor: visual
+---
+
+```{r}
+# -----------------------------
+# 1. Install + Load Packages
+# -----------------------------
+
+# install.packages("tidysynth")
+# install.packages("tidyverse")
+# install.packages("patchwork")
+
+library(tidysynth)
+library(tidyverse)
+library(patchwork)
+```
+
+```{r}
+# -----------------------------
+# 2. Load Data
+# -----------------------------
+
+data <- read_csv(here::here("course-materials", "labs", "data", "ca_captrade_scm_sim_data.csv"))
+
+head(data)
+```
+
+```{r}
+# -----------------------------
+# 3. Declare Synthetic Control
+# -----------------------------
+
+scm_data <- data %>%
+  synthetic_control(
+    outcome = co2_power_pc_tons,
+    unit = state,
+    time = year,
+    i_unit = "CA",
+    i_time = 2013,
+    generate_placebos = TRUE) %>%
+  generate_predictor(  # Predictors (pre-treatment averages)
+    time_window = 2000:2012,
+    coal_share = mean(coal_share, na.rm = TRUE),
+    income_pc = mean(income_pc, na.rm = TRUE),
+    elec_price = mean(elec_price, na.rm = TRUE),
+    co2_pre_mean = mean(co2_power_pc_tons, na.rm = TRUE)) %>%
+  generate_weights(
+    optimization_window = 2000:2012,
+    margin_ipop = 0.02,
+    sigf_ipop = 7,
+    bound_ipop = 6) %>%
+  generate_control() # Generate synthetic control
+```
+
+```{r}
+# -----------------------------
+# 4. Plot Trends
+# -----------------------------
+
+p1 <- scm_data %>%
+  plot_trends() +
+  labs(title = "California vs Synthetic California",
+       y = "CO2 per capita (power sector)",
+       x = "Year")
+
+p1
+```
+
+```{r}
+# -----------------------------
+# 5. Plot Gaps (Treatment Effect)
+# -----------------------------
+
+p2 <- scm_data %>%
+  plot_differences() +
+  labs(title = "Gap: Observed - Synthetic")
+
+p2
+```
+
+```{r}
+# -----------------------------
+# 6. Placebo Tests
+# -----------------------------
+
+p3 <- scm_data %>%
+  plot_placebos() +
+  labs(title = "Placebo Tests")
+
+p3
+```
+
+```{r}
+# -----------------------------
+# 7. MSPE Ratio Plot
+# -----------------------------
+
+p4 <- scm_data %>%
+  plot_mspe_ratio() +
+  labs(title = "MSPE Ratio (Permutation Inference)")
+
+p4
+```
+
+```{r}
+# -----------------------------
+# 8. Balance Table
+# -----------------------------
+
+balance <- scm_data %>%
+  grab_balance_table()
+
+print(balance)
+```
+
+# 
