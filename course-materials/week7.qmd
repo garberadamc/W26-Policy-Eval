@@ -10,7 +10,7 @@ description: "February 17-20, 2026"
 | Lecture slides |  Resources |
 |----------------|------------|
 | [Lecture (TUES): Instrumental Variables (continued)](https://drive.google.com/file/d/19ac78vVe4P8uBfO_NXve9S083eRnFsUE/view?usp=sharing){target="_blank"}  | [](){target="_blank"}  |  
-| [Lecture (THURS): Synthetic Control](){target="_blank"}  | [](){target="_blank"}  | 
+| [Lecture (THURS): Synthetic Control](https://drive.google.com/file/d/1bOwYe4hhZ1jtVsXwG5I9BWhefFyVTesQ/view?usp=drive_link){target="_blank"}  | [](){target="_blank"}  | 
 : {.hover .bordered tbl-colwidths="[50,25,25]"} 
 
 <br>
