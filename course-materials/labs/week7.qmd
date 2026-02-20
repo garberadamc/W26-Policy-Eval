@@ -24,8 +24,6 @@ A simple comparison of California to other states runs into several problems: st
 
 The solution is to create a **"Synthetic California"** — a weighted average of states that did not receive the policy treatment. SCM is a data-driven method that chooses weights so that pre-treatment emissions trends match closely (i.e., pre-2013) and covariates match (income, coal share, electricity price).
 
-
-
 ### When Do We Use Synthetic Control?
 
 We use SCM when we have **one aggregate unit** that receives the treatment (policy) — for example, a city, state, or nation — and we need a group of comparison units to synthesize the control. In SCM, this comparison group is called the **"donor pool"**.
@@ -46,7 +44,6 @@ Following the approach in Lessmann & Kramer (2024), the donor pool should **excl
 
 If synthetic CA looks like real CA before 2013 (i.e., in emissions), then synthetic CA approximates "what would have happened without cap-and-trade." The treatment effect at each post-treatment period is the gap between observed and synthetic outcomes.
 
-
 Before the 2013 policy: Real CA $\approx$ Synthetic CA.
 
 After the 2013 policy: the gap equals the treatment effect.
@@ -59,8 +56,6 @@ Good pre-treatment fit is the key credibility condition.If we cannot match trend
 1.  Why can't we simply pick a single state (e.g., Texas) as a comparison for California? What problems would a simple comparison introduce?
 2.  What does it mean if the synthetic control closely tracks the treated unit in the pre-treatment period? What if it doesn't?
 :::
-
-
 
 # Lab Overview
 
@@ -80,7 +75,7 @@ This lab uses a simplified example loosely based on the study by Lessmann & Kram
 We use the following pre-treatment (2000–2012) averages as predictors to construct the synthetic control:
 
 | Variable            | Description                               | Role      |
-|------------------|--------------------------------------|----------------|
+|------------------|-------------------------------------|------------------|
 | `coal_share`        | Share of electricity generation from coal | Predictor |
 | `income_pc`         | Per capita income                         | Predictor |
 | `elec_price`        | Electricity price                         | Predictor |
@@ -100,14 +95,11 @@ In this lab, you will:
 Why do we include the pre-treatment mean of the outcome variable (`co2_power_pc_tons`) as a predictor? What would happen if we only used the other covariates?
 :::
 
-
-
 # Analysis
 
 ## Setup
 
 #### Load Packages
-
 
 ```{r}
 #| warning: false
@@ -122,13 +114,9 @@ library(tidyverse)
 library(patchwork) # for combining plots
 ```
 
-
 ## Load Data
 
 The dataset contains annual state-level panel data with CO₂ emissions, energy mix, income, and electricity prices. Each row represents a state-year observation.
-
-
-
 
 ```{r}
 #| eval: false
@@ -138,7 +126,6 @@ data <- read_csv(here::here("week7", "data", "ca_captrade_scm_sim_data.csv"))
 
 head(data)
 ```
-
 
 ```{r}
 #| eval: true
@@ -150,11 +137,8 @@ head(data)
 ```
 
 ::: {.callout-tip title="Comprehension Check"}
-1.  How many states are in the donor pool? How many years does the data cover?
-2.  What is the unit of observation in this dataset?
+How many states are in the donor pool? How many years does the data cover?
 :::
-
-
 
 ## Declare the Synthetic Control
 
@@ -164,7 +148,6 @@ This is the core step. Using `tidysynth`, we declare the synthetic control speci
 -   **`generate_predictor()`**: Defines the pre-treatment characteristics used to match the synthetic control to California. We compute 2000–2012 averages of coal share, income, electricity price, and the outcome variable itself.
 -   **`generate_weights()`**: Chooses donor weights that minimize the distance between California and the synthetic control on the predictors.
 -   **`generate_control()`**: Constructs the synthetic control unit using the optimized weights.
-
 
 ```{r}
 
@@ -196,7 +179,6 @@ The trends plot is our first visual diagnostic. It overlays the observed outcome
 
 Remember the intuition from lecture: if synthetic CA looks like real CA before 2013, then synthetic CA approximates what would have happened without cap-and-trade.
 
-
 ```{r}
 #| warning: false
 #| message: false
@@ -215,7 +197,6 @@ p1
 1.  Do the observed and synthetic trends track each other well before 2013? What does this tell you about the quality of the synthetic control?
 2.  What happens to the gap between the two lines after 2013? What does this suggest about the effect of cap-and-trade?
 :::
-
 
 ## Plot Gaps (Treatment Effect)
 
@@ -237,13 +218,11 @@ p2
 Examine the gap plot. Describe what you observe in both the pre-treatment and post-treatment periods.
 :::
 
-
 ## Placebo Tests
 
 Now we assess statistical significance using placebo tests. Recall the procedure from lecture: we apply SCM to **every donor state** as if it received the treatment in 2013, then compare California's gap to the distribution of placebo gaps. If California's post-treatment gap stands out clearly from the placebos, this provides evidence that the effect is real and not just noise.
 
 The plot below overlays California's gap (highlighted) against all placebo gaps. Ideally, California's line should diverge noticeably from the placebo distribution after 2013.
-
 
 ```{r}
 #| warning: false
@@ -271,7 +250,6 @@ $$
 
 A high ratio means the unit's post-treatment gap is large **relative to its pre-treatment fit**. If California's MSPE ratio ranks at or near the top, the divergence is unlikely due to chance.
 
-
 ```{r}
 #| warning: false
 #| message: false
@@ -283,20 +261,18 @@ p4 <- scm_data %>%
 
 p4
 ```
+
 ::: {.callout-tip title="Tip"}
 Click the zoom button to open the plot in a new window to better view y axis labels!
 :::
-
 
 ::: {.callout-tip title="Comprehension Check"}
 1.  Where does California rank in the MSPE ratio distribution? What does this imply about the statistical significance of the estimated effect?
 :::
 
-
 ## Balance Table
 
 The balance table compares pre-treatment predictor values for **real California**, **synthetic California**, and the **donor pool average**. Good balance means the synthetic control closely matches California on all predictors — not just the outcome. Large discrepancies between California and its synthetic version would indicate that the optimization did not find a good match, undermining the credibility of the counterfactual.
-
 
 ```{r}
 balance <- scm_data %>%
@@ -307,9 +283,8 @@ print(balance)
 
 ::: {.callout-tip title="Comprehension Check"}
 1.  How well does synthetic California match real California on each predictor? Are there any variables where the match is particularly poor?
-2.  How does the synthetic control compare to the simple donor pool average? 
+2.  How does the synthetic control compare to the simple donor pool average?
 :::
-
 
 # Discussion & Reflection
 
@@ -321,6 +296,4 @@ print(balance)
 3.  **Donor pool selection**: Why is it important that donor states did not implement similar carbon pricing policies during the study period? What would happen to our estimates if some donor states also adopted cap-and-trade (hint: think about spillover and the no-interference assumption)?
 
 4.  **Comparison to other methods**: How is SCM different from matching? What are the advantages of building a weighted synthetic counterfactual from the donor pool to match the treated unit's pre-treatment outcome path, versus matching on observed covariates?
-
 :::
-
