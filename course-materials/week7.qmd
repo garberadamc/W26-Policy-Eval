@@ -19,7 +19,7 @@ description: "February 17-20, 2026"
 
 | Lab Materials to Download | Lab Solution |
 |----------------|------------|
-| [](){target="_blank"} | [](){target="_blank"} |
+| [Lab Materials to Download](https://downgit.github.io/#/home?url=https://github.com/annieradams/EDS241-Weekly-Labs/tree/main/week7){target="_blank"} | [Week 7 Lab](labs/week7.qmd){target="_blank"} |
 : {.hover .bordered tbl-colwidths="[50,50]"}
 
 
