@@ -27,20 +27,20 @@ website:
             href: course-materials/week2.qmd
           - text: week 3 (1/20/26)
             href: course-materials/week3.qmd
-          - text: week 4 (1/27/25)
+          - text: week 4 (1/27/26)
             href: course-materials/week4.qmd          
-          - text: week 5 (2/03/25)
+          - text: week 5 (2/03/26)
             href: course-materials/week5.qmd
-          - text: week 6 (2/10/25)
+          - text: week 6 (2/10/26)
             href: course-materials/week6.qmd        
-          - text: week 7 (2/17/25)
+          - text: week 7 (2/17/26)
             href: course-materials/week7.qmd
-          #- text: week 8 (24/02/25)
-          #  href: course-materials/week8.qmd    
-          #- text: week 9 (03/03/25)
-          #  href: course-materials/week9.qmd  
-          #- text: week 10 (10/03/25)
-          #  href: course-materials/week10.qmd  
+          - text: week 8 (2/24/26)
+            href: course-materials/week8.qmd    
+          - text: week 9 (3/03/26)
+            href: course-materials/week9.qmd  
+          - text: week 10 (3/10/26)
+            href: course-materials/week10.qmd  
       #- text: assignments
       #  href: course-materials/assignments.qmd
       #- text: resources
