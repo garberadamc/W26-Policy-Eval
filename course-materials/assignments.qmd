@@ -7,8 +7,9 @@ toc: true
 # Final Project Home Page (EDS241 / ESM 244)
 
 ::: {.callout-important}
-## Important: Email group presentation slides to instructor (Adam) before 7am on presentation day! (3/19)
+## Important: Final Project Details, Instructions, and Due Dates Are **Tentative** 
 
+- Any changes made will be announced & updated on the website 
 - Presentation slides must be emailed to your instructor (Adam) by 7am (3/19) 
 - Acceptable submission formats include `google slides` or a shared link of the slides in `pdf` format 
   (i.e., *a Google Drive link*)
@@ -20,7 +21,7 @@ toc: true
 - [Final Project Instructions](https://docs.google.com/document/d/1ZhEnoh03IW3LdFwcBSZQ3BPSJfcCWJtaVbovRfFssIM/edit?usp=sharing) 
 - [Study Group Assignments](https://docs.google.com/spreadsheets/d/1knSA53q-zJMUyUTmChbF-78BtAcZAMfCb-CSN3mnBxI/edit?usp=drive_link)
 - [Final Presentation Grading Rubric](https://docs.google.com/document/d/1iO_RxNPDAvOOiUemph7l10L-2Eby09e5WYdl8gXR5d8/edit?usp=sharing)
-- [Presentation Question Form (TO_BE_ADDDED)]()
+- `Presentation Day Audience Question Form (TO_BE_ADDDED)`
   
   
 ## Presentation day schedule (8-11am, Thursday 3/19):

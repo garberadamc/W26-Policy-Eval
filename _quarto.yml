@@ -41,8 +41,8 @@ website:
             href: course-materials/week9.qmd  
           - text: week 10 (3/10/26)
             href: course-materials/week10.qmd  
-      #- text: assignments
-      #  href: course-materials/assignments.qmd
+      - text: final project
+        href: course-materials/assignments.qmd
       #- text: resources
       #  href: course-materials/resources.qmd
       - icon: github
