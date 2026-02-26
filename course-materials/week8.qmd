@@ -18,7 +18,7 @@ description: "February 24-26, 2026"
 
 | Lab Materials to Download | Lab Solution |
 |----------------|------------|
-| [MLM Lab Repo](https://downgit.github.io/#/home?url=https://github.com/garberadamc/Lab_MLM_W8.git){target="_blank"} | [](){target="_blank"} |
+| [MLM Lab Repo](https://github.com/garberadamc/Lab_MLM_W8){target="_blank"} | [](){target="_blank"} |
 : {.hover .bordered tbl-colwidths="[50,50]"}
 
 
