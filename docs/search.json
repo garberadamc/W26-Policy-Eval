@@ -1391,5 +1391,61 @@
     "title": "Week 9:",
     "section": " Lab Materials",
     "text": "Lab Materials\n\n\n\n\n\n\n\nLab Materials to Download\nLab Solution"
+  },
+  {
+    "objectID": "course-materials/assignments/hw-4.html",
+    "href": "course-materials/assignments/hw-4.html",
+    "title": "Assignment 4: Replicate Your Project Study’s Analysis",
+    "section": "",
+    "text": "This assignment is a first draft of your blog post write-up. You will replicate the core analysis from your team’s chosen study, pair each code block with clear written explanations, and critically evaluate the study’s causal identification strategy.\n\n\n\n\n\n\nNote\n\n\n\nDue Date: Friday, March 6th — submitted as a PDF via Gradescope.\n\n\n\n\n\n\n\n\nImportant\n\n\n\nData Requirement: This assignment requires that your team has access to the study data before you begin."
+  },
+  {
+    "objectID": "course-materials/assignments/hw-4.html#overview",
+    "href": "course-materials/assignments/hw-4.html#overview",
+    "title": "Assignment 4: Replicate Your Project Study’s Analysis",
+    "section": "",
+    "text": "This assignment is a first draft of your blog post write-up. You will replicate the core analysis from your team’s chosen study, pair each code block with clear written explanations, and critically evaluate the study’s causal identification strategy.\n\n\n\n\n\n\nNote\n\n\n\nDue Date: Friday, March 6th — submitted as a PDF via Gradescope.\n\n\n\n\n\n\n\n\nImportant\n\n\n\nData Requirement: This assignment requires that your team has access to the study data before you begin."
+  },
+  {
+    "objectID": "course-materials/assignments/hw-4.html#collaboration-policy",
+    "href": "course-materials/assignments/hw-4.html#collaboration-policy",
+    "title": "Assignment 4: Replicate Your Project Study’s Analysis",
+    "section": "Collaboration Policy",
+    "text": "Collaboration Policy\n\n\n\n\n\n\n\nComponent\nPolicy\n\n\n\n\nCode\nCollaborative — you may work on code together as a team\n\n\nWrite-up\nIndependent — all writing must be in your own words; each student’s submission must differ"
+  },
+  {
+    "objectID": "course-materials/assignments/hw-4.html#assignment-structure-requirements",
+    "href": "course-materials/assignments/hw-4.html#assignment-structure-requirements",
+    "title": "Assignment 4: Replicate Your Project Study’s Analysis",
+    "section": "Assignment Structure & Requirements",
+    "text": "Assignment Structure & Requirements\n\n1. Data Description\nAfter the code block(s) that read in and clean the data, add some notes covering:\n\nWhat does each row represent? What is the unit of observation?\nWhat are the key outcome, treatment, and control variables?\nAny notable data cleaning decisions (dropped observations, constructed variables, etc.)\nSample size, time period, and geographic scope\n\n\nUse your best judgment on depth — give readers enough context to understand what is important and relevant to your analyses.\n\n\n\n\n2. Annotated Replication\nAfter each subsequent code block, add some notes covering:\n\nWhat does the code accomplish? (summary of the procedure or model)\nWhat is the causal identification approach? (e.g., DiD, RDD, IV, matching)\nWhat assumptions must hold for the estimates to be causally valid?\nAre there any signs in the output that those assumptions are or are not satisfied?\n\n\n\n\n3. Critical Evaluation\nSomewhere in the write-up (or as a closing section), address each of the following:\n\nCausal identification: Is the identification strategy credible? What would have to be true for the estimates to be causal?\nStatistical assumptions: Are key assumptions (parallel trends, exclusion restriction, etc.) tested or defended? Do you find the evidence convincing?\nSampling & external validity: Who is in the sample? To whom can results be generalized?\nMeasurement: Are the outcome and treatment variables measured accurately and without systematic bias?\nOther limitations: Anything else that affects how much weight you would put on the study’s conclusions?"
+  },
+  {
+    "objectID": "course-materials/assignments/hw-4.html#rubric",
+    "href": "course-materials/assignments/hw-4.html#rubric",
+    "title": "Assignment 4: Replicate Your Project Study’s Analysis",
+    "section": "Rubric",
+    "text": "Rubric\n\n\n\n\n\n\nNote\n\n\n\nThis is a rough draft — write-ups can be bullet points or notes rather than polished paragraphs. The primary focus is on successfully replicating the study’s analysis via code.\n\n\n\n\n\n\n\n\n\n\nCategory\nPoints\nWhat We’re Looking For\n\n\n\n\nCode Replication\n30\nStudy analysis is replicated; code runs and produces results that match (or reasonably approximate) the study’s findings\n\n\nData Description\n15\nKey variables, unit of observation, and any important cleaning decisions are noted (bullets fine)\n\n\nCode Annotation\n20\nEach code block has some accompanying notes explaining what it does and the basic identification approach\n\n\nCritical Evaluation\n30\nThoughtful reflection on identification assumptions, limitations, or data caveats (can be notes, but should completely answer all critical evaluation questions)\n\n\nCompleteness\n5\nAll sections present, .qmd renders cleanly\n\n\nTotal\n100\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\nNote for teams with simple or author-provided identification code: Your grade will weight the quality of the write-up and the thoroughness of the critical evaluation more heavily than the complexity of the code replication."
+  },
+  {
+    "objectID": "course-materials/assignments/hw-4.html#tips-for-a-strong-submission",
+    "href": "course-materials/assignments/hw-4.html#tips-for-a-strong-submission",
+    "title": "Assignment 4: Replicate Your Project Study’s Analysis",
+    "section": "Tips for a Strong Submission",
+    "text": "Tips for a Strong Submission\n\nExplain, don’t just describe. Don’t just say “this code runs a regression” — explain why that regression answers the causal question.\nBe specific about assumptions. Name the assumption (e.g., “parallel pre-trends”), explain what it means in this context, and point to evidence for or against it.\nWrite for a general audience. Imagine your reader has taken intro stats but has not read the paper."
+  },
+  {
+    "objectID": "course-materials/assignments/hw-4.html#submission",
+    "href": "course-materials/assignments/hw-4.html#submission",
+    "title": "Assignment 4: Replicate Your Project Study’s Analysis",
+    "section": "Submission",
+    "text": "Submission\nOne submission per group — all team members add themselves to the same Gradescope submission. Code and write-up are fully collaborative."
+  },
+  {
+    "objectID": "course-materials/assignments/hw-4.html#footnotes",
+    "href": "course-materials/assignments/hw-4.html#footnotes",
+    "title": "Assignment 4: Replicate Your Project Study’s Analysis",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nth↩︎"
   }
 ]

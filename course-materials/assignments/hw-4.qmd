@@ -1,0 +1,98 @@
+---
+title: "Assignment 4: Replicate Your Project Study's Analysis"
+subtitle: "Due Friday, March 6^th^"
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    theme: cosmo
+---
+
+## Overview
+
+This assignment is a **first draft of your blog post write-up**. You will replicate the core analysis from your team's chosen study, pair each code block with clear written explanations, and critically evaluate the study's causal identification strategy.
+
+::: {.callout-note}
+**Due Date:** Friday, March 6th — submitted as a PDF via **Gradescope**.
+:::
+
+::: {.callout-important}
+**Data Requirement:** This assignment requires that your team has access to the study data before you begin.
+:::
+
+---
+
+
+
+## Submission
+
+One submission per group — all team members add themselves to the **same Gradescope submission**. Code and write-up are fully collaborative.
+
+---
+
+
+
+## Assignment Structure & Requirements
+
+### 1. Data Description
+After the code block(s) that read in and clean the data, add some notes covering:
+
+- What does each row represent? What is the unit of observation?
+- What are the key outcome, treatment, and control variables?
+- Any notable data cleaning decisions (dropped observations, constructed variables, etc.)
+- Sample size, time period, and geographic scope
+
+> *Use your best judgment on depth — give readers enough context to understand what is important and relevant to your analyses.*
+
+---
+
+
+### 2. Annotated Replication
+After **each subsequent code block**, add some notes covering:
+
+- What does the code accomplish? (summary of the procedure or model)
+- What is the causal identification approach? (e.g., DiD, RDD, IV, matching)
+- What assumptions must hold for the estimates to be causally valid?
+- Are there any signs in the output that those assumptions are or are not satisfied?
+
+---
+
+### 3. Critical Evaluation
+Somewhere in the write-up (or as a closing section), address each of the following:
+
+- **Causal identification:** Is the identification strategy credible? What would have to be true for the estimates to be causal?
+- **Statistical assumptions:** Are key assumptions (parallel trends, exclusion restriction, etc.) tested or defended? Do you find the evidence convincing?
+- **Sampling & external validity:** Who is in the sample? To whom can results be generalized?
+- **Measurement:** Are the outcome and treatment variables measured accurately and without systematic bias?
+- **Other limitations:** Anything else that affects how much weight you would put on the study's conclusions?
+
+---
+
+## Rubric
+
+::: {.callout-note}
+This is a **rough draft** — write-ups can be bullet points or notes rather than polished paragraphs. The primary focus is on successfully replicating the study's analysis via code.
+:::
+
+| Category | Points | What We're Looking For |
+|----------|--------|------------------------|
+| **Code Replication** | 30 | Study analysis is replicated; code runs and produces results that match (or reasonably approximate) the study's findings |
+| **Data Description** | 15 | Key variables, unit of observation, and any important cleaning decisions are noted (bullets fine) |
+| **Code Annotation** | 20 | Each code block has some accompanying notes explaining what it does and the basic identification approach |
+| **Critical Evaluation** | 30 | Thoughtful reflection on identification assumptions, limitations, or data caveats (can be notes, but should completely answer all critical evaluation questions) |
+| **Completeness** | 5 | All sections present, `.qmd` renders cleanly |
+| **Total** | **100** | |
+
+::: {.callout-tip}
+**Note for teams with simple or author-provided identification code:** Your grade will weight the *quality of the write-up* and the *thoroughness of the critical evaluation* more heavily than the complexity of the code replication.
+:::
+
+
+---
+
+## Tips for a Strong Submission
+
+1. **Explain, don't just describe.** Don't just say "this code runs a regression" — explain *why* that regression answers the causal question.
+2. **Be specific about assumptions.** Name the assumption (e.g., "parallel pre-trends"), explain what it means in this context, and point to evidence for or against it.
+3. **Write for a general audience.** Imagine your reader has taken intro stats but has not read the paper.
+
