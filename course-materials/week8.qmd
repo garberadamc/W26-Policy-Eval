@@ -27,6 +27,7 @@ description: "February 24-26, 2026"
 
 | Assignment Type | Assignment Title                              | Date Assigned  | Date Due                   |
 |-----------------|-----------------------------------------------|----------------|----------------------------|
-| Reading -  | [](){target="_blank"} | 2/20  | 2/25 |
+| Assignment 4  | [Replicate Your Project Study's Analysis](assignments/hw-4.qmd){target="_blank"} | 2/27  | 3/6 |
 : {.hover .bordered tbl-colwidths="[20,30,20,30]"} 
+
 
