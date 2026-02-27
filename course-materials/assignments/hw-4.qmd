@@ -55,6 +55,11 @@ After **each subsequent code block**, add some notes covering:
 - What assumptions must hold for the estimates to be causally valid?
 - Are there any signs in the output that those assumptions are or are not satisfied?
 
+::: {.callout-note}
+If code is already available and/or estimation is simple think of ways the coding script could be made more accessible for communication purposes (tidyness/readability) and think of ways to creatively evaluate assumptions and visualize violations of assumptions or limitations.
+:::
+
+
 ---
 
 ### 3. Critical Evaluation
