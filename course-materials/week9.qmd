@@ -9,7 +9,7 @@ description: "March 3-5, 2026"
 | Lecture slides |  Resources |
 |----------------|------------|
 | [Lecture (TUES): Scavenger Hunt Activity](https://docs.google.com/document/d/1oyFX35Fbfni7uurPPLcF_k9vX15UNVBHKAJHO0qvc2s/edit?usp=sharing){target="_blank"}  | [](){target="_blank"}  |  
-| [Lecture (THURS): ](){target="_blank"}  | [](){target="_blank"}  | 
+| [Lecture (THURS): Causal Critique Challenge](https://docs.google.com/document/d/1WW8Xa99qvrpQ_0Fts4y2IhVoIIxZpDd_Acvi0GuzRHY/edit?usp=sharing){target="_blank"}  | [](){target="_blank"}  | 
 : {.hover .bordered tbl-colwidths="[50,25,25]"} 
 
 <br>
