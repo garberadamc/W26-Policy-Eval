@@ -1,6 +1,6 @@
 ---
 title: "Week 10: "
-subtitle: "Mixed Effects Models - Random Effects"
+subtitle: "Causal Inference Review"
 description: "March 10-12, 2026"
 ---
 
@@ -8,7 +8,7 @@ description: "March 10-12, 2026"
 
 | Lecture slides |  Resources |
 |----------------|------------|
-| [Lecture (TUES): ](){target="_blank"}  | [](){target="_blank"}  |  
+| [Lecture (TUES): Review - Causal Inference](https://drive.google.com/file/d/1EXcwjPzhwf50jowOMJ0ma8IhPTO4SS6h/view?usp=sharing){target="_blank"}  | [](){target="_blank"}  |  
 | [Lecture (THURS): ](){target="_blank"}  | [](){target="_blank"}  | 
 : {.hover .bordered tbl-colwidths="[50,25,25]"} 
 
