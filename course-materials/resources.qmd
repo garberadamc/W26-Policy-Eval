@@ -10,9 +10,9 @@ toc: true
 ::: callout-tip
 ### Legend:
 
-- ⭐️ Research study includes author(s) @ BREN 
-- 📍 Research study includes author(s) @ UCSB
-- 🔁 Main findings of study analysis replicated using *open access* data
+- ⭐️ Research study includes author(s) `@BREN`
+- 📍 Research study includes author(s) `@UCSB`
+- 🔁 Selected findings of study analysis replicated using `open access data`
 
 :::
 
@@ -21,15 +21,19 @@ toc: true
 
 **Experiments**
 
-- ⭐️🔁 [Buntaine et al., 2024 - *Social competition drives collective action to reduce informal waste burning in Uganda*](https://drive.google.com/file/d/1bvW40xguud2Y_bRnxwjCCZSmAZALgQTn/view?usp=sharing)
-- [Anderson & Buntaine et al., 2019 - Non‐Governmental Monitoring of Local Governments Increases Compliance with Central Mandates: A National-Scale Field Experiment in China](https://drive.google.com/file/d/1GDkysXQvsgIYlwwV2EkfjWgqLAX7qoia/view?usp=drive_link)
-- ⭐️ [Buntaine et al., 2024 - Does the Squeaky Wheel Get More Grease? The Direct and Indirect Effects of Citizen Participation on Environmental Governance in China](https://drive.google.com/file/d/1aB0ofVC7CyQnsDpo829BNJHcqPgqmnz4/view?usp=sharing)
-- [Gertler, 2004 - Do Conditional Cash Transfers Improve Child Health? Evidence from PROGRESA's Control Randomized Experiment](https://drive.google.com/file/d/1b2hWWIb5ri_WJENONNlcpDlBiCMY7oCW/view?usp=sharing)
-- [Jayachandran, 2017 - Cash for Carbon- A Randomized Trial of Payments for Ecosystem Services to Reduce Deforestation](https://drive.google.com/file/d/1TekkB5defbMIuSyJ6S2G1bGYot9aZqAV/view?usp=sharing)
-- 🔁 [Rennie et al., 2019 - Impacts of freshwater aquaculture on fish communities: A whole‐ecosystem experimental approach](https://drive.google.com/file/d/1Q44h_DcWd6qVkPNnWygYkf89Ccz3Xtuq/view?usp=sharing)
-- [Aklin, 2017 - Does Basic Energy Access Generate Socioeconomic Benefits? A Field Experiment with Off-grid Solar Power in India](https://drive.google.com/file/d/1wV9WAB35Anii8kPjvQ3EYqU91Zqxve27/view?usp=sharing)
-- 🔁 [Senko et al., 2025 - Harnessing Solar Energy to Reduce Sea Turtle Bycatch](https://drive.google.com/file/d/1HL5Vbxwqx9Wd19B88v6M_EW-SWwEEte_/view?usp=sharing)
-- 📍🔁 [Mildenberger, 2023 - Unintended consequences of using maps to communicate sea-level rise](https://drive.google.com/file/d/1I6f6K4pYht7lCtQB8WtBa7nH6oCxJ6sx/view?usp=sharing)
+| **Experiments** |
+|-----------------|
+| ⭐️🔁 [Buntaine et al., 2024 - *Social competition drives collective action to reduce informal waste burning in Uganda*](https://drive.google.com/file/d/1bvW40xguud2Y_bRnxwjCCZSmAZALgQTn/view?usp=sharing) |
+| [Anderson & Buntaine et al., 2019 - Non‐Governmental Monitoring of Local Governments Increases Compliance with Central Mandates: A National-Scale Field Experiment in China](https://drive.google.com/file/d/1GDkysXQvsgIYlwwV2EkfjWgqLAX7qoia/view?usp=drive_link) |
+| ⭐️ [Buntaine et al., 2024 - Does the Squeaky Wheel Get More Grease? The Direct and Indirect Effects of Citizen Participation on Environmental Governance in China](https://drive.google.com/file/d/1aB0ofVC7CyQnsDpo829BNJHcqPgqmnz4/view?usp=sharing) |
+| [Gertler, 2004 - Do Conditional Cash Transfers Improve Child Health? Evidence from PROGRESA's Control Randomized Experiment](https://drive.google.com/file/d/1b2hWWIb5ri_WJENONNlcpDlBiCMY7oCW/view?usp=sharing) |
+| [Jayachandran, 2017 - Cash for Carbon- A Randomized Trial of Payments for Ecosystem Services to Reduce Deforestation](https://drive.google.com/file/d/1TekkB5defbMIuSyJ6S2G1bGYot9aZqAV/view?usp=sharing) |
+| 🔁 [Rennie et al., 2019 - Impacts of freshwater aquaculture on fish communities: A whole‐ecosystem experimental approach](https://drive.google.com/file/d/1Q44h_DcWd6qVkPNnWygYkf89Ccz3Xtuq/view?usp=sharing) |
+| [Aklin, 2017 - Does Basic Energy Access Generate Socioeconomic Benefits? A Field Experiment with Off-grid Solar Power in India](https://drive.google.com/file/d/1wV9WAB35Anii8kPjvQ3EYqU91Zqxve27/view?usp=sharing) |
+| 🔁 [Senko et al., 2025 - Harnessing Solar Energy to Reduce Sea Turtle Bycatch](https://drive.google.com/file/d/1HL5Vbxwqx9Wd19B88v6M_EW-SWwEEte_/view?usp=sharing) |
+| 📍🔁 [Mildenberger, 2023 - Unintended consequences of using maps to communicate sea-level rise](https://drive.google.com/file/d/1I6f6K4pYht7lCtQB8WtBa7nH6oCxJ6sx/view?usp=sharing) |
+
+: {.hover .bordered tbl-colwidths="[50,50]"}
 
 **Difference-in-Difference (DiD)**
 
