@@ -1,151 +1,160 @@
 ---
-title: "All Course Materials + `Additional` Readings & Resources Organized by Topic"
+title: "Research Applied to Course Organized by Method & Topic"
 toc: true
 ---
 
-##  **All** course materials
+> Studies collected for 241/244; (1) As a case study to demonstrate a research design or method; & (2) Topical research matched with student interests.
 
-### Lectures
+<br>
 
-- [Lecture 1](https://drive.google.com/file/d/1FzwRi8Lh6snUfv5gX4fa-APQxk9TnVVz/view?usp=drive_link)
-- [Lecture 2](https://drive.google.com/file/d/1DpBNJflvGEBtA3gKllV7wTPu8kYFLjpb/view?usp=drive_link)
-- [Lecture 3](https://drive.google.com/file/d/1OZElgGhjne2zdn6MYrk63eYG9DSE69xo/view?usp=sharing)
-- [Lecture 4](https://drive.google.com/file/d/1k5XwhonfxvDBKOqHp4KqVp30oG9Bshgg/view?usp=drive_link)
-- [Lecture 5](https://drive.google.com/file/d/1vgmrn4C25WNNQrp6VRvy5qCJWh5LgMLK/view?usp=drive_link)
-- [Lecture 6](https://drive.google.com/file/d/150rJaV6XuOaZnEn-4_zAF26agLrb3Cb0/view?usp=drive_link)
-- [Lecture 7](https://drive.google.com/file/d/1KHsf4Z9qaeKuyn2LdqdRKDnRG2h1I8fr/view?usp=drive_link)
-- [Lecture 8](https://garberadamc.github.io/eds241-policy-eval/W8-Lab)
-- **Lecture 9** ([Part 1](https://garberadamc.github.io/eds241-policy-eval/RDD-Protect-Forest), [Part 2](https://garberadamc.github.io/eds241-policy-eval/DiD-FE-Stokes15))
-- [Lecture 10](https://drive.google.com/file/d/12RI9Ap6VdiIDhAanQTZ3WEGcoahU1f69/view?usp=drive_link)
+::: callout-tip
+### Legend:
 
-### Labs 
+- ⭐️ Research study includes author(s) @ BREN 
+- 📍 Research study includes author(s) @ UCSB
+- 🔁 Main findings of study analysis replicated using *open access* data
 
-- [Lab 1: Generalize Fast! Replication of analyses from Buntaine et al., 2024](https://garberadamc.github.io/project-site/Lab1-Generalize-Fast)
-- [Lab 2: Code-along 🦞 → Tables, Figures, & Lobsters (OH MY!)](https://garberadamc.github.io/project-site/Lab2-Moland13_KEY)
-- [Additional Lab - Illustration of 'Unbiased Estimator' Using {gganimate}](https://github.com/garberadamc/unbiased-estimator-viz) | [View GIF](https://drive.google.com/file/d/1wxSU-pvLdZ0MO-4ozgzbYwLFLNzKWQ9e/view)
-- [Week 8 - Lab](https://garberadamc.github.io/eds241-policy-eval/W8-Lab)
-- [Week 9 - Lab Part 1](https://garberadamc.github.io/eds241-policy-eval/RDD-Protect-Forest)
-- [Week 9 - Lab Part 2](https://garberadamc.github.io/eds241-policy-eval/DiD-FE-Stokes15)
+:::
 
-### Assignments
+### Studies Organized by Method:
 
-- [Assignment 1: California Spiny Lobster Abundance (Panulirus Interruptus)](https://garberadamc.github.io/project-site/hw1-lobstrs-eds241)
-- [Assignment 2: Investigating Causal Inference Designs Applied in Environmental Science](https://docs.google.com/document/d/1c3RtddoEN-nXRerAWp4IgBvtw5zZyuBeezjmM3VM-QY/edit?usp=sharing){target="_blank"}
 
-### Final project
+**Experiments**
 
-- [Final Project Instructions](https://docs.google.com/document/d/1pW-QzEenwRTEu8meupA_ELVcAmOtDSTq11QFCaO1eVY/edit?usp=sharing) 
-- [Study Group Assignments](https://docs.google.com/spreadsheets/d/16rPEUDtxgMFQNmf1PkByN9XN1T9oZv00_2_LPFyYLtU/edit?usp=sharing)
-- [Final Presentation Grading Rubric](https://docs.google.com/document/d/1R8BPlZ6RZWwygTcijZ5ENhktGFPYdlRGDqkIuVo2hDQ/edit?usp=sharing)
-- [Presentation Question Form](https://docs.google.com/document/d/1f1x97nH2liGQhDDN4JBBuFCFXLOGRGRIjTeNMdJuFW8/edit?usp=sharing)
+- ⭐️🔁 [Buntaine et al., 2024 - *Social competition drives collective action to reduce informal waste burning in Uganda*](https://drive.google.com/file/d/1bvW40xguud2Y_bRnxwjCCZSmAZALgQTn/view?usp=sharing)
+- [Anderson & Buntaine et al., 2019 - Non‐Governmental Monitoring of Local Governments Increases Compliance with Central Mandates: A National-Scale Field Experiment in China](https://drive.google.com/file/d/1GDkysXQvsgIYlwwV2EkfjWgqLAX7qoia/view?usp=drive_link)
+- ⭐️ [Buntaine et al., 2024 - Does the Squeaky Wheel Get More Grease? The Direct and Indirect Effects of Citizen Participation on Environmental Governance in China](https://drive.google.com/file/d/1aB0ofVC7CyQnsDpo829BNJHcqPgqmnz4/view?usp=sharing)
+- [Gertler, 2004 - Do Conditional Cash Transfers Improve Child Health? Evidence from PROGRESA's Control Randomized Experiment](https://drive.google.com/file/d/1b2hWWIb5ri_WJENONNlcpDlBiCMY7oCW/view?usp=sharing)
+- [Jayachandran, 2017 - Cash for Carbon- A Randomized Trial of Payments for Ecosystem Services to Reduce Deforestation](https://drive.google.com/file/d/1TekkB5defbMIuSyJ6S2G1bGYot9aZqAV/view?usp=sharing)
+- 🔁 [Rennie et al., 2019 - Impacts of freshwater aquaculture on fish communities: A whole‐ecosystem experimental approach](https://drive.google.com/file/d/1Q44h_DcWd6qVkPNnWygYkf89Ccz3Xtuq/view?usp=sharing)
+- [Aklin, 2017 - Does Basic Energy Access Generate Socioeconomic Benefits? A Field Experiment with Off-grid Solar Power in India](https://drive.google.com/file/d/1wV9WAB35Anii8kPjvQ3EYqU91Zqxve27/view?usp=sharing)
+- 🔁 [Senko et al., 2025 - Harnessing Solar Energy to Reduce Sea Turtle Bycatch](https://drive.google.com/file/d/1HL5Vbxwqx9Wd19B88v6M_EW-SWwEEte_/view?usp=sharing)
+- 📍🔁 [Mildenberger, 2023 - Unintended consequences of using maps to communicate sea-level rise](https://drive.google.com/file/d/1I6f6K4pYht7lCtQB8WtBa7nH6oCxJ6sx/view?usp=sharing)
 
-## Applied studies referenced in EDS 241 - organized by topic!
+**Difference-in-Difference (DiD)**
 
-### Data science - general topics 
+- 🔁 [Moland et al., 2013 - Lobster and cod benefit from small-scale northern marine protected areas: inference from an empirical before–after control-impact study](https://drive.google.com/file/d/1TjKa7gH9YVCSpG4HeWb7LFFbsqoSEYeQ/view)
+- [Mcdermott et al., 2018 - The blue paradox: Preemptive overfishing in marine reserves](https://drive.google.com/file/d/1itW-M_NnVULa66EJzObKq1nOQcSRN48t/view?usp=drive_link)
+- [Branas et al., 2011 - A Difference-in-Differences Analysis of Health, Safety, and Greening Vacant Urban Space](https://drive.google.com/file/d/1joI1nL9JtGj0XK41SfSikh0XsvSHmac8/view?usp=sharing)
+- [Xie & Zhu, 2025 - Exploring the ecological impacts of high-speed rail on urban avian biodiversity](https://drive.google.com/file/d/1y-zRr1AWq1FTC0u_FkOKEw8qxfMjGlsP/view?usp=sharing)
+- [Hsueh, 2015 - Quasi-Experimental Evidence on the “Rights to Fish”: The Effects of Catch Shares on Fishermen’s Days at Sea](https://drive.google.com/file/d/11HclociNOamjynHmO_8TH_Z3ZY22PduM/view?usp=sharing)
+- ⭐🔁️ [Buntaine, 2014 - Titling community land to prevent deforestation: An evaluation of a best-case program in Morona-Santiago, Ecuador](https://drive.google.com/file/d/1f8DECz0IfJVO5395WI20P9hZN79zZzHt/view?usp=sharing)
+- [Bhalotra et al., 2021 - Urban Water Disinfection and Mortality Decline in Lower-Income Countries](https://drive.google.com/file/d/1qw9Rl09K66i3VnybIc8AXJOfu-LmKKQ4/view?usp=drive_link)
+- [Taylor et al., 2021 - Wetlands, Flooding, and the Clean Water Act](https://drive.google.com/file/d/1UF8q21XDJn_0mpMctceSHBZqeetmcDvd/view?usp=drive_link)
+- 🔁 [Atristain et al., 2024 - Slow Drawdown Fast Recovery: Stream Macroinvertebrate Communities Improve Quickly After Large Dam Decommissioning](https://drive.google.com/file/d/1o7JUo-_8W5Pr_Qm-Y4syXYjYaLaBC6Yh/view?usp=sharing)
+
+**Fixed Effects (The Within-Estimator)**
+
+- 📍 [Hazlett & Mildenberger, 2020 - Wildfire Exposure Increases Pro-Environment Voting within Democratic but Not Republican Areas](https://drive.google.com/file/d/1Ys6BkCZMqBYmaovNf4G5_lcyIl8_EzM6/view?usp=drive_link)
+- 📍 [Deschenes & Greenstone, 2007 - The Economic Impacts of Climate Change: Evidence from Agricultural Output and Random Fluctuations in Weather](https://drive.google.com/file/d/1TA1LGd0ChFkxN5MG84MukvDy2GKD_DzD/view?usp=drive_link)
+- ⭐️🔁 [Dudney et al., 2021 - Nonlinear shifts in infectious rust disease due to climate change](https://drive.google.com/file/d/1d-pzJjHFs90zVwDl2J3pNT1uXKdOUoUE/view?usp=sharing)
+- [Ogasawara, 2021 - Persistence of natural disasters on children’s health: Evidence from the Great Kantō Earthquake of 1923](https://drive.google.com/file/d/19HpdKJokOxpdoCOsvKLaNWHqyldTGtBh/view?usp=sharing)
+- [Scherb & Voigt, 2011 - The human sex odds at birth after the atmospheric atomic bomb tests, after Chernobyl, and in the vicinity of nuclear facilities](https://drive.google.com/file/d/1as2vSEetkF8NjkgfD6GEcnefF3VhudeQ/view?usp=sharing)
+- ⭐️ [Larsen & Noack, 2021 - Impact of local and landscape complexity on the stability of field-level pest control](https://drive.google.com/file/d/1ILRt4wWrhTTvh8tl8PxScCvIPHZCXh6z/view?usp=sharing)
+- [Blackman-et-al- 2017 - Titling Indigenous Communities Protects Forests in the Peruvian Amazon](https://drive.google.com/file/d/1uJbK7R-S1uipnUgAsALNQgmgxXZsMb-o/view?usp=sharing)
+- 🔁 [Papp 2025 - Plastic bag bans and fees reduce harmful bag litter on shorelines](https://drive.google.com/file/d/1-fr9CAVDhix8w80tFbSbSC9iEUZCC4Xw/view?usp=sharing)
+- 🔁 [Gatti et al., 2020 - Can Irrigation Infrastructure Mitigate the Effect of Rainfall Shocks on Conflict](https://drive.google.com/file/d/1dOPmHRbuiTb-z02dr6OuvDScLKjs_jME/view?usp=sharing)
+
+**Instrumental Variables (IV)**
+
+- ⭐️🔁 [Stokes, 2015 - Electoral Backlash against Climate Policy: A Natural Experiment on Retrospective Voting and Local Resistance to Public Policy](https://drive.google.com/file/d/1y2Okzjq2EA43AW5JzCvFS8ecLpeP6NKh/view?usp=drive_link)
+- [Greenstone et al., 2022 - Can Technology Solve the Principal-Agent Problem? Evidence from China’s War on Air Pollution](https://drive.google.com/file/d/1S_QgyoUrjeBw6dppBejPxleEdrOtQJcY/view?usp=sharing)
+- [Maccini & Yang, 2009 - Under the Weather: Health Schooling and Economic Consequences of Early Life Rainfall](https://drive.google.com/file/d/1hbF_ssDGqTt6qFjwwGSzRV5aN6NjDdvE/view?usp=sharing)
+- [Angrist, 1990 - *Lifetime Earnings and the Vietnam Era Draft Lottery-Evidence from Social Security Administrative Records*](https://drive.google.com/file/d/1ICRoNQIUpKMdKA4MI9qwhfLgsMqX7RiW/view?usp=drive_link)
+- [Robinson et al., 2010 - The Colonial Origins of Comparative Development: An Empirical Investigation](https://docs.google.com/presentation/d/1UXFVy4duBSPiXuoVqvA5GADMUg9VGkxRIsVqObGouM8/edit?usp=sharing)
+- [Zivin et al., 2020 - When Externalities Collide- Influenza and Pollution](https://drive.google.com/file/d/1q34kPg_DmubsBKU2qHCFTxPlxcvVsvB6/view?usp=sharing)
+- ⭐️🔁 [MacDonald et al., 2018 -  Missing the People for the Trees - Identifying Coupled Natural Human System Feedbacks Driving the Ecology of Lyme Disease](https://drive.google.com/file/d/1xh09aQIuMrqb4_hJ6p-SUsi1WIcQX7VB/view?usp=sharing)
+
+**Regression Discontinuity Design (RD)**
+
+- [Neal, 2024 - Estimating the Effectiveness of Forest Protection Using Regression Discontinuity](https://drive.google.com/file/d/1ktj5u8x8TOEtPtYvjjRKnOlr-kcDy-2d/view?usp=sharing)
+- 📍🔁 [Lehmann & Masterson, 2020 - Does Aid Reduce Anti-Refugee Violence? Evidence from Syrian Refugees in Lebanon](https://drive.google.com/file/d/101EcnmbJJ0IZ-G3a90pienCyXU_rl5uI/view?usp=sharing)
+- [MacPherson & Sterck 2021 - Empowering Refugees Through Cash and Agriculture - A Regression Discontinuity Design](https://drive.google.com/file/d/1v1Z9MM8rNyVVDh-9w-seA03pU5b8D-EK/view?usp=sharing)
+- [Ferguson & Nolgren 2024 - The Causal Effects of Climate Investment Subsidies: Regression Discontinuity Evidence from Swedish Firms](https://drive.google.com/file/d/1659RyEEL_NVY7O3d0pY5qmRR_W2Iv6uM/view?usp=drive_link)
+- [Greenstone, 2022 - Can Technology Solve the Principal-Agent Problem? Evidence from China’s War on Air Pollution](https://drive.google.com/file/d/1S_QgyoUrjeBw6dppBejPxleEdrOtQJcY/view?usp=sharing)
+- [Bento et al., 2014 - The Effects of Regulation in the Presence of Multiple Unpriced Externalities: Evidence from the Transportation Sector](https://drive.google.com/file/d/1onVkoRwY5SpxZdLetk3nyLoLlV6OptAf/view?usp=sharing)
+- [Alix-Garcia et al., 2018 - Payments for Environmental Services Supported Social Capital While Increasing Land Management](https://drive.google.com/file/d/1q_4xU4HxL_7jicfUngWzoOM7w2OdAs7w/view?usp=sharing)
+
+**Synthetic Control Method (SCM)**
+
+- ⭐️🔁 [Lepissier & Mildenberger, 2021 - Unilateral Climate Policies Can Substantially Reduce National Carbon Pollution](https://drive.google.com/file/d/1eQsvVmevTLoFagWE4E5cbioUnGfxvTdk/view?usp=sharing)
+- [Lessman & Kramer 2021 - The Effect of Cap-and-Trade on Sectoral Emissions: Evidence from California](https://drive.google.com/file/d/18UG-PwhTsYxfX-yJ_qp_98dTuho_ifN0/view?usp=sharing)
+- [Abadie et al., 2010 - Synthetic Control Methods for Comparative Case Studies: Estimating the Effect of California’s Tobacco Control Program](https://www.tandfonline.com/doi/abs/10.1198/jasa.2009.ap08746?casa_token=mYVSovigdasAAAAA:oIYnxsszHWzIj2MhZDM2n54ovI9g6r2iVPOrmRj2DmgVgkSA_DSYaZc5Z9plpryCf9IlL5k5dz4N8w)
+- [Abadie, 2021 - Using Synthetic Controls- Feasibility, Data Requirements, and Methodological Aspects](https://drive.google.com/file/d/1D52MvHprR9806zLDX-cZMtXcM2ZOU4mK/view?usp=drive_link)
+- [Sills et al., 2015 - Estimating the Impacts of Local Policy Innovation: The Synthetic Control Method Applied to Tropical Deforestation](https://drive.google.com/file/d/1QwqvKrArZ7hkGz1mXkg05N-1CRf_NWFZ/view?usp=sharing)
+- [Roopsind et al., 2019  - Evidence that a national REDD+ program reduces tree cover loss and carbon emissions in a high forest cover, low deforestation country](https://drive.google.com/file/d/1QizAR2HRO2t5Ol_Wby42IFTO-1ejqVUG/view?usp=sharing)
+- 🔁 [Letellier et al., 2018 - Applying a two-stage generalized synthetic control approach to quantify the heterogeneous health effects of extreme weather events](https://drive.google.com/file/d/1n-OMXpcSP6wqHSmhjo2F-MiQ0YORB-sH/view?usp=sharing)
+
+**Statistical Matching**
+
+- [Ahmadia et al., 2015 - Integrating impact evaluation in the design and implementation of monitoring marine protected areas](https://drive.google.com/file/d/1J33O39xjoKStdvK4W8ougsUCBHekzwUn/view?usp=sharing)
+- [Letellier et al., 2018 - Applying a two-stage generalized synthetic control approach to quantify the heterogeneous health effects of extreme weather events](https://drive.google.com/file/d/1n-OMXpcSP6wqHSmhjo2F-MiQ0YORB-sH/view?usp=sharing)
+- [Andam et al., 2008 - Measuring the effectiveness of protected area networks in reducing deforestation](https://drive.google.com/file/d/1EWcxQESsXzIFn5tgFNtwmMiXVCz3i8lz/view?usp=sharing)
+
+**Mixed Effects or Random & Fixed Effects Models**
+
+- [Gillies et al., 2006 - Application of random effects to the study of resource selection by animals](https://drive.google.com/file/d/1kgwA92un13ie2szUW0j4RfAGGvtn6etX/view?usp=sharing)
+- [Golub & Sobin, 2020 - Statistical Modeling with Litter as a Random Effect in Mixed Models to Manage “Intralitter Likeness”](https://drive.google.com/file/d/1pIPYl8__EpBBWeKJRsn6lpd8blNjh46C/view?usp=sharing)
+- [Thorson & Minto, 2015 - A unifying framework for statistical modelling in fisheries biology](https://drive.google.com/file/d/1EYw4Oz_3H6YgXawpdgRDWkWqdHgP0DpU/view?usp=sharing)
+- [Bolker et al., 2009 - Generalized linear mixed models: A practical guide for ecology and evolution](https://drive.google.com/file/d/1j9xJJplDmKSCGuSDia-q9zbumIxlPajZ/view?usp=drive_link)
+- [Harrison et al., 2018 - A brief introduction to mixed effects modelling and multi-model inference in ecology](https://drive.google.com/file/d/1mrEjJ4ErxsgeVToJFG-EmXkPC4s9OIEP/view?usp=sharing)
+- [McNeish & Kelley, 2018 - Fixed Effects Models Versus Mixed Effects Models for Clustered Data: Reviewing the Approaches, Disentangling the Differences, and Making Recommendations](https://drive.google.com/file/d/1p_lx-CMkQVZThEPAoAPJ1BdjrIT8c4g8/view?usp=sharing)
+
+**General - Causal Inference**
+
+- ⭐️ [Larson, Meng, Kendall, 2019 - Causal analysis in control–impact ecological studies with observational data](https://drive.google.com/file/d/1r4KI5SwPpb41PTB_8C7NM9Rrz8RH4GBm/view?usp=drive_link)
+- [Sciberras et al., 2017 - Evaluating the biological effectiveness of fully and partially protected marine areas](https://drive.google.com/file/d/1aM_QEx10dVyg8XFCobS04Owu6axjc_o8/view?usp=sharing)
+- ⭐️ [Lenihan et al 2021 - Evidence that spillover from Marine Protected Areas benefits the spiny lobster (Panulirus interruptus) fishery in southern California](https://drive.google.com/file/d/1pHFGuhV1zTOdwxMEOCg9OyPYDvUc9-ot/view?usp=drive_link)
+- [Rubin, 2005 - Causal Inference Using Potential Outcomes](https://drive.google.com/file/d/1kE0NLhkIdmG_kbLjJQDbmt9yo4P0J6Mh/view?usp=drive_link)
+- [Pearl, 1999 - Statistics, Causality, and Graphs](https://drive.google.com/file/d/1Jmc51OAKdC4NQU0axyTppDpY2AG-yJlm/view?usp=drive_link)
+- [Pischke & Angrist 2010 - The Credibility Revolution in Empirical Economics- How Better Research Design is Taking the Con out of Econometrics](https://drive.google.com/file/d/1v6DwehE6kGGX1pWgEAxTacoVQQmF8cgU/view?usp=drive_link)
+
+### Study's Organized by Topic
+
+**EDS241/ESM244 Student Interests (Winter, 2025; Winter, 2026) **
+
+- [GREEN SPACES - Branas et al., 2011 - A Difference-in-Differences Analysis of Health, Safety, and Greening Vacant Urban Space](https://drive.google.com/file/d/1joI1nL9JtGj0XK41SfSikh0XsvSHmac8/view?usp=sharing)
+- [CARBON - Jayachandran, 2017 - Cash for Carbon - A Randomized Trial of Payments for Ecosystem Services to Reduce Deforestation](https://drive.google.com/file/d/1TekkB5defbMIuSyJ6S2G1bGYot9aZqAV/view?usp=sharing)
+- ⭐️🔁 [CARBON -Lepissier & Mildenberger, 2021 - Unilateral Climate Policies Can Substantially Reduce National Carbon Pollution](https://drive.google.com/file/d/1eQsvVmevTLoFagWE4E5cbioUnGfxvTdk/view?usp=sharing)
+- [BIRDS - Xie & Zhu, 2025 - Exploring the ecological impacts of high-speed rail on urban avian biodiversity](https://drive.google.com/file/d/1y-zRr1AWq1FTC0u_FkOKEw8qxfMjGlsP/view?usp=sharing)
+- [FISH - Hsueh 2015 - Quasi-Experimental Evidence on the “Rights to Fish”: The Effects of Catch Shares on Fishermen’s Days at Sea](https://drive.google.com/file/d/11HclociNOamjynHmO_8TH_Z3ZY22PduM/view?usp=sharing)
+- [MPA - Ahmadiam - 2015 - Integrating Impact Evaluation in the Design and Implementation of Monitoring Marine Protected Areas](https://drive.google.com/file/d/120QjbykEc2dZwOL8kQHfEzXsOsCmr6d6/view?usp=sharing)
+- 🔁 [AQUACULTURE - Rennie et al., 2019 - Impacts of freshwater aquaculture on fish communities: A whole‐ecosystem experimental approach](https://drive.google.com/file/d/1Q44h_DcWd6qVkPNnWygYkf89Ccz3Xtuq/view?usp=sharing)
+- 🔁 [BYCATCH - Senko et al., 2025 - Harnessing Solar Energy to Reduce Sea Turtle Bycatch](https://drive.google.com/file/d/1HL5Vbxwqx9Wd19B88v6M_EW-SWwEEte_/view?usp=sharing)
+- [ENERGY - Ferguson & Nolgren 2024 - The Causal Effects of Climate Investment Subsidies: Regression Discontinuity Evidence from Swedish Firms](https://drive.google.com/file/d/1659RyEEL_NVY7O3d0pY5qmRR_W2Iv6uM/view?usp=drive_link)
+- [ENERGY - Aklin - 2017 - Does Basic Energy Access Generate Socioeconomic Benefits? A Field Experiment with Off-grid Solar Power in India](https://drive.google.com/file/d/1wV9WAB35Anii8kPjvQ3EYqU91Zqxve27/view?usp=sharing)
+- 📍 [FIRE - Hazlett & Mildenberger 2020 - Wildfire Exposure Increases Pro-Environment Voting within Democratic but Not Republican Areas](https://drive.google.com/file/d/1Ys6BkCZMqBYmaovNf4G5_lcyIl8_EzM6/view?usp=drive_link)
+- 🔁 [FIRE - Letellier et al., 2018 - Applying a two-stage generalized synthetic control approach to quantify the heterogeneous health effects of extreme weather events](https://drive.google.com/file/d/1n-OMXpcSP6wqHSmhjo2F-MiQ0YORB-sH/view?usp=sharing)
+- ⭐️🔁 [LAND - Buntaine 2014 - Titling community land to prevent deforestation: An evaluation of a best-case program in Morona-Santiago, Ecuador](https://drive.google.com/file/d/1f8DECz0IfJVO5395WI20P9hZN79zZzHt/view?usp=sharing)
+- [LAND - Blackman-et-al- 2017 - Titling Indigenous Communities Protects Forests in the Peruvian Amazon](https://drive.google.com/file/d/1uJbK7R-S1uipnUgAsALNQgmgxXZsMb-o/view?usp=sharing)
+- 🔁 [PLASTIC - Papp 2025 - Plastic bag bans and fees reduce harmful bag litter on shorelines](https://drive.google.com/file/d/1-fr9CAVDhix8w80tFbSbSC9iEUZCC4Xw/view?usp=sharing)
+- 📍🔁 [MAPS - Mildenberger 2023 - Unintended consequences of using maps to communicate sea-level rise](https://drive.google.com/file/d/1I6f6K4pYht7lCtQB8WtBa7nH6oCxJ6sx/view?usp=sharing)
+- [TRANSPORTATION - Bento et al., 2014 - The Effects of Regulation in the Presence of Multiple Unpriced Externalities: Evidence from the Transportation Sector](https://drive.google.com/file/d/1onVkoRwY5SpxZdLetk3nyLoLlV6OptAf/view?usp=sharing)
+- [AIR - Greenstone - 2022 - Can Technology Solve the Principal-Agent Problem? Evidence from China’s War on Air Pollution](https://drive.google.com/file/d/1S_QgyoUrjeBw6dppBejPxleEdrOtQJcY/view?usp=sharing)
+- [WATER - Bhalotra et al., 2021 - Urban Water Disinfection and Mortality Decline in Lower-Income Countries](https://drive.google.com/file/d/1qw9Rl09K66i3VnybIc8AXJOfu-LmKKQ4/view?usp=drive_link)
+- 🔁 [IRRIGATION - Gatti et al., 2020 - Can Irrigation Infrastructure Mitigate the Effect of Rainfall Shocks on Conflict](https://drive.google.com/file/d/1dOPmHRbuiTb-z02dr6OuvDScLKjs_jME/view?usp=sharing)
+- [WETLANDS - Taylor et al., 2021 - Wetlands, Flooding, and the Clean Water Act](https://drive.google.com/file/d/1UF8q21XDJn_0mpMctceSHBZqeetmcDvd/view?usp=drive_link)
+- 🔁 [DAMS - Atristain et al., 2024 - Slow Drawdown Fast Recovery: Stream Macroinvertebrate Communities Improve Quickly After Large Dam Decommissioning](https://drive.google.com/file/d/1o7JUo-_8W5Pr_Qm-Y4syXYjYaLaBC6Yh/view?usp=sharing)
+- [CASH - Alix-Garcia et al., 2018 - Payments for Environmental Services Supported Social Capital While Increasing Land Management](https://drive.google.com/file/d/1q_4xU4HxL_7jicfUngWzoOM7w2OdAs7w/view?usp=sharing)
+- ⭐🔁️ [LYMES - MacDonald et al., 2018 -  Missing the People for the Trees - Identifying Coupled Natural Human System Feedbacks Driving the Ecology of Lyme Disease](https://drive.google.com/file/d/1xh09aQIuMrqb4_hJ6p-SUsi1WIcQX7VB/view?usp=sharing)
+- [FORESTS - Andam et al., 2008 - Measuring the effectiveness of protected area networks in reducing deforestation](https://drive.google.com/file/d/1EWcxQESsXzIFn5tgFNtwmMiXVCz3i8lz/view?usp=sharing)
+- ⭐️🔁 [TREES - Dudney et al., 2021 - Nonlinear shifts in infectious rust disease due to climate change](https://drive.google.com/file/d/1a4i29LnvPFnYg9Pbo2-l6xt_954Kr694/view?usp=sharing)
+- ⭐️ [AGRICULTURE - Larsen & Noack, 2021 - Impact of Local and Landscape Complexity on the Stability of Field-level Pest Control](https://drive.google.com/file/d/1OgEAyp3pnDNvvvCnUpe_Z-Uy1ORPCKyR/view?usp=sharing)
+
+#### Data Science References - General 
 
 **Reproducibility**
 
+- [Baker, 2016 - *1,500 Scientists Lift the Lid on Reproducibility*](https://www.nature.com/articles/533452a)
+- [Kelly, 2019 - Rate and Success of Study Replication in Ecology and Evolution](https://peerj.com/articles/7654/?utm_campaign=PeerJ_TrendMD_1&utm_medium=TrendMD&utm_source=TrendMD)
 - [Lowndes et al., 2017 - Our path to better science in less time using open data science tools](https://drive.google.com/file/d/1gEqGjKmrlt96k0a-JURtbIHnc_VIUiyK/view)
 - [Gehlman & Loken, 2013 - The garden of forking paths: Why multiple comparisons can be a problem, even when there is no “fishing expedition” or “p-hacking”](https://drive.google.com/file/d/1Cx2fqgKDTzMQjXtyo4Cz2YK4dQQzpb4Z/view?usp=drive_link)
 
-**Data viz**
+**Data Viz**
 
 - [Animated Visualizations - ‘R Psychologist’ - Kristoffer Magnusson](https://rpsychologist.com/viz/)
-- [Larsen, Meng, & Kendall 2018 - Causal analysis in control–impact ecological studies with observational data](https://drive.google.com/file/d/1hFw2OrEzk8o9zDJr1Qx_AD4oUUAXeRpo/view)
 
-### Regression
-
-**Ordinary Least Squares (OLS)**
-
-**Generalized Linear Models (GLMs)**
+**Stats**
 
 - [Carruthers et al., 2008 - Generalized linear models: model selection, diagnostics, and overdispersion](https://drive.google.com/file/d/1msSVHclxUO-zMbZTLHqksvDel9m51h0R/view)
-
-### Causal inference - Econometrics
-
-**Causal inference research conducted at Bren & UCSB**
-
-- [Sarah Anderson - Monitoring → Compliance](https://onlinelibrary.wiley.com/doi/abs/10.1111/ajps.12428?casa_token=G2Ae3oUP-JcAAAAA%3Azcz3yAxUltiPl0U-XnImZJdf5jSsN5oyvlEtOxPXZG5Yj0AFiX1fzn3vQR8F0iVbGBnYEc17AD4uYq10BA)
-- [Mark Buntaine - Citizen participation → Env. Policy](https://www.aeaweb.org/articles?id=10.1257/aer.20221215)
-- [Joan Dudney - Climate change → Infectious tree disease](https://www.nature.com/articles/s41467-021-25182-6)
-- [Leah Stokes - Voting → Climate policy](https://onlinelibrary.wiley.com/doi/abs/10.1111/ajps.12220)
-- [Olivier Deschenes - Climate change → Agricultural output](https://www.aeaweb.org/articles?id=10.1257/aer.97.1.354)
-- [Matto Mildenberger - Wildfires → Voting](https://www.cambridge.org/core/journals/american-political-science-review/article/abs/wildfire-exposure-increases-proenvironment-voting-within-democratic-but-not-republican-areas/8F483913E13A44DCB975CE90024C0931)
-- [Kyle Meng - Marine Reserves, Inequality, Ground water rights](https://www.kylemeng.com/)
-
-### Experimental Design
-
-- [Buntaine et al., 2024 - Social competition drives collective action to reduce informal waste burning in Uganda](https://drive.google.com/file/d/1bvW40xguud2Y_bRnxwjCCZSmAZALgQTn/view)
-    - [EDS 241 - Glossary of Econometric and Statistical Terms](https://docs.google.com/document/d/1RIudsVcYhWGpqC-Uftk9UTz3PIq6stVyEpT44EPNgpE/edit?usp=drive_link)
-    - [J-PAL power calculation tool](https://www.povertyactionlab.org/resource/power-calculations)
-    - [EGAP power calculation tool](https://egap.shinyapps.io/power-app/)
-
-### Difference-in-Difference Design
-
-- [Moland et al., 2013 - Lobster and cod benefit from small-scale northern marine protected areas: inference from an empirical before– after control-impact study](https://drive.google.com/file/d/1TjKa7gH9YVCSpG4HeWb7LFFbsqoSEYeQ/view)
-
-### Regression Discontinuity Design
-- []()
-- []()
-- []()
-
-### Instrumental Variable Design
-- []()
-- []()
-- []()
-
-- []()
-- []()
-- []()
-- []()
-- []()
-- []()
-- []()
-- []()
-- []()
-- []()
-- []()
-- []()
-- []()
-- []()
-- []()
-- []()
-- []()
-- []()
-- []()
-- []()
-- []()
-- []()
-- []()
-- []()
-- []()
-- []()
-- []()
-- []()
-- []()
-- []()
-- []()
-- []()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
