@@ -3,18 +3,21 @@ title: "Applied Studies Organized by Method & Topic"
 toc: FALSE
 ---
 
-> Studies collected for 241/244; (1) As a case study to demonstrate a research design or method; & (2) Topical research matched with student interests.
+### Studies collected for EDS241/ESM244 (2025-2026): 
+
+1. Used as case studies to demonstrate research design or method
+2. Research matched to student's topical interest for final projects
 
 <br>
 
 ::: callout-tip
 ### LEGEND:
 
-⭐️ Research study includes author(s) `@BREN` *\ 
+⭐️ Research study includes author(s) `@BREN` \ 
 
-📍 Research study includes author(s) `@UCSB` *\ 
+📍 Research study includes author(s) `@UCSB` \ 
 
-🔁 Selected findings of study analysis replicated using `open access data` *\ 
+🔁 Selected findings of study analysis replicated using `open access data` \ 
 
 :::
 
