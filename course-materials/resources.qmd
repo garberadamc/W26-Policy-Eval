@@ -1,5 +1,5 @@
 ---
-title: "Research Applied to Course Organized by Method & Topic"
+title: "Applied Studies Organized by Method & Topic"
 toc: FALSE
 ---
 
