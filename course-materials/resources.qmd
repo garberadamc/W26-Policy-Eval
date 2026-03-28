@@ -1,6 +1,6 @@
 ---
 title: "Research Applied to Course Organized by Method & Topic"
-toc: true
+toc: FALSE
 ---
 
 > Studies collected for 241/244; (1) As a case study to demonstrate a research design or method; & (2) Topical research matched with student interests.
@@ -10,11 +10,11 @@ toc: true
 ::: callout-tip
 ### LEGEND:
 
-> ⭐️ Research study includes author(s) `@BREN`
+⭐️ Research study includes author(s) `@BREN` *\ 
 
-> 📍 Research study includes author(s) `@UCSB`
+📍 Research study includes author(s) `@UCSB` *\ 
 
-> 🔁 Selected findings of study analysis replicated using `open access data`
+🔁 Selected findings of study analysis replicated using `open access data` *\ 
 
 :::
 
@@ -26,7 +26,7 @@ toc: true
 | Study | Title  |
 |-------|--------|
 | ⭐️ 🔁 [Buntaine et al., 2024](https://drive.google.com/file/d/1bvW40xguud2Y_bRnxwjCCZSmAZALgQTn/view?usp=sharing) | *Social competition drives collective action to reduce informal waste burning in Uganda* |
-| [Anderson & Buntaine et al., 2019](https://drive.google.com/file/d/1GDkysXQvsgIYlwwV2EkfjWgqLAX7qoia/view?usp=drive_link) | *Non‐Governmental Monitoring of Local Governments Increases Compliance with Central Mandates: A National-Scale Field Experiment in China* |
+| ⭐️ [Anderson & Buntaine et al., 2019](https://drive.google.com/file/d/1GDkysXQvsgIYlwwV2EkfjWgqLAX7qoia/view?usp=drive_link) | *Non‐Governmental Monitoring of Local Governments Increases Compliance with Central Mandates: A National-Scale Field Experiment in China* |
 | ⭐️ [Buntaine et al., 2024](https://drive.google.com/file/d/1aB0ofVC7CyQnsDpo829BNJHcqPgqmnz4/view?usp=sharing) | *Does the Squeaky Wheel Get More Grease? The Direct and Indirect Effects of Citizen Participation on Environmental Governance in China* |
 | [Gertler, 2004](https://drive.google.com/file/d/1b2hWWIb5ri_WJENONNlcpDlBiCMY7oCW/view?usp=sharing) | *Do Conditional Cash Transfers Improve Child Health? Evidence from PROGRESA's Control Randomized Experiment* |
 | [Jayachandran, 2017](https://drive.google.com/file/d/1TekkB5defbMIuSyJ6S2G1bGYot9aZqAV/view?usp=sharing) | *Cash for Carbon- A Randomized Trial of Payments for Ecosystem Services to Reduce Deforestation* |
@@ -187,10 +187,10 @@ toc: true
 
 **Reproducibility**
 
-- [Baker, 2016 - *1,500 Scientists Lift the Lid on Reproducibility*](https://www.nature.com/articles/533452a) | ** |
-- [Kelly, 2019 - Rate and Success of Study Replication in Ecology and Evolution](https://peerj.com/articles/7654/?utm_campaign=PeerJ_TrendMD_1&utm_medium=TrendMD&utm_source=TrendMD) | ** |
-- [Lowndes et al., 2017 - Our path to better science in less time using open data science tools](https://drive.google.com/file/d/1gEqGjKmrlt96k0a-JURtbIHnc_VIUiyK/view) | ** |
-- [Gehlman & Loken, 2013 - The garden of forking paths: Why multiple comparisons can be a problem, even when there is no “fishing expedition” or “p-hacking”](https://drive.google.com/file/d/1Cx2fqgKDTzMQjXtyo4Cz2YK4dQQzpb4Z/view?usp=drive_link) | ** |
+- [Baker, 2016 - *1,500 Scientists Lift the Lid on Reproducibility*](https://www.nature.com/articles/533452a) 
+- [Kelly, 2019 - Rate and Success of Study Replication in Ecology and Evolution](https://peerj.com/articles/7654/?utm_campaign=PeerJ_TrendMD_1&utm_medium=TrendMD&utm_source=TrendMD) 
+- [Lowndes et al., 2017 - Our path to better science in less time using open data science tools](https://drive.google.com/file/d/1gEqGjKmrlt96k0a-JURtbIHnc_VIUiyK/view) 
+- [Gehlman & Loken, 2013 - The garden of forking paths: Why multiple comparisons can be a problem, even when there is no “fishing expedition” or “p-hacking”](https://drive.google.com/file/d/1Cx2fqgKDTzMQjXtyo4Cz2YK4dQQzpb4Z/view?usp=drive_link) 
 
 
 ```{r, echo=FALSE}
