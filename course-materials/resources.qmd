@@ -1,14 +1,17 @@
 ---
 title: "Applied Studies Organized by Method & Topic"
-toc: FALSE
+toc: TRUE
+toc-location: body
 ---
 
 ### Studies collected for EDS241/ESM244 (2025-2026): 
 
-1. Used as case studies to demonstrate research design or method
-2. Research matched to student's topical interest for final projects
+The studies below were used throughout the course in several ways:
 
-<br>
+1. **As class examples** to help us understand research design, causal inference, and applied methods  
+2. **As references to additional reading,** for students who wanted to read more about a topic or method.
+3. **Studies used for student-led final project:** Studies found based on student interests and used to replicate analyses using open-source data (when available) for group-led final projects.
+
 
 ::: callout-tip
 ### LEGEND:
