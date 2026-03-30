@@ -1,16 +1,16 @@
 ---
-title: "Applied Studies Organized by Method & Topic"
+title: "Applied Studies Organized by Topic & Method"
 toc: TRUE
 toc-location: body
 ---
 
-### Studies collected for EDS241/ESM244 (2025-2026): 
+#### Studies collected for EDS241/ESM244 (2025-2026): 
 
 The studies below were used throughout the course in several ways:
 
 1. **As class examples** to help us understand research design, causal inference, and applied methods  
 2. **As references to additional reading,** for students who wanted to read more about a topic or method.
-3. **Studies used for student-led final project:** Studies found based on student interests and used to replicate analyses using open-source data (when available) for group-led final projects.
+3. **As studies for student-led final projects**, matched to student interests and used to replicate analyses with open-source data (when available) in group-led projects.
 
 
 ::: callout-tip
@@ -20,9 +20,45 @@ The studies below were used throughout the course in several ways:
 
 📍 Research study includes author(s) `@UCSB` \ 
 
-🔁 Selected findings of study analysis replicated using `open access data` \ 
+🔁 Selected findings of study analyses replicated using `open access data` \ 
 
 :::
+
+### Study's Organized by Topic
+
+**EDS241/ESM244 Student Interests (Winter, 2025; Winter, 2026)**
+
+| Study | Title  |
+|-------|--------|
+| [GREEN SPACES - Branas et al., 2011](https://drive.google.com/file/d/1joI1nL9JtGj0XK41SfSikh0XsvSHmac8/view?usp=sharing) | 💚 *A Difference-in-Differences Analysis of Health, Safety, and Greening Vacant Urban Space* |
+| [CARBON - Jayachandran et al., 2017](https://drive.google.com/file/d/1TekkB5defbMIuSyJ6S2G1bGYot9aZqAV/view?usp=sharing) |🍃 *Cash for Carbon - A Randomized Trial of Payments for Ecosystem Services to Reduce Deforestation* |
+| ⭐️ 🔁 [CARBON -Lepissier & Mildenberger, 2021](https://drive.google.com/file/d/1eQsvVmevTLoFagWE4E5cbioUnGfxvTdk/view?usp=sharing) |🍃 *Unilateral Climate Policies Can Substantially Reduce National Carbon Pollution* |
+| [BIRDS - Xie & Zhu, 2025](https://drive.google.com/file/d/1y-zRr1AWq1FTC0u_FkOKEw8qxfMjGlsP/view?usp=sharing) |🕊️ *Exploring the ecological impacts of high-speed rail on urban avian biodiversity* |
+| [FISH - Hsueh et al., 2015](https://drive.google.com/file/d/11HclociNOamjynHmO_8TH_Z3ZY22PduM/view?usp=sharing) | 🐟 *Quasi-Experimental Evidence on the “Rights to Fish”: The Effects of Catch Shares on Fishermen’s Days at Sea* |
+| [MPA - Ahmadiam et al., 2015](https://drive.google.com/file/d/120QjbykEc2dZwOL8kQHfEzXsOsCmr6d6/view?usp=sharing) | 🐡 *Integrating Impact Evaluation in the Design and Implementation of Monitoring Marine Protected Areas* |
+| 🔁 [AQUACULTURE - Rennie et al., 2019](https://drive.google.com/file/d/1Q44h_DcWd6qVkPNnWygYkf89Ccz3Xtuq/view?usp=sharing) | 🎣 *Impacts of freshwater aquaculture on fish communities: A whole‐ecosystem experimental approach* |
+| 🔁 [BYCATCH - Senko et al., 2025](https://drive.google.com/file/d/1HL5Vbxwqx9Wd19B88v6M_EW-SWwEEte_/view?usp=sharing) | 🐳 *Harnessing Solar Energy to Reduce Sea Turtle Bycatch* |
+| [ENERGY - Ferguson & Nolgren, 2024](https://drive.google.com/file/d/1659RyEEL_NVY7O3d0pY5qmRR_W2Iv6uM/view?usp=drive_link) | ⚡ *The Causal Effects of Climate Investment Subsidies: Regression Discontinuity Evidence from Swedish Firms* |
+| [ENERGY - Aklin et al., 2017](https://drive.google.com/file/d/1wV9WAB35Anii8kPjvQ3EYqU91Zqxve27/view?usp=sharing) | ⚡ *Does Basic Energy Access Generate Socioeconomic Benefits? A Field Experiment with Off-grid Solar Power in India* |
+| 📍 [FIRE - Hazlett & Mildenberger 2020](https://drive.google.com/file/d/1Ys6BkCZMqBYmaovNf4G5_lcyIl8_EzM6/view?usp=drive_link) | 🔥 *Wildfire Exposure Increases Pro-Environment Voting within Democratic but Not Republican Areas* |
+| 🔁 [FIRE - Letellier et al., 2018](https://drive.google.com/file/d/1n-OMXpcSP6wqHSmhjo2F-MiQ0YORB-sH/view?usp=sharing) | 🔥 *Applying a two-stage generalized synthetic control approach to quantify the heterogeneous health effects of extreme weather events* |
+| ⭐️ 🔁 [LAND - Buntaine et al., 2014](https://drive.google.com/file/d/1f8DECz0IfJVO5395WI20P9hZN79zZzHt/view?usp=sharing) |🌴 *Titling community land to prevent deforestation: An evaluation of a best-case program in Morona-Santiago, Ecuador* |
+| [LAND - Blackman et al., 2017](https://drive.google.com/file/d/1uJbK7R-S1uipnUgAsALNQgmgxXZsMb-o/view?usp=sharing) | 🌴 *Titling Indigenous Communities Protects Forests in the Peruvian Amazon* |
+| 🔁 [PLASTIC - Papp et al., 2025](https://drive.google.com/file/d/1-fr9CAVDhix8w80tFbSbSC9iEUZCC4Xw/view?usp=sharing) | 🗑️ *Plastic bag bans and fees reduce harmful bag litter on shorelines* |
+| 📍 🔁 [MAPS - Mildenberger, 2023](https://drive.google.com/file/d/1I6f6K4pYht7lCtQB8WtBa7nH6oCxJ6sx/view?usp=sharing) | 🗺️ *Unintended consequences of using maps to communicate sea-level rise* |
+| [TRANSPORTATION - Bento et al., 2014](https://drive.google.com/file/d/1onVkoRwY5SpxZdLetk3nyLoLlV6OptAf/view?usp=sharing) | 🚌 *The Effects of Regulation in the Presence of Multiple Unpriced Externalities: Evidence from the Transportation Sector* |
+| [AIR - Greenstone et al., 2022](https://drive.google.com/file/d/1S_QgyoUrjeBw6dppBejPxleEdrOtQJcY/view?usp=sharing) | 🌬️ *Can Technology Solve the Principal-Agent Problem? Evidence from China’s War on Air Pollution* |
+| [WATER - Bhalotra et al., 2021](https://drive.google.com/file/d/1qw9Rl09K66i3VnybIc8AXJOfu-LmKKQ4/view?usp=drive_link) | 💧 *Urban Water Disinfection and Mortality Decline in Lower-Income Countries* |
+| 🔁 [IRRIGATION - Gatti et al., 2020](https://drive.google.com/file/d/1dOPmHRbuiTb-z02dr6OuvDScLKjs_jME/view?usp=sharing) | 💦 *Can Irrigation Infrastructure Mitigate the Effect of Rainfall Shocks on Conflict* |
+| [WETLANDS - Taylor et al., 2021](https://drive.google.com/file/d/1UF8q21XDJn_0mpMctceSHBZqeetmcDvd/view?usp=drive_link) | 🦆 *Wetlands, Flooding, and the Clean Water Act* |
+| 🔁 [DAMS - Atristain et al., 2024](https://drive.google.com/file/d/1o7JUo-_8W5Pr_Qm-Y4syXYjYaLaBC6Yh/view?usp=sharing) | 🪳 *Slow Drawdown Fast Recovery: Stream Macroinvertebrate Communities Improve Quickly After Large Dam Decommissioning* |
+| [CASH - Alix-Garcia et al., 2018](https://drive.google.com/file/d/1q_4xU4HxL_7jicfUngWzoOM7w2OdAs7w/view?usp=sharing) | 💵 *Payments for Environmental Services Supported Social Capital While Increasing Land Management* |
+| ⭐ 🔁️ [LYMES - MacDonald et al., 2018](https://drive.google.com/file/d/1xh09aQIuMrqb4_hJ6p-SUsi1WIcQX7VB/view?usp=sharing) | *Missing the People for the Trees: Identifying Coupled Natural Human System Feedbacks Driving the Ecology of Lyme Disease* |
+| [FORESTS - Andam et al., 2008](https://drive.google.com/file/d/1EWcxQESsXzIFn5tgFNtwmMiXVCz3i8lz/view?usp=sharing) | 🌴 *Measuring the effectiveness of protected area networks in reducing deforestation* |
+| ⭐️ 🔁 [TREES - Dudney et al., 2021](https://drive.google.com/file/d/1a4i29LnvPFnYg9Pbo2-l6xt_954Kr694/view?usp=sharing) |🌲 *Nonlinear shifts in infectious rust disease due to climate change* |
+| ⭐️ [AGRICULTURE - Larsen & Noack, 2021](https://drive.google.com/file/d/1OgEAyp3pnDNvvvCnUpe_Z-Uy1ORPCKyR/view?usp=sharing) |🚜 *Impact of Local and Landscape Complexity on the Stability of Field-level Pest Control* |
+
+: {.hover .bordered tbl-colwidths="[50,50]"}
 
 ### Studies Organized by Method:
 
@@ -150,42 +186,6 @@ The studies below were used throughout the course in several ways:
 | [Rubin, 2005](https://drive.google.com/file/d/1kE0NLhkIdmG_kbLjJQDbmt9yo4P0J6Mh/view?usp=drive_link) | *Causal Inference Using Potential Outcomes* |
 | [Pearl, 1999](https://drive.google.com/file/d/1Jmc51OAKdC4NQU0axyTppDpY2AG-yJlm/view?usp=drive_link) | *Statistics, Causality, and Graphs* |
 | [Pischke & Angrist 2010](https://drive.google.com/file/d/1v6DwehE6kGGX1pWgEAxTacoVQQmF8cgU/view?usp=drive_link) | *The Credibility Revolution in Empirical Economics: How Better Research Design is Taking the Con out of Econometrics* |
-
-: {.hover .bordered tbl-colwidths="[50,50]"}
-
-### Study's Organized by Topic
-
-**EDS241/ESM244 Student Interests (Winter, 2025; Winter, 2026) **
-
-| Study | Title  |
-|-------|--------|
-| [GREEN SPACES - Branas et al., 2011](https://drive.google.com/file/d/1joI1nL9JtGj0XK41SfSikh0XsvSHmac8/view?usp=sharing) | 💚 *A Difference-in-Differences Analysis of Health, Safety, and Greening Vacant Urban Space* |
-| [CARBON - Jayachandran, 2017](https://drive.google.com/file/d/1TekkB5defbMIuSyJ6S2G1bGYot9aZqAV/view?usp=sharing) |🍃 *Cash for Carbon - A Randomized Trial of Payments for Ecosystem Services to Reduce Deforestation* |
-| ⭐️ 🔁 [CARBON -Lepissier & Mildenberger, 2021](https://drive.google.com/file/d/1eQsvVmevTLoFagWE4E5cbioUnGfxvTdk/view?usp=sharing) |🍃 *Unilateral Climate Policies Can Substantially Reduce National Carbon Pollution* |
-| [BIRDS - Xie & Zhu, 2025](https://drive.google.com/file/d/1y-zRr1AWq1FTC0u_FkOKEw8qxfMjGlsP/view?usp=sharing) |🕊️ *Exploring the ecological impacts of high-speed rail on urban avian biodiversity* |
-| [FISH - Hsueh 2015](https://drive.google.com/file/d/11HclociNOamjynHmO_8TH_Z3ZY22PduM/view?usp=sharing) | 🐟 *Quasi-Experimental Evidence on the “Rights to Fish”: The Effects of Catch Shares on Fishermen’s Days at Sea* |
-| [MPA - Ahmadiam - 2015](https://drive.google.com/file/d/120QjbykEc2dZwOL8kQHfEzXsOsCmr6d6/view?usp=sharing) | 🐡 *Integrating Impact Evaluation in the Design and Implementation of Monitoring Marine Protected Areas* |
-| 🔁 [AQUACULTURE - Rennie et al., 2019](https://drive.google.com/file/d/1Q44h_DcWd6qVkPNnWygYkf89Ccz3Xtuq/view?usp=sharing) | 🎣 *Impacts of freshwater aquaculture on fish communities: A whole‐ecosystem experimental approach* |
-| 🔁 [BYCATCH - Senko et al., 2025](https://drive.google.com/file/d/1HL5Vbxwqx9Wd19B88v6M_EW-SWwEEte_/view?usp=sharing) | 🐳 *Harnessing Solar Energy to Reduce Sea Turtle Bycatch* |
-| [ENERGY - Ferguson & Nolgren 2024](https://drive.google.com/file/d/1659RyEEL_NVY7O3d0pY5qmRR_W2Iv6uM/view?usp=drive_link) | ⚡ *The Causal Effects of Climate Investment Subsidies: Regression Discontinuity Evidence from Swedish Firms* |
-| [ENERGY - Aklin - 2017](https://drive.google.com/file/d/1wV9WAB35Anii8kPjvQ3EYqU91Zqxve27/view?usp=sharing) | ⚡ *Does Basic Energy Access Generate Socioeconomic Benefits? A Field Experiment with Off-grid Solar Power in India* |
-| 📍 [FIRE - Hazlett & Mildenberger 2020](https://drive.google.com/file/d/1Ys6BkCZMqBYmaovNf4G5_lcyIl8_EzM6/view?usp=drive_link) | 🔥 *Wildfire Exposure Increases Pro-Environment Voting within Democratic but Not Republican Areas* |
-| 🔁 [FIRE - Letellier et al., 2018](https://drive.google.com/file/d/1n-OMXpcSP6wqHSmhjo2F-MiQ0YORB-sH/view?usp=sharing) | 🔥 *Applying a two-stage generalized synthetic control approach to quantify the heterogeneous health effects of extreme weather events* |
-- ⭐️ 🔁 [LAND - Buntaine 2014](https://drive.google.com/file/d/1f8DECz0IfJVO5395WI20P9hZN79zZzHt/view?usp=sharing) |🌴 * Titling community land to prevent deforestation: An evaluation of a best-case program in Morona-Santiago, Ecuador* |
-| [LAND - Blackman-et-al- 2017](https://drive.google.com/file/d/1uJbK7R-S1uipnUgAsALNQgmgxXZsMb-o/view?usp=sharing) | 🌴 *Titling Indigenous Communities Protects Forests in the Peruvian Amazon* |
-| 🔁 [PLASTIC - Papp 2025](https://drive.google.com/file/d/1-fr9CAVDhix8w80tFbSbSC9iEUZCC4Xw/view?usp=sharing) | 🗑️ *Plastic bag bans and fees reduce harmful bag litter on shorelines* |
-| 📍 🔁 [MAPS - Mildenberger 2023](https://drive.google.com/file/d/1I6f6K4pYht7lCtQB8WtBa7nH6oCxJ6sx/view?usp=sharing) | 🗺️ *Unintended consequences of using maps to communicate sea-level rise* |
-| [TRANSPORTATION - Bento et al., 2014](https://drive.google.com/file/d/1onVkoRwY5SpxZdLetk3nyLoLlV6OptAf/view?usp=sharing) | 🚌 *The Effects of Regulation in the Presence of Multiple Unpriced Externalities: Evidence from the Transportation Sector* |
-| [AIR - Greenstone - 2022](https://drive.google.com/file/d/1S_QgyoUrjeBw6dppBejPxleEdrOtQJcY/view?usp=sharing) | 🌬️ *Can Technology Solve the Principal-Agent Problem? Evidence from China’s War on Air Pollution* |
-| [WATER - Bhalotra et al., 2021](https://drive.google.com/file/d/1qw9Rl09K66i3VnybIc8AXJOfu-LmKKQ4/view?usp=drive_link) | 💧 *Urban Water Disinfection and Mortality Decline in Lower-Income Countries* |
-| 🔁 [IRRIGATION - Gatti et al., 2020](https://drive.google.com/file/d/1dOPmHRbuiTb-z02dr6OuvDScLKjs_jME/view?usp=sharing) | 💦 *Can Irrigation Infrastructure Mitigate the Effect of Rainfall Shocks on Conflict* |
-| [WETLANDS - Taylor et al., 2021](https://drive.google.com/file/d/1UF8q21XDJn_0mpMctceSHBZqeetmcDvd/view?usp=drive_link) | 🦆 *Wetlands, Flooding, and the Clean Water Act* |
-| 🔁 [DAMS - Atristain et al., 2024](https://drive.google.com/file/d/1o7JUo-_8W5Pr_Qm-Y4syXYjYaLaBC6Yh/view?usp=sharing) | 🪳 *Slow Drawdown Fast Recovery: Stream Macroinvertebrate Communities Improve Quickly After Large Dam Decommissioning* |
-| [CASH - Alix-Garcia et al., 2018](https://drive.google.com/file/d/1q_4xU4HxL_7jicfUngWzoOM7w2OdAs7w/view?usp=sharing) | 💵 *Payments for Environmental Services Supported Social Capital While Increasing Land Management* |
-| ⭐ 🔁️ [LYMES](https://drive.google.com/file/d/1xh09aQIuMrqb4_hJ6p-SUsi1WIcQX7VB/view?usp=sharing) | *MacDonald et al., 2018 -  Missing the People for the Trees - Identifying Coupled Natural Human System Feedbacks Driving the Ecology of Lyme Disease* |
-| [FORESTS - Andam et al., 2008](https://drive.google.com/file/d/1EWcxQESsXzIFn5tgFNtwmMiXVCz3i8lz/view?usp=sharing) | 🌴 *Measuring the effectiveness of protected area networks in reducing deforestation* |
-| ⭐️ 🔁 [TREES - Dudney et al., 2021](https://drive.google.com/file/d/1a4i29LnvPFnYg9Pbo2-l6xt_954Kr694/view?usp=sharing) |🌲 *Nonlinear shifts in infectious rust disease due to climate change* |
-| ⭐️ [AGRICULTURE - Larsen & Noack, 2021](https://drive.google.com/file/d/1OgEAyp3pnDNvvvCnUpe_Z-Uy1ORPCKyR/view?usp=sharing) |🚜 *Impact of Local and Landscape Complexity on the Stability of Field-level Pest Control* |
 
 : {.hover .bordered tbl-colwidths="[50,50]"}
 
