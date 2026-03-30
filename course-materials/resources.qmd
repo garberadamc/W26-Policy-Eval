@@ -9,8 +9,8 @@ toc-location: body
 The studies below were used throughout the course in several ways:
 
 1. **As class examples** to help us understand research design, causal inference, and applied methods  
-2. **As references to additional reading,** for students who wanted to read more about a topic or method.
-3. **As studies for student-led final projects**, matched to student interests and used to replicate analyses with open-source data (when available) in group-led projects.
+2. **As references to additional reading,** for students who wanted to read more about a topic or method
+3. **As studies for student-led final projects**, matched to student interests and used to replicate analyses with open-source data (when available) in group-led projects
 
 
 ::: callout-tip
@@ -60,8 +60,7 @@ The studies below were used throughout the course in several ways:
 
 : {.hover .bordered tbl-colwidths="[50,50]"}
 
-### Studies Organized by Method:
-
+### Studies Organized by Method
 
 **Experiments**
 
